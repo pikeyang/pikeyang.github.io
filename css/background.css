@@ -1,6 +1,6 @@
 #web_bg {
   /* 背景图像的地址（url括号里）  */
-  background: url("./myimage/lyf.jpg");
+  background: url(../img/lyf.jpg);
   /* 背景图像不重复 */
   background-repeat: no-repeat;
   /* 背景图像大小 */
