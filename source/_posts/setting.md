@@ -40,3 +40,31 @@ git config --global --unset http.proxy
 
 ## 多电脑协同
 
+#### 增加电脑时
+
+```bash
+git clone address-of-your-site
+
+cd address-of-your-site
+
+npm install # due to the exist of gitignore, we should install module
+```
+
+#### 不同电脑提交
+
+```bash
+git pull # 同步
+
+git add -A
+
+git commit -m ""
+
+git push 
+
+hexo clean
+
+hexo g
+
+hexo d
+```
+
