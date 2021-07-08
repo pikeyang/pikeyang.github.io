@@ -33,6 +33,14 @@ git config --global http.proxy localhost:10809
 git config --global --unset http.proxy
 ```
 
+关闭 crlf转换
+
+```bash
+git config --global core.autocrlf false //禁用自動轉換
+```
+
+
+
 # Hexo
 
 - [Hexo doc](https://butterfly.js.org/posts/4aa8abbe/)
@@ -67,4 +75,8 @@ hexo g
 
 hexo d
 ```
+
+
+
+
 
