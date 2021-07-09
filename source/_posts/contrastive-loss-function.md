@@ -6,7 +6,6 @@ tags:
 - loss-func
 categories
 - loss function
-- Deep Learning
 ---
 
 # Contrastive Loss
