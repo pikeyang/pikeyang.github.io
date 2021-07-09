@@ -80,3 +80,15 @@ hexo d
 
 
 
+# Typora
+
+```html
+<div style="page-break-after:always"></div>
+```
+
+
+
+```
+AppData\Roaming\Typora\typora-user-images
+```
+
