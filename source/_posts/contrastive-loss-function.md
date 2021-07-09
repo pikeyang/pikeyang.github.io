@@ -4,8 +4,7 @@ date: 2021-07-09 15:15:17
 tags:
 - ML
 - loss-func
-categories
-- loss function
+categories: loss function
 ---
 
 # Contrastive Loss
