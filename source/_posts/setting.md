@@ -48,7 +48,6 @@ git update-git-for-windows
 # Hexo
 
 - [Hexo doc](https://butterfly.js.org/posts/4aa8abbe/)
-- [hexo设置 关于 标签 分类 归档]([(1条消息) hexo设置 关于 标签 分类 归档_阿甘的博客-CSDN博客_hexo 归档](https://blog.csdn.net/ganzhilin520/article/details/79047249))
 
 ## 多电脑协同
 
