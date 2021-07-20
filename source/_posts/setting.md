@@ -36,10 +36,14 @@ git config --global --unset http.proxy
 关闭 crlf转换
 
 ```bash
-git config --global core.autocrlf false //禁用自動轉換
+git config --global core.autocrlf false     //禁用自動轉換
 ```
 
+Git省级
 
+```bash
+git update-git-for-windows
+```
 
 # Hexo
 
@@ -75,10 +79,6 @@ hexo g
 
 hexo d
 ```
-
-
-
-
 
 # Typora
 
