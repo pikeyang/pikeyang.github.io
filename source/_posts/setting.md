@@ -39,7 +39,7 @@ git config --global --unset http.proxy
 git config --global core.autocrlf false     //禁用自動轉換
 ```
 
-Git省级
+Git升级
 
 ```bash
 git update-git-for-windows
