@@ -36,15 +36,18 @@ git config --global --unset http.proxy
 关闭 crlf转换
 
 ```bash
-git config --global core.autocrlf false //禁用自動轉換
+git config --global core.autocrlf false     //禁用自動轉換
 ```
 
+Git升级
 
+```bash
+git update-git-for-windows
+```
 
 # Hexo
 
 - [Hexo doc](https://butterfly.js.org/posts/4aa8abbe/)
-- [hexo设置 关于 标签 分类 归档]([(1条消息) hexo设置 关于 标签 分类 归档_阿甘的博客-CSDN博客_hexo 归档](https://blog.csdn.net/ganzhilin520/article/details/79047249))
 
 ## 多电脑协同
 
@@ -75,10 +78,6 @@ hexo g
 
 hexo d
 ```
-
-
-
-
 
 # Typora
 
