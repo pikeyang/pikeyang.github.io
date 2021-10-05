@@ -1,0 +1,20 @@
+---
+title: CPU是怎么跑起来的-1
+date: 2021-10-06 00:13:21
+tags: 
+- CPU
+categories:
+- Operation system
+---
+
+# CPU的组成
+
+​		CPU的内部由寄存器、控制器、运算器和时钟四个部分构成（有的时钟在CPU之外）
+
+![image-20211006002224075](https://gitee.com/cd-yang/pic/raw/master/img/202110060022125.png)
+
+​		CU控制单元，ALU算术逻辑单元。
+
+
+
+未完待续。。
