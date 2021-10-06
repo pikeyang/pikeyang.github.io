@@ -3,8 +3,7 @@ title: CPP-learn-source
 date: 2021-10-05 00:27:44
 tags:
 - CPP-base
-categories:
-- CPP
+categories: CPP
 ---
 
 # 内联函数
