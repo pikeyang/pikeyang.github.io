@@ -5,6 +5,7 @@ tags:
 - Array
 - C++
 category: C++
+cover: https://gitee.com/cd-yang/pic/raw/master/img/202110080100485.png
 ---
 
 # 数组的声明
