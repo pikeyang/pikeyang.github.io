@@ -8,6 +8,16 @@ category: PyTorch
 cover: https://gitee.com/cd-yang/pic/raw/master/img/202110071124255.jpeg
 ---
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta  charset=utf-8"/>
+    <style>
+        mark {
+            background-color:#ffd351 ; font-weight:bold;
+        }
+    </style>
+
 # 数据操作
 
 ## 改变形状
