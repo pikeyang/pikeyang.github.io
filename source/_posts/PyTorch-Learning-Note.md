@@ -63,6 +63,27 @@ print(id(y) == id_before) # False
 
 ​	此外还可以使用`tensor()`将`NumPy`转为`Tensor`，但是这个过程是数组的拷贝，返回的`Tensor`和原来不共享内存。
 
+## 矩阵乘法
+
+```python
+# This computes the matrix multiplication between two tensors. y1, y2, y3 will have the same value
+y1 = tensor @ tensor.T
+y2 = tensor.matmul(tensor.T)
+
+y3 = torch.rand_like(tensor)
+torch.matmul(tensor, tensor.T, out=y3)
+
+
+# This computes the element-wise product. z1, z2, z3 will have the same value
+z1 = tensor * tensor
+z2 = tensor.mul(tensor)
+
+z3 = torch.rand_like(tensor)
+torch.mul(tensor, tensor, out=z3)
+```
+
+
+
 # 梯度
 
 ## 修改`tensor`
