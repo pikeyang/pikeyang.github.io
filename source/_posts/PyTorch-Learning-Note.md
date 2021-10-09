@@ -24,7 +24,7 @@ cover: https://gitee.com/cd-yang/pic/raw/master/img/202110071124255.jpeg
 
 ### view
 
-​		`view`不会真正地改变tensor的形状，而是改变了观察tensor的视角。==注意`view()`返回的新`Tensor`与源`Tensor`虽然可能有不同的`size`，但是是共享`data`的，也即更改其中的一个，另外一个也会跟着改变。==
+​		`view`不会真正地改变tensor的形状，而是改变了观察tensor的视角。<mark>注意`view()`返回的新`Tensor`与源`Tensor`虽然可能有不同的`size`，但是是共享`data`的，也即更改其中的一个，另外一个也会跟着改变。</mark>
 
 ### reshape
 
