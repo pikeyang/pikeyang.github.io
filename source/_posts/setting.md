@@ -49,6 +49,20 @@ git update-git-for-windows
 
 - [Hexo doc](https://butterfly.js.org/posts/4aa8abbe/)
 
+## hexo highlight
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta  charset=utf-8"/>
+    <style>
+        mark {
+            background-color:#FFFF00 ; font-weight:bold;
+        }
+    </style>
+```
+
 ## 多电脑协同
 
 #### 增加电脑时

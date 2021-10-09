@@ -8,6 +8,16 @@ category: C++
 cover: https://gitee.com/cd-yang/pic/raw/master/img/202110080100485.png
 ---
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta  charset=utf-8"/>
+    <style>
+        mark {
+            background-color:#FFFF00 ; font-weight:bold;
+        }
+    </style>
+
 # 数组的声明
 
 ​		C++中，最经典的数组声明方法是，`type name [elements]`。例如：
@@ -70,7 +80,7 @@ char myword[] = { 'H', 'e', 'l', 'l', 'o', '\0' };
 char myword[] = "Hello"; 
 ```
 
-​		==需要注意的是字符串数组被初始化完成后，上面的操作不可以用来改变`myword`的值了！！==
+​		<mark>需要注意的是字符串数组被初始化完成后，上面的操作不可以用来改变`myword`的值了！！</mark>
 
 ```cpp
 myword = "Bye";
