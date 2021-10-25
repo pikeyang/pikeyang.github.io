@@ -11,14 +11,11 @@ cover: https://gitee.com/cd-yang/pic/raw/master/img/202110071124255.jpeg
 <!DOCTYPE html>
 <html>
 <head>
-<meta  charset=utf-8"/>
     <style>
         mark {
             background-color:#ffff00 ; font-weight:bold;
         }
     </style>
-
-
 # 数据操作
 
 ## 改变形状
@@ -36,6 +33,37 @@ cover: https://gitee.com/cd-yang/pic/raw/master/img/202110071124255.jpeg
 ​		因为`reshape`的不确定性，所以推荐这种用法`x.clone().view()`
 
 > 使用`clone`还有一个好处是会被记录在计算图中，即梯度回传到副本时也会传到源`Tensor`。
+
+### squeeze
+
+```python
+torch.squeeze(input, dim=None, out=None)
+将输入张量形状中的1 去除并返回。 如果输入是形如(A×1×B×1×C×1×D)，那么输出形状就为： (A×B×C×D)
+当给定dim时，那么挤压操作只在给定维度上。例如，输入形状为: (A×1×B), squeeze(input, 0) 
+将会保持张量不变，只有用 squeeze(input, 1)，形状会变成 (A×B)。
+ 
+注意： 返回张量与输入张量共享内存，所以改变其中一个的内容会改变另一个。
+ 
+参数:
+ 
+input (Tensor) – 输入张量
+dim (int, optional) – 如果给定，则input只会在给定维度挤压
+out (Tensor, optional) – 输出张量
+例子：
+ 
+>>> x = torch.zeros(2,1,2,1,2)
+>>> x.size()
+(2L, 1L, 2L, 1L, 2L)
+>>> y = torch.squeeze(x)
+>>> y.size()
+(2L, 2L, 2L)
+>>> y = torch.squeeze(x, 0)
+>>> y.size()
+(2L, 1L, 2L, 1L, 2L)
+>>> y = torch.squeeze(x, 1)
+>>> y.size()
+(2L, 2L, 1L, 2L)
+```
 
 ### item
 
@@ -120,6 +148,31 @@ tensor([1.])
 False
 tensor([100.], requires_grad=True)
 tensor([2.])
+```
+
+# 模型
+
+## nn
+
+> 注意：`torch.nn`仅支持输入一个batch的样本不支持单个样本输入，如果只有单个样本，可使用`input.unsqueeze(0)`来添加一维。
+
+### nn和functional
+
+| torch.nn.X                                          | torch.nn.functional.X                           |
+| --------------------------------------------------- | ----------------------------------------------- |
+| 是 类                                               | 是函数                                          |
+| 结构中包含所需要初始化的参数                        | 需要在函数外定义并初始化相应参数,并作为参数传入 |
+| 一般情况下放在_init_ 中实例化,并在forward中完成操作 | 一般在_init_ 中初始化相应参数,在forward中传入   |
+
+## init
+
+​		在使用模型之前，我们需要初始化模型参数。
+
+```python
+from torch.nn import init
+
+init.normal_(net[0].weight, mean=0, std=0.01)
+init.constant_(net[0].bias, val=0)  # 也可以直接修改bias的data: net[0].bias.data.fill_(0)
 ```
 
 
