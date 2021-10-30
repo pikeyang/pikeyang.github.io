@@ -5,6 +5,7 @@ tags:
 - Python
 categories: 
 - Python
+cover: https://gitee.com/cd-yang/pic/raw/master/img/202110301042953.png
 ---
 
 # *号

@@ -7,6 +7,7 @@ tags:
 - CNN
 categories:
 - Deep Learning
+cover: https://gitee.com/cd-yang/pic/raw/master/img/202110301042212.jpg
 ---
 
 
