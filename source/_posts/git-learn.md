@@ -1,7 +1,8 @@
 ---
 title: git-learn
 date: 2021-12-30 11:51:31
-tags:
+tags: git
+categories: Basic
 cover: https://gitee.com/cd-yang/pic/raw/master/img/202112301152856.jpeg
 ---
 
