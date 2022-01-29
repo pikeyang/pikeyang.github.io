@@ -175,10 +175,10 @@ Python中常用的运算符、for循环、以及类操作等都是运行在魔�
 ​    if __name__ == '__main__':
 ​        p1 = People('xiaoming', 16)
 ​    
-    输出：
-    触发了构造方法
-    初始化方法
-    析构方法，删除对象
+​    输出：
+​    触发了构造方法
+​    初始化方法
+​    析构方法，删除对象
 
 **使用`__call__`方法实现斐波那契数列**
 
@@ -416,3 +416,28 @@ Python中常用的运算符、for循环、以及类操作等都是运行在魔�
 > 把Lib/site-pakages/cv2/*.pyd 复制到site-pakages
 
 ![image-20211122161302050](https://gitee.com/cd-yang/pic/raw/master/img/202111221613113.png)
+
+# yield and return
+
+## yield
+
+It is generally used to convert a regular Python function into a generator. A generator is a special function in Python that returns a generator to the caller.  Since it stores the variable states, hence overhead of memory allocation is controlled.
+
+## return
+
+It is generally used for the end of the execution and “returns” the result to the caller statement. It can return all type of values and it returns None when there is no expression with the statement “return”.
+
+| S.NO. | YIELD                                                        | RETURN                                                       |
+| :---- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| 1     | Yield is generally used to convert a regular Python function into a generator. | Return is generally used for the end of the execution and “returns” the result to the caller statement. |
+| 2     | It replace the return of a function to suspend its execution without destroying local variables. | It exits from a function and handing back a value to its caller. |
+| 3     | It is used when the generator returns an intermediate result to the caller. | It is used when a function is ready to send a value.         |
+| 4     | Code written after yield statement execute in next function call. | while, code written after return statement wont execute.     |
+| 5     | **It can run multiple times.**                               | **It only runs single time.**                                |
+| 6     | Yield statement function is executed from the last state from where the function get paused. | Every function calls run the function from the start.        |
+
+# Reference
+
+1. [Difference between Yield and Return in Python](https://www.geeksforgeeks.org/difference-between-yield-and-return-in-python/)
+2. 
+
