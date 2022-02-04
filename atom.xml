@@ -110,9 +110,9 @@
       <category term="Python" scheme="http://example.com/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://example.com/tags/Python/"/>
-    
       <category term="Matplotlib" scheme="http://example.com/tags/Matplotlib/"/>
+    
+      <category term="Python" scheme="http://example.com/tags/Python/"/>
     
   </entry>
   
