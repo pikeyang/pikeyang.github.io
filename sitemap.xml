@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2021/10/30/Python-learn-tips/</loc>
+    
+    <lastmod>2022-02-04</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2021/12/30/git-learn/</loc>
     
     <lastmod>2022-02-04</lastmod>
@@ -16,7 +23,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/index.html</loc>
+    <loc>http://example.com/about/index.html</loc>
     
     <lastmod>2022-01-13</lastmod>
     
@@ -30,14 +37,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/about/index.html</loc>
-    
-    <lastmod>2022-01-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/07/09/contrastive-loss-function/</loc>
+    <loc>http://example.com/categories/index.html</loc>
     
     <lastmod>2022-01-13</lastmod>
     
@@ -58,6 +58,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/2021/07/09/contrastive-loss-function/</loc>
+    
+    <lastmod>2022-01-13</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2021/07/07/setting/</loc>
     
     <lastmod>2022-01-13</lastmod>
@@ -66,13 +73,6 @@
   
   <url>
     <loc>http://example.com/2021/07/08/%E6%94%B6%E8%97%8F%E7%9A%84%E9%A1%B9%E7%9B%AE/</loc>
-    
-    <lastmod>2022-01-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/01/13/hello-world/</loc>
     
     <lastmod>2022-01-13</lastmod>
     
@@ -100,6 +100,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/2022/01/13/hello-world/</loc>
+    
+    <lastmod>2022-01-13</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2021/10/05/CPP-learn-source/</loc>
     
     <lastmod>2022-01-13</lastmod>
@@ -121,14 +128,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/11/06/Matplotlib-Notes/</loc>
-    
-    <lastmod>2022-01-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/07/PyTorch-Learning-Note/</loc>
+    <loc>http://example.com/2021/11/02/Contrastive-Learning/</loc>
     
     <lastmod>2022-01-13</lastmod>
     
@@ -149,7 +149,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/11/02/Contrastive-Learning/</loc>
+    <loc>http://example.com/2021/10/07/PyTorch-Learning-Note/</loc>
+    
+    <lastmod>2022-01-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/11/06/Matplotlib-Notes/</loc>
     
     <lastmod>2022-01-13</lastmod>
     
@@ -207,21 +214,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Matplotlib/</loc>
-    <lastmod>2022-02-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/Python/</loc>
-    <lastmod>2022-02-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/PyTorch/</loc>
     <lastmod>2022-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -256,7 +249,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/loss-func/</loc>
+    <loc>http://example.com/tags/PyTorch/</loc>
     <lastmod>2022-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -264,6 +257,13 @@
   
   <url>
     <loc>http://example.com/tags/Logistics-Regression/</loc>
+    <lastmod>2022-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Matplotlib/</loc>
     <lastmod>2022-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -278,6 +278,13 @@
   
   <url>
     <loc>http://example.com/tags/math/</loc>
+    <lastmod>2022-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/loss-func/</loc>
     <lastmod>2022-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -356,20 +363,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/Python/</loc>
-    <lastmod>2022-02-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/categories/PyTorch/</loc>
-    <lastmod>2022-02-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/categories/Numpy/</loc>
     <lastmod>2022-02-04</lastmod>
     <changefreq>daily</changefreq>
@@ -384,7 +377,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/loss-function/</loc>
+    <loc>http://example.com/categories/PyTorch/</loc>
+    <lastmod>2022-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/Python/</loc>
     <lastmod>2022-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -392,6 +392,13 @@
   
   <url>
     <loc>http://example.com/categories/Basic/</loc>
+    <lastmod>2022-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/loss-function/</loc>
     <lastmod>2022-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
