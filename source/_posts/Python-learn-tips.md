@@ -1,10 +1,13 @@
-## title: Python-learn-tips
+---
+title: Python-learn-tips
 date: 2021-10-30 10:25:22
 tags:
+
 - Python
 categories: 
 - Python
 cover: https://gitee.com/cd-yang/pic/raw/master/img/202110301042953.png
+---
 
 # *号
 
