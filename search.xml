@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CPP-learn-source</title>
+    <url>/2021/10/05/CPP-learn-source/</url>
+    <content><![CDATA[<h1 id="内联函数"><a href="#内联函数" class="headerlink" title="内联函数"></a>内联函数</h1><p><a href="https://blog.csdn.net/BjarneCpp/article/details/76044493">c++ 内联函数（一看就懂）</a></p>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>CPP-base</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CPP-Array</title>
     <url>/2021/10/07/CPP-Array/</url>
     <content><![CDATA[<p>&lt;!DOCTYPE html&gt;</p>
@@ -61,36 +73,6 @@
         <tag>Deep Learning</tag>
         <tag>Computer Vision</tag>
         <tag>CNN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Contrastive Learning</title>
-    <url>/2021/11/02/Contrastive-Learning/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Iteration Batch Epoch</title>
-    <url>/2021/07/07/Iteration-Batch-Epoch/</url>
-    <content><![CDATA[<h1 id="Iteration-Batch-Epoch"><a href="#Iteration-Batch-Epoch" class="headerlink" title="Iteration Batch Epoch"></a>Iteration Batch Epoch</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210707123342.png" alt="img"></p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>ML</tag>
-        <tag>Gradient Descent</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CPP-learn-source</title>
-    <url>/2021/10/05/CPP-learn-source/</url>
-    <content><![CDATA[<h1 id="内联函数"><a href="#内联函数" class="headerlink" title="内联函数"></a>内联函数</h1><p><a href="https://blog.csdn.net/BjarneCpp/article/details/76044493">c++ 内联函数（一看就懂）</a></p>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>CPP-base</tag>
       </tags>
   </entry>
   <entry>
@@ -187,21 +169,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Why does Logistics Regression not use Square Loss?</title>
-    <url>/2021/10/11/Why-does-Logistics-Regression-not-use-Square-Loss/</url>
-    <content><![CDATA[<h1 id="为什么不使用平方损失"><a href="#为什么不使用平方损失" class="headerlink" title="为什么不使用平方损失"></a>为什么不使用平方损失</h1><h2 id="非凸函数"><a href="#非凸函数" class="headerlink" title="非凸函数"></a><a href="https://www.programmersought.com/article/12853404913/">非凸函数</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110111503422.png" alt="image-20210629193814368"></p>
-<h2 id="对反例的惩罚不够"><a href="#对反例的惩罚不够" class="headerlink" title="对反例的惩罚不够"></a><a href="https://radiant-brushlands-42789.herokuapp.com/towardsdatascience.com/why-not-mse-as-a-loss-function-for-logistic-regression-589816b5e03c">对反例的惩罚不够</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/image-20210629193908181.png" alt="image-20210629193908181"></p>
-<h2 id="The-gradient-of-MSE-will-disappear"><a href="#The-gradient-of-MSE-will-disappear" class="headerlink" title="The gradient of MSE will disappear"></a><a href="https://www.programmersought.com/article/12853404913/">The gradient of MSE will disappear</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/image-20210629193736889.png" alt="image-20210629193736889"></p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>ML</tag>
-        <tag>Logistics Regression</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Numpy-Note</title>
     <url>/2021/10/09/Numpy-Note/</url>
     <content><![CDATA[<h1 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a><code>Numpy</code></h1><p>​        <a href="https://numpy.org/doc/stable/reference/random/generator.html">官方文档</a></p>
@@ -241,6 +208,19 @@ scale\to\sigma</script>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>Iteration Batch Epoch</title>
+    <url>/2021/07/07/Iteration-Batch-Epoch/</url>
+    <content><![CDATA[<h1 id="Iteration-Batch-Epoch"><a href="#Iteration-Batch-Epoch" class="headerlink" title="Iteration Batch Epoch"></a>Iteration Batch Epoch</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210707123342.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>ML</tag>
+        <tag>Gradient Descent</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>contrastive loss function</title>
     <url>/2021/07/09/contrastive-loss-function/</url>
     <content><![CDATA[<h1 id="Contrastive-Loss"><a href="#Contrastive-Loss" class="headerlink" title="Contrastive Loss"></a>Contrastive Loss</h1><h2 id="Max-margin-contrastive-loss"><a href="#Max-margin-contrastive-loss" class="headerlink" title="Max margin contrastive loss"></a>Max margin contrastive loss</h2><h2 id="REFFERENCE"><a href="#REFFERENCE" class="headerlink" title="REFFERENCE"></a>REFFERENCE</h2><ol>
@@ -256,48 +236,19 @@ scale\to\sigma</script>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>math-for-ML</title>
-    <url>/2021/07/10/math-for-ML/</url>
-    <content><![CDATA[]]></content>
+    <title>Why does Logistics Regression not use Square Loss?</title>
+    <url>/2021/10/11/Why-does-Logistics-Regression-not-use-Square-Loss/</url>
+    <content><![CDATA[<h1 id="为什么不使用平方损失"><a href="#为什么不使用平方损失" class="headerlink" title="为什么不使用平方损失"></a>为什么不使用平方损失</h1><h2 id="非凸函数"><a href="#非凸函数" class="headerlink" title="非凸函数"></a><a href="https://www.programmersought.com/article/12853404913/">非凸函数</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110111503422.png" alt="image-20210629193814368"></p>
+<h2 id="对反例的惩罚不够"><a href="#对反例的惩罚不够" class="headerlink" title="对反例的惩罚不够"></a><a href="https://radiant-brushlands-42789.herokuapp.com/towardsdatascience.com/why-not-mse-as-a-loss-function-for-logistic-regression-589816b5e03c">对反例的惩罚不够</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/image-20210629193908181.png" alt="image-20210629193908181"></p>
+<h2 id="The-gradient-of-MSE-will-disappear"><a href="#The-gradient-of-MSE-will-disappear" class="headerlink" title="The gradient of MSE will disappear"></a><a href="https://www.programmersought.com/article/12853404913/">The gradient of MSE will disappear</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/image-20210629193736889.png" alt="image-20210629193736889"></p>
+]]></content>
       <categories>
         <category>Machine Learning</category>
       </categories>
       <tags>
         <tag>ML</tag>
-        <tag>math</tag>
+        <tag>Logistics Regression</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/01/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>tricks for contrastive learning</title>
-    <url>/2022/01/23/tricks-for-contrastive-learning/</url>
-    <content><![CDATA[<h1 id="Projection-head"><a href="#Projection-head" class="headerlink" title="Projection head"></a>Projection head</h1>]]></content>
-      <categories>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>contrastive learning</tag>
-        <tag>deep learning tricks</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图像风格变换</title>
-    <url>/2021/07/10/%E5%9B%BE%E5%83%8F%E9%A3%8E%E6%A0%BC%E5%8F%98%E6%8D%A2/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210710104000.png" alt="image-20210710104000250"></p>
-]]></content>
   </entry>
   <entry>
     <title>git-learn</title>
@@ -349,17 +300,15 @@ scale\to\sigma</script>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>收藏的项目</title>
-    <url>/2021/07/08/%E6%94%B6%E8%97%8F%E7%9A%84%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<h1 id="收藏的项目"><a href="#收藏的项目" class="headerlink" title="收藏的项目"></a>收藏的项目</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210708095602.jpeg" alt="My Favorite Rubber Stamp. Grunge Design With Dust Scratches... Royalty Free  Cliparts, Vectors, And Stock Illustration. Image 69733888."></p>
-<h2 id="对比损失的实现"><a href="#对比损失的实现" class="headerlink" title="对比损失的实现"></a>对比损失的实现</h2><p><a href="https://github.com/wangz10/contrastive_loss">contrastive_loss</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Contrastive loss functions</span><br><span class="line">Experiments with different contrastive loss functions to see if they help supervised learning.</span><br><span class="line"></span><br><span class="line">For detailed reviews and intuitions, please check out those posts:</span><br><span class="line"></span><br><span class="line">Contrastive loss for supervised classification</span><br><span class="line">Contrasting contrastive loss functions</span><br></pre></td></tr></table></figure>
-]]></content>
+    <title>math-for-ML</title>
+    <url>/2021/07/10/math-for-ML/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>项目</category>
+        <category>Machine Learning</category>
       </categories>
       <tags>
-        <tag>github</tag>
+        <tag>ML</tag>
+        <tag>math</tag>
       </tags>
   </entry>
   <entry>
@@ -390,6 +339,72 @@ scale\to\sigma</script>]]></content>
         <tag>git</tag>
         <tag>hexo</tag>
         <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tricks for contrastive learning</title>
+    <url>/2022/01/23/tricks-for-contrastive-learning/</url>
+    <content><![CDATA[<h1 id="Projection-head"><a href="#Projection-head" class="headerlink" title="Projection head"></a>Projection head</h1>]]></content>
+      <categories>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>contrastive learning</tag>
+        <tag>deep learning tricks</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>收藏的项目</title>
+    <url>/2021/07/08/%E6%94%B6%E8%97%8F%E7%9A%84%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="收藏的项目"><a href="#收藏的项目" class="headerlink" title="收藏的项目"></a>收藏的项目</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210708095602.jpeg" alt="My Favorite Rubber Stamp. Grunge Design With Dust Scratches... Royalty Free  Cliparts, Vectors, And Stock Illustration. Image 69733888."></p>
+<h2 id="对比损失的实现"><a href="#对比损失的实现" class="headerlink" title="对比损失的实现"></a>对比损失的实现</h2><p><a href="https://github.com/wangz10/contrastive_loss">contrastive_loss</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Contrastive loss functions</span><br><span class="line">Experiments with different contrastive loss functions to see if they help supervised learning.</span><br><span class="line"></span><br><span class="line">For detailed reviews and intuitions, please check out those posts:</span><br><span class="line"></span><br><span class="line">Contrastive loss for supervised classification</span><br><span class="line">Contrasting contrastive loss functions</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Contrastive Learning</title>
+    <url>/2021/11/02/Contrastive-Learning/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/01/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>图像风格变换</title>
+    <url>/2021/07/10/%E5%9B%BE%E5%83%8F%E9%A3%8E%E6%A0%BC%E5%8F%98%E6%8D%A2/</url>
+    <content><![CDATA[<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210710104000.png" alt="image-20210710104000250"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>程序是怎么跑起来的-1</title>
+    <url>/2021/10/06/%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-1/</url>
+    <content><![CDATA[<h1 id="CPU的组成"><a href="#CPU的组成" class="headerlink" title="CPU的组成"></a>CPU的组成</h1><p>​        CPU的内部由寄存器、控制器、运算器和时钟四个部分构成（有的时钟在CPU之外）</p>
+<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110060022125.png" alt="image-20211006002224075"></p>
+<p>​        CU控制单元，ALU算术逻辑单元。</p>
+<p>未完待续。。</p>
+]]></content>
+      <categories>
+        <category>Operating System</category>
+      </categories>
+      <tags>
+        <tag>CPU</tag>
       </tags>
   </entry>
   <entry>
@@ -431,21 +446,6 @@ scale\to\sigma</script>]]></content>
       <tags>
         <tag>Memory</tag>
         <tag>CPP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>程序是怎么跑起来的-1</title>
-    <url>/2021/10/06/%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-1/</url>
-    <content><![CDATA[<h1 id="CPU的组成"><a href="#CPU的组成" class="headerlink" title="CPU的组成"></a>CPU的组成</h1><p>​        CPU的内部由寄存器、控制器、运算器和时钟四个部分构成（有的时钟在CPU之外）</p>
-<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110060022125.png" alt="image-20211006002224075"></p>
-<p>​        CU控制单元，ALU算术逻辑单元。</p>
-<p>未完待续。。</p>
-]]></content>
-      <categories>
-        <category>Operating System</category>
-      </categories>
-      <tags>
-        <tag>CPU</tag>
       </tags>
   </entry>
 </search>
