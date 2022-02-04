@@ -1,12 +1,10 @@
----
-title: Python-learn-tips
+## title: Python-learn-tips
 date: 2021-10-30 10:25:22
 tags:
 - Python
 categories: 
 - Python
 cover: https://gitee.com/cd-yang/pic/raw/master/img/202110301042953.png
----
 
 # *号
 
@@ -448,12 +446,117 @@ else:
     正常推出while时调用
 ```
 
+# 新建dict注意
+
+```python
+In [56]: d = {x: y for x in [1, 2, 3] for y in [4, 5, 6]}
+
+In [57]: d
+Out[57]: {1: 6, 2: 6, 3: 6}
+```
+
+>1:4 -> 1:5 -> 1:6
+
+一直在更新键值对
+
+# 集合的方法
+
+```python
+update("all") -> a l l  add("all")
+
+issuperset >  >=
+
+issubset  < <=
+
+union |
+
+intersection &
+
+difference -
+
+# 集合A与集合B的对称差集定义为集合A与集合B中所有不属于A∩B的元素的集合，记为A△B
+symmetric_difference ^
+```
 
 
 
+# Frozenset
+
+可哈希
+
+# 字符串前 u r b f
+
+[Python 字符串前面加u,r,b,f的含义_python学习者的博客-CSDN博客](https://blog.csdn.net/sinat_38682860/article/details/108848994)
+
+# 函数
+
+## 关键字参数
+
+![截屏2022-02-04 下午1.39.33](https://gitee.com/cd-yang/pic/raw/master/img/%E6%88%AA%E5%B1%8F2022-02-04%20%E4%B8%8B%E5%8D%881.39.33.png)
+
+**/** 之前不可以使用关键字参数，**/**之后可以使用
+
+![截屏2022-02-04 下午1.46.02](https://gitee.com/cd-yang/pic/raw/master/img/%E6%88%AA%E5%B1%8F2022-02-04%20%E4%B8%8B%E5%8D%881.46.02.png)
+
+![截屏2022-02-04 下午1.48.00](https://gitee.com/cd-yang/pic/raw/master/img/%E6%88%AA%E5%B1%8F2022-02-04%20%E4%B8%8B%E5%8D%881.48.00.png)
+
+## 收集参数
+
+![截屏2022-02-04 下午1.54.03](https://gitee.com/cd-yang/pic/raw/master/img/%E6%88%AA%E5%B1%8F2022-02-04%20%E4%B8%8B%E5%8D%881.54.03.png)
+
+​		Python中，多值赋值，返回多个值都是使用元组（打包解包）
+
+![截屏2022-02-04 下午2.02.11](https://gitee.com/cd-yang/pic/raw/master/img/截屏2022-02-04 下午2.02.11.png)
+
+![截屏2022-02-04 下午2.06.25](https://gitee.com/cd-yang/pic/raw/master/img/%E6%88%AA%E5%B1%8F2022-02-04%20%E4%B8%8B%E5%8D%882.06.25.png)
+
+## global nonlocal
+
+nonlocal声明的变量不是局部变量,也不是全局变量,而是外部嵌套函数内的变量
+
+global 全局
+
+## LEGB
+
+local > enclosed(嵌套函数的外部函数变量) > global > build-in
+
+## 闭包
+
+<img src="https://gitee.com/cd-yang/pic/raw/master/img/202202041425081.png" alt="截屏2022-02-04 下午2.24.38" style="zoom:50%;" />
+
+![截屏2022-02-04 下午2.27.54](https://gitee.com/cd-yang/pic/raw/master/img/202202041428136.png)
+
+## 装饰器
+
+```python
+def debug(func):
+    def wrapper():
+        print("[DEBUG]: enter {}()".format(func.__name__))
+        return func()
+    return wrapper
+
+@debug
+def hello():
+    print("hello")
+
+hello()
+-----------------------------
+>>>[DEBUG]: enter hello()
+>>>hello
+```
+
+## lambda
+
+![截屏2022-02-04 下午2.44.39](https://gitee.com/cd-yang/pic/raw/master/img/202202041445941.png)
+
+filter 返回使得表达式为True的结果
+
+## 生成器
+
+![截屏2022-02-04 下午2.53.14](https://gitee.com/cd-yang/pic/raw/master/img/202202041453589.png)
 
 # Reference
 
 1. [Difference between Yield and Return in Python](https://www.geeksforgeeks.org/difference-between-yield-and-return-in-python/)
-2. 
+2. [Python 字符串前面加u,r,b,f的含义_python学习者的博客-CSDN博客](https://blog.csdn.net/sinat_38682860/article/details/108848994)
 
