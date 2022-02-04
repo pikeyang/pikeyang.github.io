@@ -436,6 +436,22 @@ It is generally used for the end of the execution and “returns” the result t
 | 5     | **It can run multiple times.**                               | **It only runs single time.**                                |
 | 6     | Yield statement function is executed from the last state from where the function get paused. | Every function calls run the function from the start.        |
 
+# While else
+
+```python
+while:
+    ...
+    ...
+    	break
+        
+else:
+    正常推出while时调用
+```
+
+
+
+
+
 # Reference
 
 1. [Difference between Yield and Return in Python](https://www.geeksforgeeks.org/difference-between-yield-and-return-in-python/)
