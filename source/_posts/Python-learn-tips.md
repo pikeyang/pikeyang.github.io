@@ -558,6 +558,30 @@ filter 返回使得表达式为True的结果
 
 ![截屏2022-02-04 下午2.53.14](https://gitee.com/cd-yang/pic/raw/master/img/202202041453589.png)
 
+# 列表的删除问题
+
+```python
+data = [1, 1]
+
+for each in data:  # for each in data.copy()
+  if each == 1:
+    data.remove(1)
+    
+print(data)
+```
+
+![截屏2022-02-04 下午11.17.53](https://gitee.com/cd-yang/pic/raw/master/img/202202042318301.png)
+
+# 元组
+
+## 元组中只有一个元素时--逗号
+
+```python
+tup1 = (50,)
+```
+
+
+
 # Reference
 
 1. [Difference between Yield and Return in Python](https://www.geeksforgeeks.org/difference-between-yield-and-return-in-python/)
