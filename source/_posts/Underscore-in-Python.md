@@ -5,7 +5,7 @@ tags: Python
 categories: Python
 ---
 
-
+[TOC]
 
 ## 1.在解释器中的使用
 
@@ -78,3 +78,8 @@ AttributeError: 'Base' object has no attribute '__var'
 ​		魔术方法。
 
 ![截屏2022-02-28 下午4.55.50](https://gitee.com/cd-yang/pic/raw/master/img/202202281656936.png)
+
+## 参考文献
+
+1.[Role of Underscore(_) in Python Tutorial](https://www.datacamp.com/community/tutorials/role-underscore-python#SDON)
+
