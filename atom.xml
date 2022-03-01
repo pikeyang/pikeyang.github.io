@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-02-28T09:40:01.943Z</updated>
+  <updated>2022-03-01T07:30:36.728Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>to-learn</title>
+    <link href="http://example.com/2022/03/01/to-learn/"/>
+    <id>http://example.com/2022/03/01/to-learn/</id>
+    <published>2022-03-01T07:19:02.000Z</published>
+    <updated>2022-03-01T07:30:36.728Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Contrastive-Learning"><a href="#Contrastive-Learning" class="headerlink" title="Contrastive Learning"></a>Contrastive Learning</h1><h2 id="DINO"><a href="#DINO" class="headerlink" title="DINO"></a>DINO</h2><h1 id="Knowledge-Distilataion"><a href="#Knowledge-Distilataion" class="headerlink" title="Knowledge Distilataion"></a>Knowledge Distilataion</h1><p><a href="https://github.com/HobbitLong/RepDistiller">Code reproduce</a></p><p><a href="https://devopedia.org/knowledge-distillation">Summary</a></p><p><a href="https://peerj.com/articles/cs-474/">Knowledge distillation in deep learning and its applications</a></p><h1 id="Objection-Detection"><a href="#Objection-Detection" class="headerlink" title="Objection Detection"></a>Objection Detection</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Contrastive-Learning&quot;&gt;&lt;a href=&quot;#Contrastive-Learning&quot; class=&quot;headerlink&quot; title=&quot;Contrastive Learning&quot;&gt;&lt;/a&gt;Contrastive Learning&lt;/h1&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Deep Learning" scheme="http://example.com/tags/Deep-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>Underscore in Python (Python中的下划线)</title>
@@ -496,36 +519,6 @@
     
     
       <category term="github" scheme="http://example.com/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>setting</title>
-    <link href="http://example.com/2021/07/07/setting/"/>
-    <id>http://example.com/2021/07/07/setting/</id>
-    <published>2021-07-07T04:39:07.000Z</published>
-    <updated>2022-01-13T03:37:46.544Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210707130820.png" alt="image-20210707130820709"></p><h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>只针对github</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.https://github.com.proxy localhost:10809</span><br><span class="line"></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br></pre></td></tr></table></figure><p>为git开启代理</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global https.proxy localhost:10809</span><br><span class="line">git config --global http.proxy localhost:10809</span><br><span class="line"></span><br><span class="line">git config --global --unset http.proxy</span><br></pre></td></tr></table></figure><p>关闭 crlf转换</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span>     //禁用自動轉換</span><br></pre></td></tr></table></figure><p>Git升级</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git update-git-for-windows</span><br></pre></td></tr></table></figure><h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><ul><li><a href="https://butterfly.js.org/posts/4aa8abbe/">Hexo doc</a></li></ul><h2 id="hexo-highlight"><a href="#hexo-highlight" class="headerlink" title="hexo highlight"></a>hexo highlight</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span>  <span class="attr">charset</span>=<span class="string">utf-8</span>&quot;/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">mark</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>:<span class="number">#FFFF00</span> ; <span class="attribute">font-weight</span>:bold;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="多电脑协同"><a href="#多电脑协同" class="headerlink" title="多电脑协同"></a>多电脑协同</h2><h4 id="增加电脑时"><a href="#增加电脑时" class="headerlink" title="增加电脑时"></a>增加电脑时</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> address-of-your-site</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> address-of-your-site</span><br><span class="line"></span><br><span class="line">npm install <span class="comment"># due to the exist of gitignore, we should install module</span></span><br></pre></td></tr></table></figure><h4 id="不同电脑提交"><a href="#不同电脑提交" class="headerlink" title="不同电脑提交"></a>不同电脑提交</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git pull <span class="comment"># 同步</span></span><br><span class="line"></span><br><span class="line">git add -A</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">git push </span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure><h1 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;page-break-after:always&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AppData\Roaming\Typora\typora-user-images</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://gitee.com/cd-yang/pic/raw/master/img/20210707130820.png&quot; alt=&quot;image-20210707130820709&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot;
-      
-    
-    </summary>
-    
-      <category term="note" scheme="http://example.com/categories/note/"/>
-    
-    
-      <category term="git" scheme="http://example.com/tags/git/"/>
-    
-      <category term="hexo" scheme="http://example.com/tags/hexo/"/>
-    
-      <category term="butterfly" scheme="http://example.com/tags/butterfly/"/>
     
   </entry>
   

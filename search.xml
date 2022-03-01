@@ -53,6 +53,11 @@
       </tags>
   </entry>
   <entry>
+    <title>Contrastive Learning</title>
+    <url>/2021/11/02/Contrastive-Learning/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>CV-some-tips</title>
     <url>/2021/10/29/CV-some-tips/</url>
     <content><![CDATA[<h1 id="【CNN】理解卷积神经网络中的通道-channel-scxyz的博客-CSDN博客-cnn通道"><a href="#【CNN】理解卷积神经网络中的通道-channel-scxyz的博客-CSDN博客-cnn通道" class="headerlink" title="【CNN】理解卷积神经网络中的通道 channel_scxyz的博客-CSDN博客_cnn通道"></a><a href="https://blog.csdn.net/sscc_learning/article/details/79814146">【CNN】理解卷积神经网络中的通道 channel_scxyz的博客-CSDN博客_cnn通道</a></h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110300952401.png" alt="cnn"></p>
@@ -74,11 +79,6 @@
         <tag>Computer Vision</tag>
         <tag>CNN</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Contrastive Learning</title>
-    <url>/2021/11/02/Contrastive-Learning/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Matplotlib Notes</title>
@@ -104,6 +104,19 @@
       <tags>
         <tag>Matplotlib</tag>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Iteration Batch Epoch</title>
+    <url>/2021/07/07/Iteration-Batch-Epoch/</url>
+    <content><![CDATA[<h1 id="Iteration-Batch-Epoch"><a href="#Iteration-Batch-Epoch" class="headerlink" title="Iteration Batch Epoch"></a>Iteration Batch Epoch</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210707123342.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>ML</tag>
+        <tag>Gradient Descent</tag>
       </tags>
   </entry>
   <entry>
@@ -143,19 +156,6 @@ scale\to\sigma</script>]]></content>
         <tag>Python</tag>
         <tag>Random</tag>
         <tag>Numpy</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Iteration Batch Epoch</title>
-    <url>/2021/07/07/Iteration-Batch-Epoch/</url>
-    <content><![CDATA[<h1 id="Iteration-Batch-Epoch"><a href="#Iteration-Batch-Epoch" class="headerlink" title="Iteration Batch Epoch"></a>Iteration Batch Epoch</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210707123342.png" alt="img"></p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>ML</tag>
-        <tag>Gradient Descent</tag>
       </tags>
   </entry>
   <entry>
@@ -223,166 +223,6 @@ scale\to\sigma</script>]]></content>
       <tags>
         <tag>Deep Learning</tag>
         <tag>PyTorch</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Underscore in Python (Python中的下划线)</title>
-    <url>/2022/02/28/Underscore-in-Python/</url>
-    <content><![CDATA[<p>[TOC]</p>
-<h2 id="1-在解释器中的使用"><a href="#1-在解释器中的使用" class="headerlink" title="1.在解释器中的使用"></a>1.在解释器中的使用</h2><p>​        Python会自动将解释器中最后一个值存储到‘_’中</p>
-<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202202281633866.png" alt="截屏2022-02-28 下午4.33.27"></p>
-<h2 id="2-忽略具体值"><a href="#2-忽略具体值" class="headerlink" title="2.忽略具体值"></a>2.忽略具体值</h2><p>​        很多情况下，在Python的解包操作中，我们并非需要其中的所有值。这时可以使用‘_’来忽略部分值。</p>
-<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202202281638483.png" alt="截屏2022-02-28 下午4.37.12"></p>
-<h2 id="3-在循环中使用"><a href="#3-在循环中使用" class="headerlink" title="3.在循环中使用"></a>3.在循环中使用</h2><p>​        这种用法和用法2较为类似。同样为不给某些值具体变量名。</p>
-<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202202281639437.png" alt="截屏2022-02-28 下午4.38.40"></p>
-<h2 id="4-分隔数字"><a href="#4-分隔数字" class="headerlink" title="4.分隔数字"></a>4.分隔数字</h2><p>​        在使用较长的数字时，可以使用下划线进行分隔。</p>
-<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202202281640365.png" alt=""></p>
-<h2 id="5-命名"><a href="#5-命名" class="headerlink" title="5.命名"></a>5.命名</h2><p>​        前缀双下划线有实际意义，而其他的都是一种编程约定。</p>
-<ul>
-<li><p>Single Pre Underscore:- <strong>_variable</strong></p>
-</li>
-<li><p>Signle Post Underscore:- <strong>variable_</strong></p>
-</li>
-<li><p>Double Pre Underscores:- <strong>__variable</strong></p>
-</li>
-<li><p>Double Pre and Post Underscores:- <strong><strong>variable</strong></strong></p>
-</li>
-</ul>
-<h3 id="5-1-前缀单下划线"><a href="#5-1-前缀单下划线" class="headerlink" title="5.1 前缀单下划线"></a>5.1 前缀单下划线</h3><p>​        单下划线意味着内部使用，类似于Java中的private，在import 操作时不会引入有前缀单下划线的变量或者方法。</p>
-<h3 id="5-2-后缀单下划线"><a href="#5-2-后缀单下划线" class="headerlink" title="5.2 后缀单下划线"></a>5.2 后缀单下划线</h3><p>​        Python中经常遇到命名冲突的场景，后缀单下划线就可以用来解决命名冲突问题。</p>
-<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202202281647908.png" alt="截屏2022-02-28 下午4.45.37"></p>
-<h3 id="5-3-前缀双下划线"><a href="#5-3-前缀双下划线" class="headerlink" title="5.3 前缀双下划线"></a>5.3 前缀双下划线</h3><p>​        Name magling is the process to overwrite such identifiers in a class to avoid conficts of names between the current class and its subclassed. 名称改写是改写类中变量名的一种行为，用来避免当前类和它的子类命名冲突的问题（避免被重写）。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span>:</span></span><br><span class="line">		<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.__var = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>base = Base()</span><br><span class="line">&gt;&gt;&gt;<span class="built_in">dir</span>(base)</span><br><span class="line">[<span class="string">&#x27;_Base__var&#x27;</span>, <span class="string">&#x27;__class__&#x27;</span>, <span class="string">&#x27;__delattr__&#x27;</span>, <span class="string">&#x27;__dict__&#x27;</span>, <span class="string">&#x27;__dir__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__eq__&#x27;</span>, <span class="string">&#x27;__format__&#x27;</span>, <span class="string">&#x27;__ge__&#x27;</span>, <span class="string">&#x27;__getattribute__&#x27;</span>, <span class="string">&#x27;__gt__&#x27;</span>, <span class="string">&#x27;__hash__&#x27;</span>, <span class="string">&#x27;__init__&#x27;</span>, <span class="string">&#x27;__init_subclass__&#x27;</span>, <span class="string">&#x27;__le__&#x27;</span>, <span class="string">&#x27;__lt__&#x27;</span>, <span class="string">&#x27;__module__&#x27;</span>, <span class="string">&#x27;__ne__&#x27;</span>, <span class="string">&#x27;__new__&#x27;</span>, <span class="string">&#x27;__reduce__&#x27;</span>, <span class="string">&#x27;__reduce_ex__&#x27;</span>, <span class="string">&#x27;__repr__&#x27;</span>, <span class="string">&#x27;__setattr__&#x27;</span>, <span class="string">&#x27;__sizeof__&#x27;</span>, <span class="string">&#x27;__str__&#x27;</span>, <span class="string">&#x27;__subclasshook__&#x27;</span>, <span class="string">&#x27;__weakref__&#x27;</span>]</span><br><span class="line">&gt;&gt;&gt;base.__var</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">AttributeError: <span class="string">&#x27;Base&#x27;</span> <span class="built_in">object</span> has no attribute <span class="string">&#x27;__var&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>base._Base__var</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-<h3 id="5-4-前后双下划线"><a href="#5-4-前后双下划线" class="headerlink" title="5.4 前后双下划线"></a>5.4 前后双下划线</h3><p>​        魔术方法。</p>
-<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202202281656936.png" alt="截屏2022-02-28 下午4.55.50"></p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>1.<a href="https://www.datacamp.com/community/tutorials/role-underscore-python#SDON">Role of Underscore(_) in Python Tutorial</a></p>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>contrastive loss function</title>
-    <url>/2021/07/09/contrastive-loss-function/</url>
-    <content><![CDATA[<h1 id="Contrastive-Loss"><a href="#Contrastive-Loss" class="headerlink" title="Contrastive Loss"></a>Contrastive Loss</h1><h2 id="Max-margin-contrastive-loss"><a href="#Max-margin-contrastive-loss" class="headerlink" title="Max margin contrastive loss"></a>Max margin contrastive loss</h2><h2 id="REFFERENCE"><a href="#REFFERENCE" class="headerlink" title="REFFERENCE"></a>REFFERENCE</h2><ol>
-<li>Wang, F., &amp; Liu, H. (2020). Understanding the Behaviour of Contrastive Loss. 2495–2504. <a href="http://arxiv.org/abs/2012.09740">http://arxiv.org/abs/2012.09740</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>loss function</category>
-      </categories>
-      <tags>
-        <tag>ML</tag>
-        <tag>loss-func</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Why does Logistics Regression not use Square Loss?</title>
-    <url>/2021/10/11/Why-does-Logistics-Regression-not-use-Square-Loss/</url>
-    <content><![CDATA[<h1 id="为什么不使用平方损失"><a href="#为什么不使用平方损失" class="headerlink" title="为什么不使用平方损失"></a>为什么不使用平方损失</h1><h2 id="非凸函数"><a href="#非凸函数" class="headerlink" title="非凸函数"></a><a href="https://www.programmersought.com/article/12853404913/">非凸函数</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110111503422.png" alt="image-20210629193814368"></p>
-<h2 id="对反例的惩罚不够"><a href="#对反例的惩罚不够" class="headerlink" title="对反例的惩罚不够"></a><a href="https://radiant-brushlands-42789.herokuapp.com/towardsdatascience.com/why-not-mse-as-a-loss-function-for-logistic-regression-589816b5e03c">对反例的惩罚不够</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/image-20210629193908181.png" alt="image-20210629193908181"></p>
-<h2 id="The-gradient-of-MSE-will-disappear"><a href="#The-gradient-of-MSE-will-disappear" class="headerlink" title="The gradient of MSE will disappear"></a><a href="https://www.programmersought.com/article/12853404913/">The gradient of MSE will disappear</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/image-20210629193736889.png" alt="image-20210629193736889"></p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>ML</tag>
-        <tag>Logistics Regression</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git-learn</title>
-    <url>/2021/12/30/git-learn/</url>
-    <content><![CDATA[<h1 id="The-lifecycle-of-the-status-of-files"><a href="#The-lifecycle-of-the-status-of-files" class="headerlink" title="The lifecycle of the status of files"></a>The lifecycle of the status of files</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202112301154791.png" alt="The lifecycle of the status of your files"></p>
-<h1 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h1><ul>
-<li>It may be helpful to think of it more as “add precisely this content to the next commit” rather than “add this file to the project”.</li>
-<li>f you modify a file after you run <code>git add</code>, you have to run <code>git add</code> again to stage the latest version of the file.</li>
-</ul>
-<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202112301209255.png" alt="image-20211230120957213"></p>
-<h1 id="Ignoring-Files"><a href="#Ignoring-Files" class="headerlink" title="Ignoring Files"></a>Ignoring Files</h1><h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><ul>
-<li>Blank lines or lines starting with <code>#</code> are ignored.</li>
-<li>Standard glob patterns work, and will be applied recursively throughout the entire working tree.</li>
-<li>You can start patterns with a forward slash (<code>/</code>) to avoid recursively.</li>
-<li>You can end patterns with a forward slash (<code>/</code>) to specify a directory.</li>
-<li>You can negate a pattern by starting it with an exclamation point (<code>!</code>).</li>
-</ul>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202112301226686.png" alt="image-20211230122626631"></p>
-<ul>
-<li><code>*~</code> tells Git to ignore all files whose names end with a tilde(~).</li>
-<li><code>*.[oa]</code> tells Git to ignore any files ending in “.o” o “.a”</li>
-<li><code>!</code> but do track <code>lib.a</code>, even though you’re ignoring .a files above</li>
-<li>a question mark (<code>?</code>) matches a single character</li>
-<li><code>a/**/z</code> would match <code>a/z</code>, <code>a/b/z</code>, <code>a/b/c/z</code>, and so on.</li>
-</ul>
-<h1 id="git-mv"><a href="#git-mv" class="headerlink" title="git mv"></a>git mv</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mv README.md README</span><br><span class="line">git rm README.md</span><br><span class="line">git add README</span><br></pre></td></tr></table></figure>
-<h1 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a><a href="https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History">git log</a></h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git log -S function_name</span><br></pre></td></tr></table></figure>
-<p>if you wanted to find the last commit that added or removed a reference to a specific function, you could call <code>git log -S function_name</code></p>
-<h2 id="git-log-—pretty"><a href="#git-log-—pretty" class="headerlink" title="git log —pretty"></a>git log —pretty</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --pretty=format:<span class="string">&quot;%h %s&quot;</span> --graph</span></span><br><span class="line">* 2d3acf9 Ignore errors from SIGCHLD on trap</span><br><span class="line">*  5e3ee11 Merge branch &#x27;master&#x27; of git://github.com/dustin/grit</span><br><span class="line">|\</span><br><span class="line">| * 420eac9 Add method for getting the current branch</span><br><span class="line">* | 30e367c Timeout code and tests</span><br><span class="line">* | 5a09431 Add timeout protection to grit</span><br><span class="line">* | e1193f8 Support for heads with slashes in them</span><br><span class="line">|/</span><br><span class="line">* d6016bc Require time for xmlschema</span><br><span class="line">*  11d191e Merge branch &#x27;defunkt&#x27; into local</span><br></pre></td></tr></table></figure>
-<h1 id="git-fetch-vs-git-pull"><a href="#git-fetch-vs-git-pull" class="headerlink" title="git fetch vs git pull"></a>git fetch vs git pull</h1><ul>
-<li>git fetch is a command that allows you to download objects from another repository.<ul>
-<li>download files not available locally</li>
-<li>make no change to local files</li>
-<li>help you get all information you need</li>
-<li>a safer alternative</li>
-</ul>
-</li>
-<li>git pull is a command that allow you to fetch and integrate with another repository or local branch<ul>
-<li>a faster alternative</li>
-</ul>
-</li>
-</ul>
-<h1 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h1>]]></content>
-      <categories>
-        <category>Basic</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>math-for-ML</title>
-    <url>/2021/07/10/math-for-ML/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>ML</tag>
-        <tag>math</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>setting</title>
-    <url>/2021/07/07/setting/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210707130820.png" alt="image-20210707130820709"></p>
-<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>只针对github</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.https://github.com.proxy localhost:10809</span><br><span class="line"></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br></pre></td></tr></table></figure>
-<p>为git开启代理</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global https.proxy localhost:10809</span><br><span class="line">git config --global http.proxy localhost:10809</span><br><span class="line"></span><br><span class="line">git config --global --unset http.proxy</span><br></pre></td></tr></table></figure>
-<p>关闭 crlf转换</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span>     //禁用自動轉換</span><br></pre></td></tr></table></figure>
-<p>Git升级</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-git-for-windows</span><br></pre></td></tr></table></figure>
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><ul>
-<li><a href="https://butterfly.js.org/posts/4aa8abbe/">Hexo doc</a></li>
-</ul>
-<h2 id="hexo-highlight"><a href="#hexo-highlight" class="headerlink" title="hexo highlight"></a>hexo highlight</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span>  <span class="attr">charset</span>=<span class="string">utf-8</span>&quot;/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">mark</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>:<span class="number">#FFFF00</span> ; <span class="attribute">font-weight</span>:bold;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="多电脑协同"><a href="#多电脑协同" class="headerlink" title="多电脑协同"></a>多电脑协同</h2><h4 id="增加电脑时"><a href="#增加电脑时" class="headerlink" title="增加电脑时"></a>增加电脑时</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> address-of-your-site</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> address-of-your-site</span><br><span class="line"></span><br><span class="line">npm install <span class="comment"># due to the exist of gitignore, we should install module</span></span><br></pre></td></tr></table></figure>
-<h4 id="不同电脑提交"><a href="#不同电脑提交" class="headerlink" title="不同电脑提交"></a>不同电脑提交</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git pull <span class="comment"># 同步</span></span><br><span class="line"></span><br><span class="line">git add -A</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">git push </span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<h1 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;page-break-after:always&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AppData\Roaming\Typora\typora-user-images</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>hexo</tag>
-        <tag>butterfly</tag>
       </tags>
   </entry>
   <entry>
@@ -758,24 +598,196 @@ __contains__(self, item)       定义当使用成员测试运算符（in 或 not
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/01/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>contrastive loss function</title>
+    <url>/2021/07/09/contrastive-loss-function/</url>
+    <content><![CDATA[<h1 id="Contrastive-Loss"><a href="#Contrastive-Loss" class="headerlink" title="Contrastive Loss"></a>Contrastive Loss</h1><h2 id="Max-margin-contrastive-loss"><a href="#Max-margin-contrastive-loss" class="headerlink" title="Max margin contrastive loss"></a>Max margin contrastive loss</h2><h2 id="REFFERENCE"><a href="#REFFERENCE" class="headerlink" title="REFFERENCE"></a>REFFERENCE</h2><ol>
+<li>Wang, F., &amp; Liu, H. (2020). Understanding the Behaviour of Contrastive Loss. 2495–2504. <a href="http://arxiv.org/abs/2012.09740">http://arxiv.org/abs/2012.09740</a></li>
+</ol>
 ]]></content>
+      <categories>
+        <category>loss function</category>
+      </categories>
+      <tags>
+        <tag>ML</tag>
+        <tag>loss-func</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Underscore in Python (Python中的下划线)</title>
+    <url>/2022/02/28/Underscore-in-Python/</url>
+    <content><![CDATA[<p>[TOC]</p>
+<h2 id="1-在解释器中的使用"><a href="#1-在解释器中的使用" class="headerlink" title="1.在解释器中的使用"></a>1.在解释器中的使用</h2><p>​        Python会自动将解释器中最后一个值存储到‘_’中</p>
+<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202202281633866.png" alt="截屏2022-02-28 下午4.33.27"></p>
+<h2 id="2-忽略具体值"><a href="#2-忽略具体值" class="headerlink" title="2.忽略具体值"></a>2.忽略具体值</h2><p>​        很多情况下，在Python的解包操作中，我们并非需要其中的所有值。这时可以使用‘_’来忽略部分值。</p>
+<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202202281638483.png" alt="截屏2022-02-28 下午4.37.12"></p>
+<h2 id="3-在循环中使用"><a href="#3-在循环中使用" class="headerlink" title="3.在循环中使用"></a>3.在循环中使用</h2><p>​        这种用法和用法2较为类似。同样为不给某些值具体变量名。</p>
+<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202202281639437.png" alt="截屏2022-02-28 下午4.38.40"></p>
+<h2 id="4-分隔数字"><a href="#4-分隔数字" class="headerlink" title="4.分隔数字"></a>4.分隔数字</h2><p>​        在使用较长的数字时，可以使用下划线进行分隔。</p>
+<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202202281640365.png" alt=""></p>
+<h2 id="5-命名"><a href="#5-命名" class="headerlink" title="5.命名"></a>5.命名</h2><p>​        前缀双下划线有实际意义，而其他的都是一种编程约定。</p>
+<ul>
+<li><p>Single Pre Underscore:- <strong>_variable</strong></p>
+</li>
+<li><p>Signle Post Underscore:- <strong>variable_</strong></p>
+</li>
+<li><p>Double Pre Underscores:- <strong>__variable</strong></p>
+</li>
+<li><p>Double Pre and Post Underscores:- <strong><strong>variable</strong></strong></p>
+</li>
+</ul>
+<h3 id="5-1-前缀单下划线"><a href="#5-1-前缀单下划线" class="headerlink" title="5.1 前缀单下划线"></a>5.1 前缀单下划线</h3><p>​        单下划线意味着内部使用，类似于Java中的private，在import 操作时不会引入有前缀单下划线的变量或者方法。</p>
+<h3 id="5-2-后缀单下划线"><a href="#5-2-后缀单下划线" class="headerlink" title="5.2 后缀单下划线"></a>5.2 后缀单下划线</h3><p>​        Python中经常遇到命名冲突的场景，后缀单下划线就可以用来解决命名冲突问题。</p>
+<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202202281647908.png" alt="截屏2022-02-28 下午4.45.37"></p>
+<h3 id="5-3-前缀双下划线"><a href="#5-3-前缀双下划线" class="headerlink" title="5.3 前缀双下划线"></a>5.3 前缀双下划线</h3><p>​        Name magling is the process to overwrite such identifiers in a class to avoid conficts of names between the current class and its subclassed. 名称改写是改写类中变量名的一种行为，用来避免当前类和它的子类命名冲突的问题（避免被重写）。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span>:</span></span><br><span class="line">		<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.__var = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>base = Base()</span><br><span class="line">&gt;&gt;&gt;<span class="built_in">dir</span>(base)</span><br><span class="line">[<span class="string">&#x27;_Base__var&#x27;</span>, <span class="string">&#x27;__class__&#x27;</span>, <span class="string">&#x27;__delattr__&#x27;</span>, <span class="string">&#x27;__dict__&#x27;</span>, <span class="string">&#x27;__dir__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__eq__&#x27;</span>, <span class="string">&#x27;__format__&#x27;</span>, <span class="string">&#x27;__ge__&#x27;</span>, <span class="string">&#x27;__getattribute__&#x27;</span>, <span class="string">&#x27;__gt__&#x27;</span>, <span class="string">&#x27;__hash__&#x27;</span>, <span class="string">&#x27;__init__&#x27;</span>, <span class="string">&#x27;__init_subclass__&#x27;</span>, <span class="string">&#x27;__le__&#x27;</span>, <span class="string">&#x27;__lt__&#x27;</span>, <span class="string">&#x27;__module__&#x27;</span>, <span class="string">&#x27;__ne__&#x27;</span>, <span class="string">&#x27;__new__&#x27;</span>, <span class="string">&#x27;__reduce__&#x27;</span>, <span class="string">&#x27;__reduce_ex__&#x27;</span>, <span class="string">&#x27;__repr__&#x27;</span>, <span class="string">&#x27;__setattr__&#x27;</span>, <span class="string">&#x27;__sizeof__&#x27;</span>, <span class="string">&#x27;__str__&#x27;</span>, <span class="string">&#x27;__subclasshook__&#x27;</span>, <span class="string">&#x27;__weakref__&#x27;</span>]</span><br><span class="line">&gt;&gt;&gt;base.__var</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">AttributeError: <span class="string">&#x27;Base&#x27;</span> <span class="built_in">object</span> has no attribute <span class="string">&#x27;__var&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>base._Base__var</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-4-前后双下划线"><a href="#5-4-前后双下划线" class="headerlink" title="5.4 前后双下划线"></a>5.4 前后双下划线</h3><p>​        魔术方法。</p>
+<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202202281656936.png" alt="截屏2022-02-28 下午4.55.50"></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>1.<a href="https://www.datacamp.com/community/tutorials/role-underscore-python#SDON">Role of Underscore(_) in Python Tutorial</a></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Why does Logistics Regression not use Square Loss?</title>
+    <url>/2021/10/11/Why-does-Logistics-Regression-not-use-Square-Loss/</url>
+    <content><![CDATA[<h1 id="为什么不使用平方损失"><a href="#为什么不使用平方损失" class="headerlink" title="为什么不使用平方损失"></a>为什么不使用平方损失</h1><h2 id="非凸函数"><a href="#非凸函数" class="headerlink" title="非凸函数"></a><a href="https://www.programmersought.com/article/12853404913/">非凸函数</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110111503422.png" alt="image-20210629193814368"></p>
+<h2 id="对反例的惩罚不够"><a href="#对反例的惩罚不够" class="headerlink" title="对反例的惩罚不够"></a><a href="https://radiant-brushlands-42789.herokuapp.com/towardsdatascience.com/why-not-mse-as-a-loss-function-for-logistic-regression-589816b5e03c">对反例的惩罚不够</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/image-20210629193908181.png" alt="image-20210629193908181"></p>
+<h2 id="The-gradient-of-MSE-will-disappear"><a href="#The-gradient-of-MSE-will-disappear" class="headerlink" title="The gradient of MSE will disappear"></a><a href="https://www.programmersought.com/article/12853404913/">The gradient of MSE will disappear</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/image-20210629193736889.png" alt="image-20210629193736889"></p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>ML</tag>
+        <tag>Logistics Regression</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>setting</title>
+    <url>/2021/07/07/setting/</url>
+    <content><![CDATA[<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210707130820.png" alt="image-20210707130820709"></p>
+<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>只针对github</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.https://github.com.proxy localhost:10809</span><br><span class="line"></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br></pre></td></tr></table></figure>
+<p>为git开启代理</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global https.proxy localhost:10809</span><br><span class="line">git config --global http.proxy localhost:10809</span><br><span class="line"></span><br><span class="line">git config --global --unset http.proxy</span><br></pre></td></tr></table></figure>
+<p>关闭 crlf转换</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span>     //禁用自動轉換</span><br></pre></td></tr></table></figure>
+<p>Git升级</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-git-for-windows</span><br></pre></td></tr></table></figure>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><ul>
+<li><a href="https://butterfly.js.org/posts/4aa8abbe/">Hexo doc</a></li>
+</ul>
+<h2 id="hexo-highlight"><a href="#hexo-highlight" class="headerlink" title="hexo highlight"></a>hexo highlight</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span>  <span class="attr">charset</span>=<span class="string">utf-8</span>&quot;/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">mark</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>:<span class="number">#FFFF00</span> ; <span class="attribute">font-weight</span>:bold;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="多电脑协同"><a href="#多电脑协同" class="headerlink" title="多电脑协同"></a>多电脑协同</h2><h4 id="增加电脑时"><a href="#增加电脑时" class="headerlink" title="增加电脑时"></a>增加电脑时</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> address-of-your-site</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> address-of-your-site</span><br><span class="line"></span><br><span class="line">npm install <span class="comment"># due to the exist of gitignore, we should install module</span></span><br></pre></td></tr></table></figure>
+<h4 id="不同电脑提交"><a href="#不同电脑提交" class="headerlink" title="不同电脑提交"></a>不同电脑提交</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git pull <span class="comment"># 同步</span></span><br><span class="line"></span><br><span class="line">git add -A</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">git push </span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h1 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;page-break-after:always&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AppData\Roaming\Typora\typora-user-images</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>hexo</tag>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>to-learn</title>
+    <url>/2022/03/01/to-learn/</url>
+    <content><![CDATA[<h1 id="Contrastive-Learning"><a href="#Contrastive-Learning" class="headerlink" title="Contrastive Learning"></a>Contrastive Learning</h1><h2 id="DINO"><a href="#DINO" class="headerlink" title="DINO"></a>DINO</h2><h1 id="Knowledge-Distilataion"><a href="#Knowledge-Distilataion" class="headerlink" title="Knowledge Distilataion"></a>Knowledge Distilataion</h1><p><a href="https://github.com/HobbitLong/RepDistiller">Code reproduce</a></p>
+<p><a href="https://devopedia.org/knowledge-distillation">Summary</a></p>
+<p><a href="https://peerj.com/articles/cs-474/">Knowledge distillation in deep learning and its applications</a></p>
+<h1 id="Objection-Detection"><a href="#Objection-Detection" class="headerlink" title="Objection Detection"></a>Objection Detection</h1>]]></content>
+      <tags>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git-learn</title>
+    <url>/2021/12/30/git-learn/</url>
+    <content><![CDATA[<h1 id="The-lifecycle-of-the-status-of-files"><a href="#The-lifecycle-of-the-status-of-files" class="headerlink" title="The lifecycle of the status of files"></a>The lifecycle of the status of files</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202112301154791.png" alt="The lifecycle of the status of your files"></p>
+<h1 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h1><ul>
+<li>It may be helpful to think of it more as “add precisely this content to the next commit” rather than “add this file to the project”.</li>
+<li>f you modify a file after you run <code>git add</code>, you have to run <code>git add</code> again to stage the latest version of the file.</li>
+</ul>
+<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202112301209255.png" alt="image-20211230120957213"></p>
+<h1 id="Ignoring-Files"><a href="#Ignoring-Files" class="headerlink" title="Ignoring Files"></a>Ignoring Files</h1><h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><ul>
+<li>Blank lines or lines starting with <code>#</code> are ignored.</li>
+<li>Standard glob patterns work, and will be applied recursively throughout the entire working tree.</li>
+<li>You can start patterns with a forward slash (<code>/</code>) to avoid recursively.</li>
+<li>You can end patterns with a forward slash (<code>/</code>) to specify a directory.</li>
+<li>You can negate a pattern by starting it with an exclamation point (<code>!</code>).</li>
+</ul>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202112301226686.png" alt="image-20211230122626631"></p>
+<ul>
+<li><code>*~</code> tells Git to ignore all files whose names end with a tilde(~).</li>
+<li><code>*.[oa]</code> tells Git to ignore any files ending in “.o” o “.a”</li>
+<li><code>!</code> but do track <code>lib.a</code>, even though you’re ignoring .a files above</li>
+<li>a question mark (<code>?</code>) matches a single character</li>
+<li><code>a/**/z</code> would match <code>a/z</code>, <code>a/b/z</code>, <code>a/b/c/z</code>, and so on.</li>
+</ul>
+<h1 id="git-mv"><a href="#git-mv" class="headerlink" title="git mv"></a>git mv</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mv README.md README</span><br><span class="line">git rm README.md</span><br><span class="line">git add README</span><br></pre></td></tr></table></figure>
+<h1 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a><a href="https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History">git log</a></h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git log -S function_name</span><br></pre></td></tr></table></figure>
+<p>if you wanted to find the last commit that added or removed a reference to a specific function, you could call <code>git log -S function_name</code></p>
+<h2 id="git-log-—pretty"><a href="#git-log-—pretty" class="headerlink" title="git log —pretty"></a>git log —pretty</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --pretty=format:<span class="string">&quot;%h %s&quot;</span> --graph</span></span><br><span class="line">* 2d3acf9 Ignore errors from SIGCHLD on trap</span><br><span class="line">*  5e3ee11 Merge branch &#x27;master&#x27; of git://github.com/dustin/grit</span><br><span class="line">|\</span><br><span class="line">| * 420eac9 Add method for getting the current branch</span><br><span class="line">* | 30e367c Timeout code and tests</span><br><span class="line">* | 5a09431 Add timeout protection to grit</span><br><span class="line">* | e1193f8 Support for heads with slashes in them</span><br><span class="line">|/</span><br><span class="line">* d6016bc Require time for xmlschema</span><br><span class="line">*  11d191e Merge branch &#x27;defunkt&#x27; into local</span><br></pre></td></tr></table></figure>
+<h1 id="git-fetch-vs-git-pull"><a href="#git-fetch-vs-git-pull" class="headerlink" title="git fetch vs git pull"></a>git fetch vs git pull</h1><ul>
+<li>git fetch is a command that allows you to download objects from another repository.<ul>
+<li>download files not available locally</li>
+<li>make no change to local files</li>
+<li>help you get all information you need</li>
+<li>a safer alternative</li>
+</ul>
+</li>
+<li>git pull is a command that allow you to fetch and integrate with another repository or local branch<ul>
+<li>a faster alternative</li>
+</ul>
+</li>
+</ul>
+<h1 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h1>]]></content>
+      <categories>
+        <category>Basic</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tricks for contrastive learning</title>
+    <url>/2022/01/23/tricks-for-contrastive-learning/</url>
+    <content><![CDATA[<h1 id="Projection-head"><a href="#Projection-head" class="headerlink" title="Projection head"></a>Projection head</h1>]]></content>
+      <categories>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>contrastive learning</tag>
+        <tag>deep learning tricks</tag>
+      </tags>
   </entry>
   <entry>
     <title>图像风格变换</title>
     <url>/2021/07/10/%E5%9B%BE%E5%83%8F%E9%A3%8E%E6%A0%BC%E5%8F%98%E6%8D%A2/</url>
     <content><![CDATA[<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210710104000.png" alt="image-20210710104000250"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>程序是怎么跑起来的-1</title>
+    <url>/2021/10/06/%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-1/</url>
+    <content><![CDATA[<h1 id="CPU的组成"><a href="#CPU的组成" class="headerlink" title="CPU的组成"></a>CPU的组成</h1><p>​        CPU的内部由寄存器、控制器、运算器和时钟四个部分构成（有的时钟在CPU之外）</p>
+<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110060022125.png" alt="image-20211006002224075"></p>
+<p>​        CU控制单元，ALU算术逻辑单元。</p>
+<p>未完待续。。</p>
+]]></content>
+      <categories>
+        <category>Operating System</category>
+      </categories>
+      <tags>
+        <tag>CPU</tag>
+      </tags>
   </entry>
   <entry>
     <title>收藏的项目</title>
@@ -792,19 +804,18 @@ __contains__(self, item)       定义当使用成员测试运算符（in 或 not
       </tags>
   </entry>
   <entry>
-    <title>程序是怎么跑起来的-1</title>
-    <url>/2021/10/06/%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-1/</url>
-    <content><![CDATA[<h1 id="CPU的组成"><a href="#CPU的组成" class="headerlink" title="CPU的组成"></a>CPU的组成</h1><p>​        CPU的内部由寄存器、控制器、运算器和时钟四个部分构成（有的时钟在CPU之外）</p>
-<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110060022125.png" alt="image-20211006002224075"></p>
-<p>​        CU控制单元，ALU算术逻辑单元。</p>
-<p>未完待续。。</p>
+    <title>Hello World</title>
+    <url>/2022/01/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-      <categories>
-        <category>Operating System</category>
-      </categories>
-      <tags>
-        <tag>CPU</tag>
-      </tags>
   </entry>
   <entry>
     <title>程序的内存分布</title>
@@ -848,15 +859,15 @@ __contains__(self, item)       定义当使用成员测试运算符（in 或 not
       </tags>
   </entry>
   <entry>
-    <title>tricks for contrastive learning</title>
-    <url>/2022/01/23/tricks-for-contrastive-learning/</url>
-    <content><![CDATA[<h1 id="Projection-head"><a href="#Projection-head" class="headerlink" title="Projection head"></a>Projection head</h1>]]></content>
+    <title>math-for-ML</title>
+    <url>/2021/07/10/math-for-ML/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>Deep Learning</category>
+        <category>Machine Learning</category>
       </categories>
       <tags>
-        <tag>contrastive learning</tag>
-        <tag>deep learning tricks</tag>
+        <tag>ML</tag>
+        <tag>math</tag>
       </tags>
   </entry>
 </search>
