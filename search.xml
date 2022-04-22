@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CV-some-tips</title>
+    <url>/2021/10/29/CV-some-tips/</url>
+    <content><![CDATA[<h1 id="【CNN】理解卷积神经网络中的通道-channel-scxyz的博客-CSDN博客-cnn通道"><a href="#【CNN】理解卷积神经网络中的通道-channel-scxyz的博客-CSDN博客-cnn通道" class="headerlink" title="【CNN】理解卷积神经网络中的通道 channel_scxyz的博客-CSDN博客_cnn通道"></a><a href="https://blog.csdn.net/sscc_learning/article/details/79814146">【CNN】理解卷积神经网络中的通道 channel_scxyz的博客-CSDN博客_cnn通道</a></h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110300952401.png" alt="cnn"></p>
+<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110300953770.png" alt="多个卷积核"></p>
+<h1 id="1x1conv"><a href="#1x1conv" class="headerlink" title="1x1conv"></a>1x1conv</h1><p>Suppose that I have a conv layer which outputs an (N,F,H,W)(N,F,H,W) shaped tensor where:</p>
+<ul>
+<li>NN is the batch size</li>
+<li>FF is the number of convolutional filters</li>
+<li>H,WH,W are the spatial dimensions</li>
+</ul>
+<p>Suppose this output is fed into a conv layer with F1F1 1x1 filters, zero padding and stride 1. Then the output of this 1x1 conv layer will have shape (N,F1,H,W)(N,F1,H,W).</p>
+<p>So 1x1 conv filters can be used to change the dimensionality in the filter space. If F1&gt;FF1&gt;F then we are increasing dimensionality, if F1&lt;FF1&lt;F we are decreasing dimensionality, in the filter dimension.</p>
+]]></content>
+      <categories>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
+        <tag>Computer Vision</tag>
+        <tag>CNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CPP-learn-source</title>
+    <url>/2021/10/05/CPP-learn-source/</url>
+    <content><![CDATA[<h1 id="内联函数"><a href="#内联函数" class="headerlink" title="内联函数"></a>内联函数</h1><p><a href="https://blog.csdn.net/BjarneCpp/article/details/76044493">c++ 内联函数（一看就懂）</a></p>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>CPP-base</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Contrastive Learning</title>
+    <url>/2021/11/02/Contrastive-Learning/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>CPP-Array</title>
     <url>/2021/10/07/CPP-Array/</url>
     <content><![CDATA[<p>&lt;!DOCTYPE html&gt;</p>
@@ -41,43 +81,16 @@
       </tags>
   </entry>
   <entry>
-    <title>CPP-learn-source</title>
-    <url>/2021/10/05/CPP-learn-source/</url>
-    <content><![CDATA[<h1 id="内联函数"><a href="#内联函数" class="headerlink" title="内联函数"></a>内联函数</h1><p><a href="https://blog.csdn.net/BjarneCpp/article/details/76044493">c++ 内联函数（一看就懂）</a></p>
+    <title>Iteration Batch Epoch</title>
+    <url>/2021/07/07/Iteration-Batch-Epoch/</url>
+    <content><![CDATA[<h1 id="Iteration-Batch-Epoch"><a href="#Iteration-Batch-Epoch" class="headerlink" title="Iteration Batch Epoch"></a>Iteration Batch Epoch</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210707123342.png" alt="img"></p>
 ]]></content>
       <categories>
-        <category>C++</category>
+        <category>Machine Learning</category>
       </categories>
       <tags>
-        <tag>CPP-base</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Contrastive Learning</title>
-    <url>/2021/11/02/Contrastive-Learning/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>CV-some-tips</title>
-    <url>/2021/10/29/CV-some-tips/</url>
-    <content><![CDATA[<h1 id="【CNN】理解卷积神经网络中的通道-channel-scxyz的博客-CSDN博客-cnn通道"><a href="#【CNN】理解卷积神经网络中的通道-channel-scxyz的博客-CSDN博客-cnn通道" class="headerlink" title="【CNN】理解卷积神经网络中的通道 channel_scxyz的博客-CSDN博客_cnn通道"></a><a href="https://blog.csdn.net/sscc_learning/article/details/79814146">【CNN】理解卷积神经网络中的通道 channel_scxyz的博客-CSDN博客_cnn通道</a></h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110300952401.png" alt="cnn"></p>
-<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110300953770.png" alt="多个卷积核"></p>
-<h1 id="1x1conv"><a href="#1x1conv" class="headerlink" title="1x1conv"></a>1x1conv</h1><p>Suppose that I have a conv layer which outputs an (N,F,H,W)(N,F,H,W) shaped tensor where:</p>
-<ul>
-<li>NN is the batch size</li>
-<li>FF is the number of convolutional filters</li>
-<li>H,WH,W are the spatial dimensions</li>
-</ul>
-<p>Suppose this output is fed into a conv layer with F1F1 1x1 filters, zero padding and stride 1. Then the output of this 1x1 conv layer will have shape (N,F1,H,W)(N,F1,H,W).</p>
-<p>So 1x1 conv filters can be used to change the dimensionality in the filter space. If F1&gt;FF1&gt;F then we are increasing dimensionality, if F1&lt;FF1&lt;F we are decreasing dimensionality, in the filter dimension.</p>
-]]></content>
-      <categories>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>Deep Learning</tag>
-        <tag>Computer Vision</tag>
-        <tag>CNN</tag>
+        <tag>ML</tag>
+        <tag>Gradient Descent</tag>
       </tags>
   </entry>
   <entry>
@@ -104,19 +117,6 @@
       <tags>
         <tag>Matplotlib</tag>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Iteration Batch Epoch</title>
-    <url>/2021/07/07/Iteration-Batch-Epoch/</url>
-    <content><![CDATA[<h1 id="Iteration-Batch-Epoch"><a href="#Iteration-Batch-Epoch" class="headerlink" title="Iteration Batch Epoch"></a>Iteration Batch Epoch</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210707123342.png" alt="img"></p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>ML</tag>
-        <tag>Gradient Descent</tag>
       </tags>
   </entry>
   <entry>
@@ -598,6 +598,21 @@ __contains__(self, item)       定义当使用成员测试运算符（in 或 not
       </tags>
   </entry>
   <entry>
+    <title>Why does Logistics Regression not use Square Loss?</title>
+    <url>/2021/10/11/Why-does-Logistics-Regression-not-use-Square-Loss/</url>
+    <content><![CDATA[<h1 id="为什么不使用平方损失"><a href="#为什么不使用平方损失" class="headerlink" title="为什么不使用平方损失"></a>为什么不使用平方损失</h1><h2 id="非凸函数"><a href="#非凸函数" class="headerlink" title="非凸函数"></a><a href="https://www.programmersought.com/article/12853404913/">非凸函数</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110111503422.png" alt="image-20210629193814368"></p>
+<h2 id="对反例的惩罚不够"><a href="#对反例的惩罚不够" class="headerlink" title="对反例的惩罚不够"></a><a href="https://radiant-brushlands-42789.herokuapp.com/towardsdatascience.com/why-not-mse-as-a-loss-function-for-logistic-regression-589816b5e03c">对反例的惩罚不够</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/image-20210629193908181.png" alt="image-20210629193908181"></p>
+<h2 id="The-gradient-of-MSE-will-disappear"><a href="#The-gradient-of-MSE-will-disappear" class="headerlink" title="The gradient of MSE will disappear"></a><a href="https://www.programmersought.com/article/12853404913/">The gradient of MSE will disappear</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/image-20210629193736889.png" alt="image-20210629193736889"></p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>ML</tag>
+        <tag>Logistics Regression</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>contrastive loss function</title>
     <url>/2021/07/09/contrastive-loss-function/</url>
     <content><![CDATA[<h1 id="Contrastive-Loss"><a href="#Contrastive-Loss" class="headerlink" title="Contrastive Loss"></a>Contrastive Loss</h1><h2 id="Max-margin-contrastive-loss"><a href="#Max-margin-contrastive-loss" class="headerlink" title="Max margin contrastive loss"></a>Max margin contrastive loss</h2><h2 id="REFFERENCE"><a href="#REFFERENCE" class="headerlink" title="REFFERENCE"></a>REFFERENCE</h2><ol>
@@ -652,62 +667,6 @@ __contains__(self, item)       定义当使用成员测试运算符（in 或 not
       </tags>
   </entry>
   <entry>
-    <title>Why does Logistics Regression not use Square Loss?</title>
-    <url>/2021/10/11/Why-does-Logistics-Regression-not-use-Square-Loss/</url>
-    <content><![CDATA[<h1 id="为什么不使用平方损失"><a href="#为什么不使用平方损失" class="headerlink" title="为什么不使用平方损失"></a>为什么不使用平方损失</h1><h2 id="非凸函数"><a href="#非凸函数" class="headerlink" title="非凸函数"></a><a href="https://www.programmersought.com/article/12853404913/">非凸函数</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110111503422.png" alt="image-20210629193814368"></p>
-<h2 id="对反例的惩罚不够"><a href="#对反例的惩罚不够" class="headerlink" title="对反例的惩罚不够"></a><a href="https://radiant-brushlands-42789.herokuapp.com/towardsdatascience.com/why-not-mse-as-a-loss-function-for-logistic-regression-589816b5e03c">对反例的惩罚不够</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/image-20210629193908181.png" alt="image-20210629193908181"></p>
-<h2 id="The-gradient-of-MSE-will-disappear"><a href="#The-gradient-of-MSE-will-disappear" class="headerlink" title="The gradient of MSE will disappear"></a><a href="https://www.programmersought.com/article/12853404913/">The gradient of MSE will disappear</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/image-20210629193736889.png" alt="image-20210629193736889"></p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>ML</tag>
-        <tag>Logistics Regression</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>setting</title>
-    <url>/2021/07/07/setting/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210707130820.png" alt="image-20210707130820709"></p>
-<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>只针对github</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.https://github.com.proxy localhost:10809</span><br><span class="line"></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br></pre></td></tr></table></figure>
-<p>为git开启代理</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global https.proxy localhost:10809</span><br><span class="line">git config --global http.proxy localhost:10809</span><br><span class="line"></span><br><span class="line">git config --global --unset http.proxy</span><br></pre></td></tr></table></figure>
-<p>关闭 crlf转换</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span>     //禁用自動轉換</span><br></pre></td></tr></table></figure>
-<p>Git升级</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-git-for-windows</span><br></pre></td></tr></table></figure>
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><ul>
-<li><a href="https://butterfly.js.org/posts/4aa8abbe/">Hexo doc</a></li>
-</ul>
-<h2 id="hexo-highlight"><a href="#hexo-highlight" class="headerlink" title="hexo highlight"></a>hexo highlight</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span>  <span class="attr">charset</span>=<span class="string">utf-8</span>&quot;/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">mark</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>:<span class="number">#FFFF00</span> ; <span class="attribute">font-weight</span>:bold;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="多电脑协同"><a href="#多电脑协同" class="headerlink" title="多电脑协同"></a>多电脑协同</h2><h4 id="增加电脑时"><a href="#增加电脑时" class="headerlink" title="增加电脑时"></a>增加电脑时</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> address-of-your-site</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> address-of-your-site</span><br><span class="line"></span><br><span class="line">npm install <span class="comment"># due to the exist of gitignore, we should install module</span></span><br></pre></td></tr></table></figure>
-<h4 id="不同电脑提交"><a href="#不同电脑提交" class="headerlink" title="不同电脑提交"></a>不同电脑提交</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git pull <span class="comment"># 同步</span></span><br><span class="line"></span><br><span class="line">git add -A</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">git push </span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<h1 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;page-break-after:always&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AppData\Roaming\Typora\typora-user-images</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>hexo</tag>
-        <tag>butterfly</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>to-learn</title>
-    <url>/2022/03/01/to-learn/</url>
-    <content><![CDATA[<h1 id="Contrastive-Learning"><a href="#Contrastive-Learning" class="headerlink" title="Contrastive Learning"></a>Contrastive Learning</h1><h2 id="DINO"><a href="#DINO" class="headerlink" title="DINO"></a>DINO</h2><h1 id="Knowledge-Distilataion"><a href="#Knowledge-Distilataion" class="headerlink" title="Knowledge Distilataion"></a>Knowledge Distilataion</h1><p><a href="https://github.com/HobbitLong/RepDistiller">Code reproduce</a></p>
-<p><a href="https://devopedia.org/knowledge-distillation">Summary</a></p>
-<p><a href="https://peerj.com/articles/cs-474/">Knowledge distillation in deep learning and its applications</a></p>
-<h1 id="Objection-Detection"><a href="#Objection-Detection" class="headerlink" title="Objection Detection"></a>Objection Detection</h1>]]></content>
-      <tags>
-        <tag>Deep Learning</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>git-learn</title>
     <url>/2021/12/30/git-learn/</url>
     <content><![CDATA[<h1 id="The-lifecycle-of-the-status-of-files"><a href="#The-lifecycle-of-the-status-of-files" class="headerlink" title="The lifecycle of the status of files"></a>The lifecycle of the status of files</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202112301154791.png" alt="The lifecycle of the status of your files"></p>
@@ -757,6 +716,104 @@ __contains__(self, item)       定义当使用成员测试运算符（in 或 not
       </tags>
   </entry>
   <entry>
+    <title>distance measures</title>
+    <url>/2022/04/22/distance-measures/</url>
+    <content><![CDATA[<h1 id="距离公式分析"><a href="#距离公式分析" class="headerlink" title="距离公式分析"></a>距离公式分析</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202204222010766.png" alt=""></p>
+<h1 id="欧式距离"><a href="#欧式距离" class="headerlink" title="欧式距离"></a>欧式距离</h1><script type="math/tex; mode=display">
+D(x,y)=\sqrt{\sum^{n}_{i=1}{(x_i-y_i)^2}}</script><h2 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h2><ul>
+<li>欧式距离在衡量特征之间的距离时，需要考虑特征的分布范围。一般来讲使用欧式距离时需要标准化（$z\sim N(0, 1)$）。</li>
+<li>欧式距离对于高维特征来说并非好的选择。（高纬度和低纬度分布的差别）</li>
+</ul>
+<blockquote>
+<p>如果我们通过将超球面刻在超立方体中来近似超球面，那么在高维中，几乎所有超立方体的体积都在超球面之外。 这对于机器学习来说是个坏消息，因为我们通常使用其中一种类型的形状近似另一种类型的形状。</p>
+</blockquote>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ul>
+<li>低维数据，向量的大小很重要<ul>
+<li>kNN</li>
+</ul>
+</li>
+<li>直观，易于实现使其使用广泛</li>
+</ul>
+<h1 id="Cosine-相似度"><a href="#Cosine-相似度" class="headerlink" title="Cosine 相似度"></a>Cosine 相似度</h1><script type="math/tex; mode=display">
+D(x,y)=cos(\theta)=\frac{x\cdot y}{||x||\cdot ||y||}</script><h2 id="缺陷-1"><a href="#缺陷-1" class="headerlink" title="缺陷"></a>缺陷</h2><ul>
+<li>没有将特征的大小考虑在内<ul>
+<li>比如$(1,1) and (2,2)$</li>
+</ul>
+</li>
+</ul>
+<h2 id="使用场景-1"><a href="#使用场景-1" class="headerlink" title="使用场景"></a>使用场景</h2><ul>
+<li>高维数据</li>
+<li>特征的大小不重要时<ul>
+<li>一个词在一篇文章中出现的次数多于在另一篇文章中的出现次数，并不能说明它和第一篇文章的关联度大，还有可能是文章长度问题</li>
+</ul>
+</li>
+</ul>
+<h1 id="汉明距离"><a href="#汉明距离" class="headerlink" title="汉明距离"></a>汉明距离</h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://towardsdatascience.com/9-distance-measures-in-data-science-918109d069fa">9 Distance Measures in Data Science</a></p>
+]]></content>
+      <categories>
+        <category>Deep learning</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/01/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>math-for-ML</title>
+    <url>/2021/07/10/math-for-ML/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>ML</tag>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>setting</title>
+    <url>/2021/07/07/setting/</url>
+    <content><![CDATA[<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210707130820.png" alt="image-20210707130820709"></p>
+<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>只针对github</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.https://github.com.proxy localhost:10809</span><br><span class="line"></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br></pre></td></tr></table></figure>
+<p>为git开启代理</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global https.proxy localhost:10809</span><br><span class="line">git config --global http.proxy localhost:10809</span><br><span class="line"></span><br><span class="line">git config --global --unset http.proxy</span><br></pre></td></tr></table></figure>
+<p>关闭 crlf转换</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span>     //禁用自動轉換</span><br></pre></td></tr></table></figure>
+<p>Git升级</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-git-for-windows</span><br></pre></td></tr></table></figure>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><ul>
+<li><a href="https://butterfly.js.org/posts/4aa8abbe/">Hexo doc</a></li>
+</ul>
+<h2 id="hexo-highlight"><a href="#hexo-highlight" class="headerlink" title="hexo highlight"></a>hexo highlight</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span>  <span class="attr">charset</span>=<span class="string">utf-8</span>&quot;/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">mark</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>:<span class="number">#FFFF00</span> ; <span class="attribute">font-weight</span>:bold;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="多电脑协同"><a href="#多电脑协同" class="headerlink" title="多电脑协同"></a>多电脑协同</h2><h4 id="增加电脑时"><a href="#增加电脑时" class="headerlink" title="增加电脑时"></a>增加电脑时</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> address-of-your-site</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> address-of-your-site</span><br><span class="line"></span><br><span class="line">npm install <span class="comment"># due to the exist of gitignore, we should install module</span></span><br></pre></td></tr></table></figure>
+<h4 id="不同电脑提交"><a href="#不同电脑提交" class="headerlink" title="不同电脑提交"></a>不同电脑提交</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git pull <span class="comment"># 同步</span></span><br><span class="line"></span><br><span class="line">git add -A</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">git push </span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h1 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;page-break-after:always&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AppData\Roaming\Typora\typora-user-images</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>hexo</tag>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>tricks for contrastive learning</title>
     <url>/2022/01/23/tricks-for-contrastive-learning/</url>
     <content><![CDATA[<h1 id="Projection-head"><a href="#Projection-head" class="headerlink" title="Projection head"></a>Projection head</h1>]]></content>
@@ -775,18 +832,23 @@ __contains__(self, item)       定义当使用成员测试运算符（in 或 not
 ]]></content>
   </entry>
   <entry>
-    <title>程序是怎么跑起来的-1</title>
-    <url>/2021/10/06/%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-1/</url>
-    <content><![CDATA[<h1 id="CPU的组成"><a href="#CPU的组成" class="headerlink" title="CPU的组成"></a>CPU的组成</h1><p>​        CPU的内部由寄存器、控制器、运算器和时钟四个部分构成（有的时钟在CPU之外）</p>
-<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110060022125.png" alt="image-20211006002224075"></p>
-<p>​        CU控制单元，ALU算术逻辑单元。</p>
-<p>未完待续。。</p>
-]]></content>
-      <categories>
-        <category>Operating System</category>
-      </categories>
+    <title>to-learn</title>
+    <url>/2022/03/01/to-learn/</url>
+    <content><![CDATA[<h1 id="Contrastive-Learning"><a href="#Contrastive-Learning" class="headerlink" title="Contrastive Learning"></a>Contrastive Learning</h1><h2 id="DINO"><a href="#DINO" class="headerlink" title="DINO"></a>DINO</h2><h1 id="Knowledge-Distilataion"><a href="#Knowledge-Distilataion" class="headerlink" title="Knowledge Distilataion"></a>Knowledge Distilataion</h1><p><a href="https://github.com/HobbitLong/RepDistiller">Code reproduce</a></p>
+<p><a href="https://devopedia.org/knowledge-distillation">Summary</a></p>
+<p><a href="https://peerj.com/articles/cs-474/">Knowledge distillation in deep learning and its applications</a></p>
+<p><a href="https://github.com/peterliht/knowledge-distillation-pytorch">cifar and mnist distillation</a></p>
+<h1 id="Objection-Detection"><a href="#Objection-Detection" class="headerlink" title="Objection Detection"></a>Objection Detection</h1>]]></content>
       <tags>
-        <tag>CPU</tag>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>deep learning interview</title>
+    <url>/2022/04/19/deep-learning-interview/</url>
+    <content><![CDATA[<h2 id="Resnet-和-DenseNet有什么不同"><a href="#Resnet-和-DenseNet有什么不同" class="headerlink" title="Resnet 和 DenseNet有什么不同"></a>Resnet 和 DenseNet有什么不同</h2><h1 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h1>]]></content>
+      <tags>
+        <tag>Deep Learning</tag>
       </tags>
   </entry>
   <entry>
@@ -804,18 +866,19 @@ __contains__(self, item)       定义当使用成员测试运算符（in 或 not
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/01/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>程序是怎么跑起来的-1</title>
+    <url>/2021/10/06/%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-1/</url>
+    <content><![CDATA[<h1 id="CPU的组成"><a href="#CPU的组成" class="headerlink" title="CPU的组成"></a>CPU的组成</h1><p>​        CPU的内部由寄存器、控制器、运算器和时钟四个部分构成（有的时钟在CPU之外）</p>
+<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110060022125.png" alt="image-20211006002224075"></p>
+<p>​        CU控制单元，ALU算术逻辑单元。</p>
+<p>未完待续。。</p>
 ]]></content>
+      <categories>
+        <category>Operating System</category>
+      </categories>
+      <tags>
+        <tag>CPU</tag>
+      </tags>
   </entry>
   <entry>
     <title>程序的内存分布</title>
@@ -856,18 +919,6 @@ __contains__(self, item)       定义当使用成员测试运算符（in 或 not
       <tags>
         <tag>Memory</tag>
         <tag>CPP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>math-for-ML</title>
-    <url>/2021/07/10/math-for-ML/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>ML</tag>
-        <tag>math</tag>
       </tags>
   </entry>
 </search>

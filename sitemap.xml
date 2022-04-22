@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2022/04/22/distance-measures/</loc>
+    
+    <lastmod>2022-04-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/04/19/deep-learning-interview/</loc>
+    
+    <lastmod>2022-04-19</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2022/03/01/to-learn/</loc>
     
     <lastmod>2022-03-01</lastmod>
@@ -37,6 +51,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/tags/index.html</loc>
+    
+    <lastmod>2022-01-13</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/about/index.html</loc>
     
     <lastmod>2022-01-13</lastmod>
@@ -51,7 +72,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/index.html</loc>
+    <loc>http://example.com/2021/10/11/Why-does-Logistics-Regression-not-use-Square-Loss/</loc>
     
     <lastmod>2022-01-13</lastmod>
     
@@ -65,7 +86,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/11/Why-does-Logistics-Regression-not-use-Square-Loss/</loc>
+    <loc>http://example.com/2022/01/13/hello-world/</loc>
+    
+    <lastmod>2022-01-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/07/10/math-for-ML/</loc>
     
     <lastmod>2022-01-13</lastmod>
     
@@ -86,13 +114,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/06/%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-1/</loc>
-    
-    <lastmod>2022-01-13</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/2021/07/08/%E6%94%B6%E8%97%8F%E7%9A%84%E9%A1%B9%E7%9B%AE/</loc>
     
     <lastmod>2022-01-13</lastmod>
@@ -100,7 +121,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/01/13/hello-world/</loc>
+    <loc>http://example.com/2021/10/06/%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-1/</loc>
     
     <lastmod>2022-01-13</lastmod>
     
@@ -114,14 +135,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/07/10/math-for-ML/</loc>
-    
-    <lastmod>2022-01-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/07/CPP-Array/</loc>
+    <loc>http://example.com/2021/10/29/CV-some-tips/</loc>
     
     <lastmod>2022-01-13</lastmod>
     
@@ -142,14 +156,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/29/CV-some-tips/</loc>
-    
-    <lastmod>2022-01-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/11/06/Matplotlib-Notes/</loc>
+    <loc>http://example.com/2021/10/07/CPP-Array/</loc>
     
     <lastmod>2022-01-13</lastmod>
     
@@ -157,6 +164,13 @@
   
   <url>
     <loc>http://example.com/2021/07/07/Iteration-Batch-Epoch/</loc>
+    
+    <lastmod>2022-01-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/11/06/Matplotlib-Notes/</loc>
     
     <lastmod>2022-01-13</lastmod>
     
@@ -179,183 +193,183 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>http://example.com/tags/Array/</loc>
-    <lastmod>2022-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/C/</loc>
-    <lastmod>2022-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/CPP-base/</loc>
-    <lastmod>2022-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/Deep-Learning/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Computer-Vision/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/CNN/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/Matplotlib/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <loc>http://example.com/tags/CPP-base/</loc>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/Python/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <loc>http://example.com/tags/Array/</loc>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/C/</loc>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/ML/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Gradient-Descent/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Matplotlib/</loc>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Python/</loc>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Random/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Numpy/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/PyTorch/</loc>
-    <lastmod>2022-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/loss-func/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Logistics-Regression/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/loss-func/</loc>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/git/</loc>
-    <lastmod>2022-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/hexo/</loc>
-    <lastmod>2022-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/butterfly/</loc>
-    <lastmod>2022-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/contrastive-learning/</loc>
-    <lastmod>2022-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/deep-learning-tricks/</loc>
-    <lastmod>2022-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/CPU/</loc>
-    <lastmod>2022-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/github/</loc>
-    <lastmod>2022-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Memory/</loc>
-    <lastmod>2022-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/CPP/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/math/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/hexo/</loc>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/butterfly/</loc>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/contrastive-learning/</loc>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/deep-learning-tricks/</loc>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/github/</loc>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/CPU/</loc>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Memory/</loc>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/CPP/</loc>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -363,78 +377,85 @@
 
   
   <url>
-    <loc>http://example.com/categories/C/</loc>
-    <lastmod>2022-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/categories/Deep-Learning/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/Python/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <loc>http://example.com/categories/C/</loc>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/Machine-Learning/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/Python/</loc>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/Numpy/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/PyTorch/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/loss-function/</loc>
-    <lastmod>2022-03-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/categories/note/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/Basic/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/Operating-System/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <loc>http://example.com/categories/Deep-learning/</loc>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/note/</loc>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/Operating-System/</loc>
+    <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
