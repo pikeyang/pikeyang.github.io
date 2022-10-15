@@ -7,14 +7,14 @@ tags:
 - CNN
 categories:
 - Deep Learning
-cover: https://gitee.com/cd-yang/pic/raw/master/img/202110301042212.jpg
+cover: https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141605871.png?token=AOH5QIC5TDKHGOU4AWF5DQDDJEMHW
 ---
 
 
 
 # [【CNN】理解卷积神经网络中的通道 channel_scxyz的博客-CSDN博客_cnn通道](https://blog.csdn.net/sscc_learning/article/details/79814146)
 
-![cnn](https://gitee.com/cd-yang/pic/raw/master/img/202110300952401.png)
+![cnn](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141605871.png?token=AOH5QIC5TDKHGOU4AWF5DQDDJEMHW)
 
 ![多个卷积核](https://gitee.com/cd-yang/pic/raw/master/img/202110300953770.png)
 
