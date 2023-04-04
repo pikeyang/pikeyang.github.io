@@ -3,12 +3,12 @@ title: distance measures
 date: 2022-04-22 20:05:44
 tags: Deep Learning
 categories: Deep learning
-cover: https://gitee.com/cd-yang/pic/raw/master/img/202204222010766.png
+cover: https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141602530.png?token=AOH5QIFXWH7K37JOUTMMUS3DJEL4I
 ---
 
 # 距离公式分析
 
-![](https://gitee.com/cd-yang/pic/raw/master/img/202204222010766.png)
+![](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141602530.png?token=AOH5QIFXWH7K37JOUTMMUS3DJEL4I)
 
 # 欧式距离
 

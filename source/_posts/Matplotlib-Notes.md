@@ -12,7 +12,7 @@ cover: https://gitee.com/cd-yang/pic/raw/master/img/202111062128916.png
 
 # Figure Axis
 
-![v2-896219515a8d7f28fdcb757e0ae81e8d_1440w](https://gitee.com/cd-yang/pic/raw/master/img/202111062131751.jpg)![preview](https://gitee.com/cd-yang/pic/raw/master/img/202111062127754.jpeg)
+![v2-896219515a8d7f28fdcb757e0ae81e8d_1440w](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141549311.jpeg?token=AOH5QIG7TM6FADJGENTZFHTDJEKLA)![preview](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141551956.jpeg?token=AOH5QIG6RPRMWPMT5C3DCDLDJEKTO)
 
 
 
@@ -28,7 +28,7 @@ plt.plot([1,2,3],[4,5,6])
 plt.show()
 ```
 
-![image-20211106213655889](https://gitee.com/cd-yang/pic/raw/master/img/202111062136946.png)
+![image-20211106213655889](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141551798.png?token=AOH5QIFZFPC4HDK4BIXJCM3DJEKVM)
 
 
 
@@ -40,7 +40,7 @@ ax.plot([1,2,3],[4,5,6])
 plt.show()
 ```
 
-![image-20211106213728477](https://gitee.com/cd-yang/pic/raw/master/img/202111062137539.png)
+![image-20211106213728477](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141551993.png?token=AOH5QIDXFV6K5KTSBEQHVATDJEKU6)
 
 ## 区别
 
@@ -54,7 +54,7 @@ plt.show()
 
 ## subplot的绘制
 
-![image-20211106213950817](https://gitee.com/cd-yang/pic/raw/master/img/202111062139856.png)
+![image-20211106213950817](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141551231.png?token=AOH5QICQUOYCHC73RE4SB2LDJEKUU)
 
 # Reference
 

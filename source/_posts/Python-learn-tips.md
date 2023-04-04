@@ -6,7 +6,7 @@ tags:
 - Python
 categories: 
 - Python
-cover: https://gitee.com/cd-yang/pic/raw/master/img/202110301042953.png
+cover: https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141606171.png?token=AOH5QIHC75RMN67J3OHTAATDJEMLY
 ---
 
 # *号
@@ -55,7 +55,7 @@ orderdict示例
     for k,v in d1.items():
         print k,v
 
-![](https://img-blog.csdn.net/20180512204317537?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM1NDg1Njg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141606650.png?token=AOH5QIG4W2PLKWGQCPJE7K3DJEMMC)
 
 > 输入也可以是list,然后输入的时候用\*来引用
 
@@ -64,7 +64,7 @@ orderdict示例
      return nn.Sequential(*layers)  # 不加*号，会报错 TypeError: list is not a Module subclass
 
 因为从nn.Sequential的定义来看  
-![](https://img-blog.csdn.net/20180512210046158?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM1NDg1Njg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)  
+![](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141606878.png?token=AOH5QIGEQVQXRDJSW2DKLPTDJEMMO)  
 输入要么事orderdict,要么事一系列的模型，遇到上述的list，必须用\*号进行转化
 
 Sequential好处是啥呢？
@@ -124,7 +124,7 @@ Sequential好处是啥呢？
     two(d1)
 
 
-![](https://gitee.com/cd-yang/pic/raw/master/img/202110301037699.png)
+![](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141606600.png?token=AOH5QICWBXAARBSF7VKEDUTDJEMOG)
 
 > \*\* 双星号代表这个位置接收任意多个关键字参数，并按照关键字转化成字典  
 > 用双星号传入实参的时候，一定是所有的实参必须带有关键字
@@ -416,7 +416,7 @@ Python中常用的运算符、for循环、以及类操作等都是运行在魔�
 
 > 把Lib/site-pakages/cv2/*.pyd 复制到site-pakages
 
-![image-20211122161302050](https://gitee.com/cd-yang/pic/raw/master/img/202111221613113.png)
+![image-20211122161302050](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141607394.png?token=AOH5QIAV463S7D2EAQB4PL3DJEMO2)
 
 # yield and return
 
@@ -495,21 +495,21 @@ symmetric_difference ^
 
 ## 关键字参数
 
-![截屏2022-02-04 下午1.39.33](https://gitee.com/cd-yang/pic/raw/master/img/%E6%88%AA%E5%B1%8F2022-02-04%20%E4%B8%8B%E5%8D%881.39.33.png)
+![截屏2022-02-04 下午1.39.33](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141607109.png?token=AOH5QIAXWQORMHSDGNK3AXLDJEMPK)
 
 **/** 之前不可以使用关键字参数，**/**之后可以使用
 
-![截屏2022-02-04 下午1.46.02](https://gitee.com/cd-yang/pic/raw/master/img/%E6%88%AA%E5%B1%8F2022-02-04%20%E4%B8%8B%E5%8D%881.46.02.png)
+![截屏2022-02-04 下午1.46.02](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141607745.png?token=AOH5QIAZEMZ57JGJQCYEARDDJEMP2)
 
-![截屏2022-02-04 下午1.48.00](https://gitee.com/cd-yang/pic/raw/master/img/%E6%88%AA%E5%B1%8F2022-02-04%20%E4%B8%8B%E5%8D%881.48.00.png)
+![截屏2022-02-04 下午1.48.00](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141607259.png?token=AOH5QIHYSGMH2SFRN2MKDGTDJEMQO)
 
 ## 收集参数
 
-![截屏2022-02-04 下午1.54.03](https://gitee.com/cd-yang/pic/raw/master/img/%E6%88%AA%E5%B1%8F2022-02-04%20%E4%B8%8B%E5%8D%881.54.03.png)
+<img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141607266.png?token=AOH5QID37OEI7FUSJTM7TOTDJEMRG" alt="截屏2022-02-04 下午1.54.03" style="zoom:25%;" />
 
 ​		Python中，多值赋值，返回多个值都是使用元组（打包解包）
 
-![截屏2022-02-04 下午2.02.11](https://gitee.com/cd-yang/pic/raw/master/img/截屏2022-02-04 下午2.02.11.png)
+![截屏2022-02-04 下午2.02.11](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141607917.png?token=AOH5QIGAMLYI7PLL53DCKHDDJEMRU)
 
 ![截屏2022-02-04 下午2.06.25](https://gitee.com/cd-yang/pic/raw/master/img/%E6%88%AA%E5%B1%8F2022-02-04%20%E4%B8%8B%E5%8D%882.06.25.png)
 
@@ -527,7 +527,7 @@ local > enclosed(嵌套函数的外部函数变量) > global > build-in
 
 <img src="https://gitee.com/cd-yang/pic/raw/master/img/202202041425081.png" alt="截屏2022-02-04 下午2.24.38" style="zoom:50%;" />
 
-![截屏2022-02-04 下午2.27.54](https://gitee.com/cd-yang/pic/raw/master/img/202202041428136.png)
+![截屏2022-02-04 下午2.27.54](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141608061.png?token=AOH5QID4UABABKCLMATFWFLDJEMTW)
 
 ## 装饰器
 
@@ -550,13 +550,13 @@ hello()
 
 ## lambda
 
-![截屏2022-02-04 下午2.44.39](https://gitee.com/cd-yang/pic/raw/master/img/202202041445941.png)
+![截屏2022-02-04 下午2.44.39](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141608936.png?token=AOH5QIHOCPNQE35VT4M6J2DDJEMTI)
 
 filter 返回使得表达式为True的结果
 
 ## 生成器
 
-![截屏2022-02-04 下午2.53.14](https://gitee.com/cd-yang/pic/raw/master/img/202202041453589.png)
+![截屏2022-02-04 下午2.53.14](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141608411.png?token=AOH5QIDPPR75GICQWGPU723DJEMS6)
 
 # 列表的删除问题
 
@@ -570,7 +570,7 @@ for each in data:  # for each in data.copy()
 print(data)
 ```
 
-![截屏2022-02-04 下午11.17.53](https://gitee.com/cd-yang/pic/raw/master/img/202202042318301.png)
+![截屏2022-02-04 下午11.17.53](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141608417.png?token=AOH5QID6QYNBCYNBKYOT5VTDJEMSM)
 
 # 元组
 
