@@ -22,8 +22,8 @@ cover: https://gitee.com/cd-yang/pic/raw/master/img/202110301042212.jpg
 
 Suppose that I have a conv layer which outputs an (N,F,H,W)(N,F,H,W) shaped tensor where:
 
-- NN is the batch size
-- FF is the number of convolutional filters
+- N is the batch size
+- F is the number of convolutional filters
 - H,WH,W are the spatial dimensions
 
 Suppose this output is fed into a conv layer with F1F1 1x1 filters, zero padding and stride 1. Then the output of this 1x1 conv layer will have shape (N,F1,H,W)(N,F1,H,W).
