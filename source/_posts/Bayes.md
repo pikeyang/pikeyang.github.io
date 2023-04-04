@@ -3,7 +3,7 @@ title: Bayes
 date: 2022-10-15 12:48:05
 tags: ML
 categories: Machine Learning
-cover: https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210151319725.png?token=AOH5QIHMT23O6H65YFIJSC3DJJBS2
+cover: https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042151694.png
 ---
 
 ## 概念
@@ -33,7 +33,7 @@ $$
 
 ​		对于上述场景，我们容易将待求表示为$P(A|B)$，直接求解该式难度较大。但是人群中吸烟的比例相对容易得到（调查数据），然后吸烟致癌的可能性也可以获得（研究吸烟致癌的科研数据）。同时不吸烟患肺癌的数据也是可获得的。
 
-<img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210151354879.png?token=AOH5QICJR3VUZWKA2TN5IY3DJJFUC" alt="贝叶斯" style="zoom:10%;" />
+<img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042150403.png" alt="贝叶斯" style="zoom:10%;" />
 
 ​		吸烟且患肺癌为$P(B|A)P(A)$， 不吸烟患肺癌为$P(B|\lnot A)P(\lnot A)$。那么问题求解科研表示为如下形式。
 $$
@@ -59,6 +59,8 @@ P(E=患癌症) &= P(患癌症|吸烟)P(吸烟) + P(患癌症|不吸烟)P(不吸�
 15\% \times 80\% + 10\% \times 85\%
 \end{aligned}
 $$
+
+
 
 ## 似然概率 先验概率 后验概率
 

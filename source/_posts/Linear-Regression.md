@@ -3,6 +3,7 @@ title: Linear Regression
 date: 2022-10-14 16:09:52
 tags: ML
 category: Machine Learning
+cover: https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042152453.png
 ---
 
 # 线性回归与最小二乘法
