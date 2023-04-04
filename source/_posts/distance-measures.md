@@ -3,12 +3,12 @@ title: distance measures
 date: 2022-04-22 20:05:44
 tags: Deep Learning
 categories: Deep learning
-cover: https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141602530.png?token=AOH5QIFXWH7K37JOUTMMUS3DJEL4I
+cover: https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042208149.png
 ---
 
 # 距离公式分析
 
-![](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141602530.png?token=AOH5QIFXWH7K37JOUTMMUS3DJEL4I)
+![](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042208149.png)
 
 # 欧式距离
 
@@ -48,7 +48,7 @@ $$
 
 # 汉明距离
 
-![hanming](https://gitee.com/cd-yang/pic/raw/master/img/202204231640090.png)
+![hanming](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209877.png)
 
 ​		汉明距离是两个向量之间不同元素的个数。
 

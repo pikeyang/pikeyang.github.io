@@ -5,14 +5,14 @@ tags:
 - Matplotlib
 - Python
 categories: Python
-cover: https://gitee.com/cd-yang/pic/raw/master/img/202111062128916.png
+cover: https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042156601.png
 ---
-
-
 
 # Figure Axis
 
-![v2-896219515a8d7f28fdcb757e0ae81e8d_1440w](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141549311.jpeg?token=AOH5QIG7TM6FADJGENTZFHTDJEKLA)![preview](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141551956.jpeg?token=AOH5QIG6RPRMWPMT5C3DCDLDJEKTO)
+![v2-896219515a8d7f28fdcb757e0ae81e8d_1440w](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042155236.jpeg)
+
+![preview](https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141551956.jpeg?token=AOH5QIG6RPRMWPMT5C3DCDLDJEKTO)
 
 
 

@@ -11,25 +11,25 @@ categories: Python
 
 ​		Python会自动将解释器中最后一个值存储到‘_’中
 
-![截屏2022-02-28 下午4.33.27](https://gitee.com/cd-yang/pic/raw/master/img/202202281633866.png)
+![截屏2022-02-28 下午4.33.27](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209516.png)
 
 ## 2.忽略具体值
 
 ​		很多情况下，在Python的解包操作中，我们并非需要其中的所有值。这时可以使用‘_’来忽略部分值。
 
-![截屏2022-02-28 下午4.37.12](https://gitee.com/cd-yang/pic/raw/master/img/202202281638483.png)
+![截屏2022-02-28 下午4.37.12](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209988.png)
 
 ## 3.在循环中使用
 
 ​		这种用法和用法2较为类似。同样为不给某些值具体变量名。
 
-![截屏2022-02-28 下午4.38.40](https://gitee.com/cd-yang/pic/raw/master/img/202202281639437.png)
+![截屏2022-02-28 下午4.38.40](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209216.png)
 
 ## 4.分隔数字
 
 ​		在使用较长的数字时，可以使用下划线进行分隔。
 
-![](https://gitee.com/cd-yang/pic/raw/master/img/202202281640365.png)
+![](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209679.png)
 
 ## 5.命名
 
@@ -51,7 +51,7 @@ categories: Python
 
 ​		Python中经常遇到命名冲突的场景，后缀单下划线就可以用来解决命名冲突问题。
 
-![截屏2022-02-28 下午4.45.37](https://gitee.com/cd-yang/pic/raw/master/img/202202281647908.png)
+![截屏2022-02-28 下午4.45.37](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209431.png)
 
 ### 5.3 前缀双下划线
 
@@ -77,7 +77,7 @@ AttributeError: 'Base' object has no attribute '__var'
 
 ​		魔术方法。
 
-![截屏2022-02-28 下午4.55.50](https://gitee.com/cd-yang/pic/raw/master/img/202202281656936.png)
+![截屏2022-02-28 下午4.55.50](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209365.png)
 
 ## 参考文献
 

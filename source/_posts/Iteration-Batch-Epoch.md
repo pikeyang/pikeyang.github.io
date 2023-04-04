@@ -10,5 +10,5 @@ cover: https://gitee.com/cd-yang/pic/raw/master/img/20210707123342.png
 
 # Iteration Batch Epoch
 
-![img](https://gitee.com/cd-yang/pic/raw/master/img/20210707123342.png)
+![img](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209565.png)
 
