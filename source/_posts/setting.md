@@ -7,12 +7,12 @@ tags:
 - git 
 -  hexo 
 -  butterfly
-cover: https://gitee.com/cd-yang/pic/raw/master/img/20210707130820.png
+cover: https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202305251435947.png
 ---
 
 
 
-![image-20210707130820709](https://gitee.com/cd-yang/pic/raw/master/img/20210707130820.png)
+![image-20210707130820709](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202305251435947.png)
 
 # Git
 
