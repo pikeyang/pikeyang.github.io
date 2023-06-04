@@ -5,7 +5,7 @@ tags:
 - Array
 - C++
 category: C++
-cover: https://gitee.com/cd-yang/pic/raw/master/img/202110080100485.png
+cover: https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202110080100485.png
 ---
 
 <!DOCTYPE html>
@@ -46,7 +46,7 @@ int foo [5] = { 16, 2, 77, 40, 12071 };
 int bar [5] = { 10, 20, 30 };
 ```
 
-![img](https://www.cplusplus.com/doc/tutorial/arrays/arrays3.png)
+![img](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/arrays3.png)
 
 
 
@@ -56,7 +56,7 @@ int bar [5] = { 10, 20, 30 };
 int baz [5] = { }; 
 ```
 
-![img](https://www.cplusplus.com/doc/tutorial/arrays/arrays4.png)
+![img](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/arrays4.png)
 
 ## 不必声明数组的长度的情况
 
@@ -108,3 +108,4 @@ cout << mystring.c_str();  // printed as a c-string
 # 参考
 
 https://www.cplusplus.com/doc/tutorial/arrays/（摘录）
+

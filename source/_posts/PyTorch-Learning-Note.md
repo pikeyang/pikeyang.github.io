@@ -5,7 +5,7 @@ tags:
 - Deep Learning
 - PyTorch
 category: PyTorch
-cover: https://gitee.com/cd-yang/pic/raw/master/img/202110071124255.jpeg
+cover: https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202110071124255.jpeg
 ---
 
 <!DOCTYPE html>

@@ -3,19 +3,19 @@ title: git-learn
 date: 2021-12-30 11:51:31
 tags: git
 categories: Basic
-cover: https://gitee.com/cd-yang/pic/raw/master/img/202112301152856.jpeg
+cover: https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/eyecatch_git-960x504.png
 ---
 
 # The lifecycle of the status of files
 
-![The lifecycle of the status of your files](https://gitee.com/cd-yang/pic/raw/master/img/202112301154791.png)
+![The lifecycle of the status of your files](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202112301154791.png)
 
 # git add
 
 - It may be helpful to think of it more as “add precisely this content to the next commit” rather than “add this file to the project”.
 - f you modify a file after you run `git add`, you have to run `git add` again to stage the latest version of the file.
 
-![image-20211230120957213](https://gitee.com/cd-yang/pic/raw/master/img/202112301209255.png)
+![image-20211230120957213](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202112301209255.png)
 
 # Ignoring Files
 
@@ -29,7 +29,7 @@ cover: https://gitee.com/cd-yang/pic/raw/master/img/202112301152856.jpeg
 
 ## Example
 
-![image-20211230122626631](https://gitee.com/cd-yang/pic/raw/master/img/202112301226686.png)
+![image-20211230122626631](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202112301226686.png)
 
 - `*~` tells Git to ignore all files whose names end with a tilde(~).
 - `*.[oa]` tells Git to ignore any files ending in ".o" o ".a"

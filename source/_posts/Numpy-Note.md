@@ -6,7 +6,7 @@ tags:
 - Random
 - Numpy
 category: Numpy
-cover: https://gitee.com/cd-yang/pic/raw/master/img/202110091216761.png 
+cover: https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202110091216761.png
 ---
 
 # `Numpy`
@@ -15,7 +15,7 @@ cover: https://gitee.com/cd-yang/pic/raw/master/img/202110091216761.png
 
 # Random
 
-![image-20211009121523706](https://gitee.com/cd-yang/pic/raw/master/img/202110091215782.png)
+![image-20211009121523706](https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202110091215782.png)
 
 
 
