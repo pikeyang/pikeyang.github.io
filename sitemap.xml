@@ -2,6 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2021/07/07/Iteration-Batch-Epoch/</loc>
+    
+    <lastmod>2023-06-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/07/10/%E5%9B%BE%E5%83%8F%E9%A3%8E%E6%A0%BC%E5%8F%98%E6%8D%A2/</loc>
+    
+    <lastmod>2023-06-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/06/%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-1/</loc>
+    
+    <lastmod>2023-06-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/09/Numpy-Note/</loc>
+    
+    <lastmod>2023-06-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/11/Why-does-Logistics-Regression-not-use-Square-Loss/</loc>
+    
+    <lastmod>2023-06-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/07/CPP-Array/</loc>
+    
+    <lastmod>2023-06-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/07/PyTorch-Learning-Note/</loc>
+    
+    <lastmod>2023-06-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/06/%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83/</loc>
+    
+    <lastmod>2023-06-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/12/30/git-learn/</loc>
+    
+    <lastmod>2023-06-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2023/06/04/hello-world/</loc>
+    
+    <lastmod>2023-06-04</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2023/06/04/prime-number/</loc>
     
     <lastmod>2023-06-04</lastmod>
@@ -23,20 +93,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/06/%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-1/</loc>
-    
-    <lastmod>2023-06-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/06/%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83/</loc>
-    
-    <lastmod>2023-06-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/about/index.html</loc>
     
     <lastmod>2023-06-03</lastmod>
@@ -51,13 +107,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/03/01/to-learn/</loc>
-    
-    <lastmod>2023-06-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/2022/01/23/tricks-for-contrastive-learning/</loc>
     
     <lastmod>2023-06-03</lastmod>
@@ -65,7 +114,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/07/10/%E5%9B%BE%E5%83%8F%E9%A3%8E%E6%A0%BC%E5%8F%98%E6%8D%A2/</loc>
+    <loc>http://example.com/2022/03/01/to-learn/</loc>
     
     <lastmod>2023-06-03</lastmod>
     
@@ -79,7 +128,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/06/04/hello-world/</loc>
+    <loc>http://example.com/2021/07/07/setting/</loc>
     
     <lastmod>2023-06-03</lastmod>
     
@@ -87,20 +136,6 @@
   
   <url>
     <loc>http://example.com/2021/07/10/math-for-ML/</loc>
-    
-    <lastmod>2023-06-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/12/30/git-learn/</loc>
-    
-    <lastmod>2023-06-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/07/07/setting/</loc>
     
     <lastmod>2023-06-03</lastmod>
     
@@ -128,13 +163,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/11/Why-does-Logistics-Regression-not-use-Square-Loss/</loc>
-    
-    <lastmod>2023-06-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/2022/02/28/Underscore-in-Python/</loc>
     
     <lastmod>2023-06-03</lastmod>
@@ -156,13 +184,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/09/Numpy-Note/</loc>
-    
-    <lastmod>2023-06-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/2021/11/06/Matplotlib-Notes/</loc>
     
     <lastmod>2023-06-03</lastmod>
@@ -170,21 +191,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/07/PyTorch-Learning-Note/</loc>
-    
-    <lastmod>2023-06-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/2021/11/02/Contrastive-Learning/</loc>
-    
-    <lastmod>2023-06-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/07/07/Iteration-Batch-Epoch/</loc>
     
     <lastmod>2023-06-03</lastmod>
     
@@ -206,13 +213,6 @@
   
   <url>
     <loc>http://example.com/2022/10/15/Bayes/</loc>
-    
-    <lastmod>2023-06-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/07/CPP-Array/</loc>
     
     <lastmod>2023-06-03</lastmod>
     
@@ -284,6 +284,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/tags/Matplotlib/</loc>
+    <lastmod>2023-06-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/Python/</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
@@ -305,7 +312,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Matplotlib/</loc>
+    <loc>http://example.com/tags/PyTorch/</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -319,13 +326,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/PyTorch/</loc>
-    <lastmod>2023-06-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/loss-func/</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
@@ -333,21 +333,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/math/</loc>
-    <lastmod>2023-06-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/git/</loc>
-    <lastmod>2023-06-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Python-Algorithm/</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -368,6 +354,20 @@
   </url>
   
   <url>
+    <loc>http://example.com/tags/math/</loc>
+    <lastmod>2023-06-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Python-Algorithm/</loc>
+    <lastmod>2023-06-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/contrastive-learning/</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
@@ -382,7 +382,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/github/</loc>
+    <loc>http://example.com/tags/Memory/</loc>
+    <lastmod>2023-06-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/CPP/</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -396,14 +403,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Memory/</loc>
-    <lastmod>2023-06-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/CPP/</loc>
+    <loc>http://example.com/tags/github/</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -433,14 +433,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/Numpy/</loc>
+    <loc>http://example.com/categories/Python/</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/Python/</loc>
+    <loc>http://example.com/categories/Numpy/</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -454,14 +454,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/loss-function/</loc>
+    <loc>http://example.com/categories/Deep-learning/</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/Deep-learning/</loc>
+    <loc>http://example.com/categories/loss-function/</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -475,13 +475,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/Algorithm/</loc>
-    <lastmod>2023-06-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/categories/note/</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
@@ -489,7 +482,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E9%A1%B9%E7%9B%AE/</loc>
+    <loc>http://example.com/categories/Algorithm/</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -497,6 +490,13 @@
   
   <url>
     <loc>http://example.com/categories/Operating-System/</loc>
+    <lastmod>2023-06-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/%E9%A1%B9%E7%9B%AE/</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
