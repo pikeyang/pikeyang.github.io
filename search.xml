@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>prime number</title>
+      <link href="/2023/06/04/prime-number/"/>
+      <url>/2023/06/04/prime-number/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Miller-Rabin"><a href="#Miller-Rabin" class="headerlink" title="Miller Rabin"></a>Miller Rabin</h1><p>Miller Rabin素性检验是一种素数判定的法则，由CMU的教授Miller首次提出，并由希大的Rabin教授作出修改，变成了今天竞赛人广泛使用的一种算法，故称Miller Rabin素性检验。</p><p>该算法本质上是一种随机化算法，能在 $O(k\log_3 n)$ 的时间复杂度下快速判断出一个数是否是素数，但具有一定的错误概率。不过在一定数据范围内，通过一些技巧可以使其不出错。</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>以下是Miller-Rabin算法的详细解析：</p><ol><li>输入：待判断的数n和测试次数k。</li><li>如果n是2或3，直接返回True，因为2和3是素数。</li><li>如果n是偶数或小于2，直接返回False。</li><li>将n-1分解为2^s * d，其中d是一个奇数。</li><li>进行k次测试： a. 选择一个随机数a，满足1 &lt; a &lt; n-1。 b. 计算x = a^d mod n。 c. 如果x等于1或x等于n-1，进入下一次测试。 d. 重复s次：<ul><li>计算x = x^2 mod n。</li><li>如果x等于1，返回False，n是合数。</li><li>如果x等于n-1，进入下一次测试。 e. 返回False，n是合数。</li></ul></li><li>返回True，n可能是素数。</li></ol><p>Miller-Rabin算法的核心思想是进行多次随机测试，每次测试都会选择一个不同的随机数a，并检查a的幂次对n取模的结果。如果其中一次测试表明n是合数，那么n就肯定是合数。如果所有的测试都通过，那么n很有可能是素数，但并不是确定的。</p><p>需要注意的是，增加测试次数k可以提高Miller-Rabin算法的准确性，但同时也增加了运行时间。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_prime</span>(<span class="params">n, k=<span class="number">20</span></span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;判断一个整数是否是素数&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">2</span> <span class="keyword">or</span> n == <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> n % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 将n-1分解为2^s * d的形式</span></span><br><span class="line">    s = <span class="number">0</span></span><br><span class="line">    d = n - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> d % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        s += <span class="number">1</span></span><br><span class="line">        d //= <span class="number">2</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 进行k次测试</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">        a = random.randint(<span class="number">2</span>, n-<span class="number">2</span>) <span class="comment"># 在[2, n-2]范围内选择一个随机整数a</span></span><br><span class="line">        x = <span class="built_in">pow</span>(a, d, n) <span class="comment"># 计算a^d mod n的值</span></span><br><span class="line">        <span class="keyword">if</span> x == <span class="number">1</span> <span class="keyword">or</span> x == n-<span class="number">1</span>: <span class="comment"># 如果x=1或x=n-1，继续下一次测试</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(s-<span class="number">1</span>):</span><br><span class="line">            x = <span class="built_in">pow</span>(x, <span class="number">2</span>, n) <span class="comment"># 计算x^2 mod n的值</span></span><br><span class="line">            <span class="keyword">if</span> x == n-<span class="number">1</span>: <span class="comment"># 如果x=n-1，继续下一次测试,出现一个n-1，后面都是1，直接跳出</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>: <span class="comment"># 如果所有测试都没有退出，n不是素数，返回False</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span> <span class="comment"># 所有测试都通过，n可能是素数，返回True</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/image-20230604134732737.png" alt="image-20230604134732737"></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://zhuanlan.zhihu.com/p/349360074">【朝夕的ACM笔记】数论-Miller Rabin素数判定 - 知乎 (zhihu.com)</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python, Algorithm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2023/06/04/hello-world/"/>
+      <url>/2023/06/04/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>shortest path problem</title>
+      <link href="/2023/06/01/shortest-path-problem/"/>
+      <url>/2023/06/01/shortest-path-problem/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dij_adjacency_matrix_without_heap</span>(<span class="params">adj_matrix, source</span>):</span></span><br><span class="line">    dist = [<span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>)] * <span class="built_in">len</span>(adj_matrix)</span><br><span class="line">    visited = [<span class="literal">False</span>] * <span class="built_in">len</span>(adj_matrix)</span><br><span class="line">    dist[source] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(adj_matrix)):</span><br><span class="line">        min_dist = <span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>)</span><br><span class="line">        min_index = -<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(adj_matrix)):</span><br><span class="line">            <span class="comment"># find the min distance node in the unvisited nodes</span></span><br><span class="line">            <span class="comment"># this can be optimized by using heap</span></span><br><span class="line">            <span class="comment"># source is the first node</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> visited[j] <span class="keyword">and</span> dist[j] &lt; min_dist:</span><br><span class="line">                min_dist = dist[j]</span><br><span class="line">                min_index = j</span><br><span class="line">                </span><br><span class="line">        <span class="comment"># if there is no unvisited node, break</span></span><br><span class="line">        <span class="comment"># or if the min distance node is not reachable, break</span></span><br><span class="line">        <span class="keyword">if</span> min_index == -<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># mark the min distance node as visited</span></span><br><span class="line">        visited[min_index] = <span class="literal">True</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># update the distance of the unvisited nodes</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(adj_matrix)):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> visited[j] <span class="keyword">and</span> adj_matrix[min_index][j] != <span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>) <span class="keyword">and</span> \</span><br><span class="line">                    dist[min_index] + adj_matrix[min_index][j] &lt; dist[j]:</span><br><span class="line">                dist[j] = dist[min_index] + adj_matrix[min_index][j]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dist</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dij_adjacency_matrix</span>(<span class="params">adj_matrix, source</span>):</span></span><br><span class="line">    dist = [<span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>)] * <span class="built_in">len</span>(adj_matrix)</span><br><span class="line">    visited = [<span class="literal">False</span>] * <span class="built_in">len</span>(adj_matrix)</span><br><span class="line">    dist[source] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># use the heap (priority queue) to store the distance between the visited node and unvisited node</span></span><br><span class="line">    heap = []</span><br><span class="line">    heapq.heappush(heap, (<span class="number">0</span>, source))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> heap:</span><br><span class="line">        <span class="comment"># find the min distance node</span></span><br><span class="line">        distance, cur = heapq.heappop(heap)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># update the distance of the unvisited nodes</span></span><br><span class="line">        <span class="keyword">for</span> neighbor <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(adj_matrix[cur])):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> visited[neighbor] <span class="keyword">and</span> distance + adj_matrix[cur][neighbor] &lt; dist[neighbor]:</span><br><span class="line">                dist[neighbor] = dist[cur] + adj_matrix[cur][neighbor]</span><br><span class="line">                heapq.heappush(heap, (dist[neighbor], neighbor))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># mark the min distance node as visited</span></span><br><span class="line">        visited[cur] = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dist</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dij_adjacency_list</span>(<span class="params">adj_list, source</span>):</span></span><br><span class="line">    dist = [<span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>)] * <span class="built_in">len</span>(adj_list)</span><br><span class="line">    visited = [<span class="literal">False</span>] * <span class="built_in">len</span>(adj_list)</span><br><span class="line">    dist[source] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># use the heap (priority queue) to store the distance between the visited node and unvisited node</span></span><br><span class="line">    heap = []</span><br><span class="line">    heapq.heappush(heap, (<span class="number">0</span>, source))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> heap:</span><br><span class="line">        <span class="comment"># find the min distance node</span></span><br><span class="line">        distance, cur = heapq.heappop(heap)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># update the distance of the unvisited nodes</span></span><br><span class="line">        <span class="keyword">for</span> neighbor, weight <span class="keyword">in</span> adj_list[cur]:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> visited[neighbor] <span class="keyword">and</span> distance + weight &lt; dist[neighbor]:</span><br><span class="line">                dist[neighbor] = dist[cur] + weight</span><br><span class="line">                heapq.heappush(heap, (dist[neighbor], neighbor))</span><br><span class="line">                </span><br><span class="line">        <span class="comment"># mark the min distance node as visited</span></span><br><span class="line">        visited[cur] = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dist</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Bayes</title>
+      <link href="/2022/10/15/Bayes/"/>
+      <url>/2022/10/15/Bayes/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul><li><p>$P(Hypothesis)$ 先验概率，根据常识或者历史数据的统计得出的预判概率。</p></li><li><p>$P(Hypothesis | Evidence)$  后验概率，其中 $|$ 意味着  Hypothesis given Evidence （在什么条件下），后验概率由于已知结果（实际观测值Evidence），所以是由果溯因。贝叶斯即属于由果溯因。</p></li><li><p>$P(Evidence | Hypothesis)$ 似然概率，其中 $|$意味着 Limited （限制），即在假设成立的情况下，我们观测到证据的概率</p></li><li><p>条件概率是表示一个事件发生后另一个事件发生的概率。</p></li><li>联合概率指的是事件同时发生的概率。</li></ul><p>​        在如下公式中，$\theta$已知时，$P$为关于x的概率函数，$x$已知时，$P$是关于$\theta$的似然函数。</p><script type="math/tex; mode=display">P(x|\theta)</script><h2 id="贝叶斯公式"><a href="#贝叶斯公式" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h2><p>​        贝叶斯公式在描述一个事情发生后，我们对于一件证据的相信程度。</p><blockquote><p>​        考虑这样一个场景，吸烟致癌。我们定义A为“吸烟”，B为“患肺癌”。吸烟有可能导致人患肺癌，但是患肺癌并非一定是吸烟所致，那么求解一个肺癌患者（B已发生）有多大可能是吸烟（A）的。那么我们已知一个人（B已发生），电动车被碰到了（A发生）的概率。</p></blockquote><p>​        对于上述场景，我们容易将待求表示为$P(A|B)$，直接求解该式难度较大。但是人群中吸烟的比例相对容易得到（调查数据），然后吸烟致癌的可能性也可以获得（研究吸烟致癌的科研数据）。同时不吸烟患肺癌的数据也是可获得的。</p><p><img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042150403.png" alt="贝叶斯" style="zoom:10%;" /></p><p>​        吸烟且患肺癌为$P(B|A)P(A)$， 不吸烟患肺癌为$P(B|\lnot A)P(\lnot A)$。那么问题求解科研表示为如下形式。</p><script type="math/tex; mode=display">P(A|B) = \frac{P(B|A)P(A)}{P(B|A)P(A)+P(B|\lnot A)P(\lnot A)}</script><p>​        在吸烟致癌问题中，我们假定了患癌症的情况分为吸烟和不吸烟，但是在实际中，一件事情的发生往往都是多种诱因，那么可以将贝叶斯公式推广，写为更一般的形式。</p><script type="math/tex; mode=display">P(H_i|E) = \frac{P(E|H_i)P(H_i)}{\sum_i{P(E|H_i)P(H_i)}}\label{eq:bayes}</script><p>​        其中$H_i$为$E$的各种诱因。</p><h2 id="全概率公式"><a href="#全概率公式" class="headerlink" title="全概率公式"></a>全概率公式</h2><p>​        $\eqref{eq:bayes}$ 的分母即为全概率公式。</p><script type="math/tex; mode=display">P(E) = \sum_i{P(E|H_i)P(H_i)}</script><p>​        事件$E$发生的所有诱因放到一起可以计算出事件$E$发生的概率。在上面吸烟致癌的例子中就是，人群中患肺癌的比例。</p><script type="math/tex; mode=display">\begin{aligned}P(E=患癌症) &= P(患癌症|吸烟)P(吸烟) + P(患癌症|不吸烟)P(不吸烟) \\ &=15\% \times 80\% + 10\% \times 85\%\end{aligned}</script><h2 id="似然概率-先验概率-后验概率"><a href="#似然概率-先验概率-后验概率" class="headerlink" title="似然概率 先验概率 后验概率"></a>似然概率 先验概率 后验概率</h2><script type="math/tex; mode=display">Posterior \ probability \propto Likelihood \propto Prior \ probability</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linear Regression</title>
+      <link href="/2022/10/14/Linear-Regression/"/>
+      <url>/2022/10/14/Linear-Regression/</url>
+      
+        <content type="html"><![CDATA[<h1 id="线性回归与最小二乘法"><a href="#线性回归与最小二乘法" class="headerlink" title="线性回归与最小二乘法"></a>线性回归与最小二乘法</h1><h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><p>​        线性回归的公式容易表示为.</p><script type="math/tex; mode=display">Y = X \cdot w    (w_{(p+1) \times 1})\label{linear}</script><p>​        其中，X为$\eqref{eq:X}$ </p><script type="math/tex; mode=display">X = (x_1, x_2, ..., X_N)^T =\left( \begin{array}{c}    x_1^T\\    x_2^T\\    \vdots\\    x_N^T\\\end{array} \right) = \left( \begin{matrix}    x_{10}&     x_{11}&        x_{12}&        \cdots&        x_{1p}\\    x_{20}&     x_{21}&        x_{22}&        \cdots&        x_{2p}\\    \vdots&     \vdots&        \vdots&        &        \vdots\\    X_{N0}&     x_{N1}&        x_{N2}&        \cdots&        x_{Np}\\\end{matrix} \right)_{N \times (p+1)}\label{eq:X}</script><p>​        其中，$x_{*0}$为常数1，W的形状为$(p+1, 1)$，$X$为N个样本，p个特征，多出来的常数项用于计算偏置。</p><script type="math/tex; mode=display">Y = \left( \begin{array}{c}    y_1\\    y_2\\    \vdots\\    y_N\\\end{array} \right)_{N \times 1}</script><p>​        $X$为已知量，那么可以$Y=X\cdot w$ 可以看做关于W的函数，记作：</p><script type="math/tex; mode=display">f(w)=w^Tx</script><h2 id="最小二乘估计"><a href="#最小二乘估计" class="headerlink" title="最小二乘估计"></a>最小二乘估计</h2><script type="math/tex; mode=display">\mathscr{L}(w) = \sum_{i=1}^{N}||w^T \cdot x_i - y_i|| ^ 2 = \sum_{i=1}^N(w^T \cdot x_i - y_i)^2</script><script type="math/tex; mode=display">\begin{aligned}\mathscr{L}(w) &= \left( \begin{matrix}  w^Tx_1-y_1&        w^Tx_2-y_2&    \cdots&    w^Tx_n-y_n \end{matrix} \right) \cdot \left( \begin{matrix} w^Tx_1-y_1 \\ w^Tx_2-y_2\\ \vdots \\ w^Tx_n-y_n  \end{matrix} \right)  \\ &= (\left( \begin{matrix}  w^Tx_1&        w^Tx_2&    \cdots&    w^Tx_n \end{matrix} \right) -\left( \begin{matrix}y_1& y_2& \cdots& y_N  \end{matrix}\right))\cdot \left( \begin{matrix} w^Tx_1-y_1 \\ w^Tx_2-y_2\\ \vdots \\ w^Tx_n-y_n  \end{matrix} \right)  \\ &=(w^T\left( \begin{matrix}  x_1&        x_2&    \cdots&    x_n \end{matrix} \right) -\left( \begin{matrix}y_1& y_2& \cdots& y_N  \end{matrix}\right))\cdot \left( \begin{matrix} w^Tx_1-y_1 \\ w^Tx_2-y_2\\ \vdots \\ w^Tx_n-y_n  \end{matrix} \right) \\ &=(w^T X^T - Y^T)(Xw-Y) \end{aligned}\label{lse-matrix}</script><p>​    $\mathscr{L}(W)$是一个常数。 </p><script type="math/tex; mode=display">\mathscr{L}(W)=(w^T X^T - Y^T)(Xw-Y) = w^T X^TXw - w^T X^TY - Y^TXw - Y^TY\label{eq:loss-res}</script><p>​        $\mathscr{L}(W)$是一个常数，则$\eqref{eq:loss-res}$ 中每一项都是常数。则：</p><script type="math/tex; mode=display">w^T X^TY = (w^T X^TY)^T = Y^TXw</script><script type="math/tex; mode=display">\mathscr{L}(w)=(w^T X^T - Y^T)(Xw-Y) = w^T X^TXw - 2w^T X^TY - Y^TY</script><p>​    </p><script type="math/tex; mode=display">\hat{w} = argmin \mathscr{L}(w)</script><script type="math/tex; mode=display">\frac{\partial \mathscr{L}(w)}{\partial w} = 2X^TXw - 2X^TY = 0</script><script type="math/tex; mode=display">W=\begin{array}{c}    \underbrace{(X^TX)^{-1}X^T}Y\\    Pseudo-inverse\\\end{array}</script><h2 id="最小二乘法几何解释"><a href="#最小二乘法几何解释" class="headerlink" title="最小二乘法几何解释"></a>最小二乘法几何解释</h2><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141938336.png?token=AOH5QIEUKNJ4S6RBGFSCJGDDJFFIC" alt="lse-geometry" style="zoom: 13%;" /></p><p>​        X中的所有向量可以构成一个向量空间，我们想用Y来表达该空间，但是Y能落到X构成的向量空间中的概率很小，所以只能退而求其次，找到Y在向量空间中的投影$\hat{Y}=Xw$，并使Y和该投影的误差尽量小。</p><p>​        由于$\hat{Y}$是Y在向量空间中的投影，所以有$\eqref{eq:projection}$。</p><script type="math/tex; mode=display">X^T \cdot (Y-\hat{Y}) = 0 \\X^T\cdot(Y-Xw) = 0 \\\label{eq:projection}</script><h2 id="最小二乘法的概率解释"><a href="#最小二乘法的概率解释" class="headerlink" title="最小二乘法的概率解释"></a>最小二乘法的概率解释</h2><p>​        由于实际数据的随机性，不妨假设$f(w) = w^Tx+\varepsilon, \varepsilon \sim N(0, \sigma^2)$。根据极大似然$p( y_i|x_i;w )$估计有：        </p><script type="math/tex; mode=display">\hat{w} = \underset{w}{argmax}\prod_{i=1}{p( y_i|x_i;w )}</script><p>​        在这里，$P(y_i|x_i;w)≤1$，相乘的结果由于取数值小于1的乘积会随着这些项数量的增加而逼近0,容易溢出。所以变换如下：</p><script type="math/tex; mode=display">\begin{aligned}\hat{w} &= \underset{w}{argmax}\sum_{i=1}\log{p( y_i|x_i;w )} \\ &=\underset{w}{argmax}\sum_{i=1}{-\log {\sqrt {2\pi}\sigma} - \frac{||w^T \cdot x_i - y_i||^2}{2\sigma^2}} \\ & \Leftrightarrow\underset{w}{argmin}\sum_{i=1}{\log {\sqrt {2\pi}\sigma} + \frac{||w^T \cdot x_i - y_i||^2}{2\sigma^2}} \\ & \Leftrightarrow\underset{w}{argmin}||w^T \cdot x_i - y_i||^2\end{aligned}</script><p>​        最小二乘法是相当于用极大似然估计求噪声为高斯分布的的线性模型。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>distance measures</title>
+      <link href="/2022/04/22/distance-measures/"/>
+      <url>/2022/04/22/distance-measures/</url>
+      
+        <content type="html"><![CDATA[<h1 id="距离公式分析"><a href="#距离公式分析" class="headerlink" title="距离公式分析"></a>距离公式分析</h1><p><img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042208149.png" alt=""></p><h1 id="欧式距离"><a href="#欧式距离" class="headerlink" title="欧式距离"></a>欧式距离</h1><script type="math/tex; mode=display">D(x,y)=\sqrt{\sum^{n}_{i=1}{(x_i-y_i)^2}}</script><h2 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h2><ul><li>欧式距离在衡量特征之间的距离时，需要考虑特征的分布范围。一般来讲使用欧式距离时需要标准化（$z\sim N(0, 1)$）。</li><li>欧式距离对于高维特征来说并非好的选择。（高纬度和低纬度分布的差别）</li></ul><blockquote><p>如果我们通过将超球面刻在超立方体中来近似超球面，那么在高维中，几乎所有超立方体的体积都在超球面之外。 这对于机器学习来说是个坏消息，因为我们通常使用其中一种类型的形状近似另一种类型的形状。</p></blockquote><h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ul><li>低维数据，向量的大小很重要<ul><li>kNN</li></ul></li><li>直观，易于实现使其使用广泛</li></ul><h1 id="Cosine-相似度"><a href="#Cosine-相似度" class="headerlink" title="Cosine 相似度"></a>Cosine 相似度</h1><script type="math/tex; mode=display">D(x,y)=cos(\theta)=\frac{x\cdot y}{||x||\cdot ||y||}</script><h2 id="缺陷-1"><a href="#缺陷-1" class="headerlink" title="缺陷"></a>缺陷</h2><ul><li>没有将特征的大小考虑在内<ul><li>比如$(1,1) and (2,2)$</li></ul></li></ul><h2 id="使用场景-1"><a href="#使用场景-1" class="headerlink" title="使用场景"></a>使用场景</h2><ul><li>高维数据</li><li>特征的大小不重要时<ul><li>一个词在一篇文章中出现的次数多于在另一篇文章中的出现次数，并不能说明它和第一篇文章的关联度大，还有可能是文章长度问题</li></ul></li></ul><h1 id="汉明距离"><a href="#汉明距离" class="headerlink" title="汉明距离"></a>汉明距离</h1><p><img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209877.png" alt="hanming"></p><p>​        汉明距离是两个向量之间不同元素的个数。</p><h2 id="使用场景-2"><a href="#使用场景-2" class="headerlink" title="使用场景"></a>使用场景</h2><ul><li>检测网络传播后的文件是否错误</li></ul><h1 id="曼哈顿距离"><a href="#曼哈顿距离" class="headerlink" title="曼哈顿距离"></a>曼哈顿距离</h1><script type="math/tex; mode=display">D(x,y)=\sum^{k}_{i=1}{|x_i-y_i|}</script><h2 id="使用场景-3"><a href="#使用场景-3" class="headerlink" title="使用场景"></a>使用场景</h2><p>​        当数据集有离散和/或二元属性时，曼哈顿距离工作的很好，因为它考虑了这些值内实际的路径，以欧几里得距离为例，它会在两个向量之间创建一条直线，而实际上这是不可能的。</p><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://towardsdatascience.com/9-distance-measures-in-data-science-918109d069fa">9 Distance Measures in Data Science</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Deep learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>deep learning interview</title>
+      <link href="/2022/04/19/deep-learning-interview/"/>
+      <url>/2022/04/19/deep-learning-interview/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Resnet-和-DenseNet有什么不同"><a href="#Resnet-和-DenseNet有什么不同" class="headerlink" title="Resnet 和 DenseNet有什么不同"></a>Resnet 和 DenseNet有什么不同</h2><h1 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h1>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>to-learn</title>
+      <link href="/2022/03/01/to-learn/"/>
+      <url>/2022/03/01/to-learn/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Contrastive-Learning"><a href="#Contrastive-Learning" class="headerlink" title="Contrastive Learning"></a>Contrastive Learning</h1><h2 id="DINO"><a href="#DINO" class="headerlink" title="DINO"></a>DINO</h2><h1 id="Knowledge-Distilataion"><a href="#Knowledge-Distilataion" class="headerlink" title="Knowledge Distilataion"></a>Knowledge Distilataion</h1><p><a href="https://github.com/HobbitLong/RepDistiller">Code reproduce</a></p><p><a href="https://devopedia.org/knowledge-distillation">Summary</a></p><p><a href="https://peerj.com/articles/cs-474/">Knowledge distillation in deep learning and its applications</a></p><p><a href="https://github.com/peterliht/knowledge-distillation-pytorch">cifar and mnist distillation</a></p><h1 id="Objection-Detection"><a href="#Objection-Detection" class="headerlink" title="Objection Detection"></a>Objection Detection</h1>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Underscore in Python (Python中的下划线)</title>
+      <link href="/2022/02/28/Underscore-in-Python/"/>
+      <url>/2022/02/28/Underscore-in-Python/</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><h2 id="1-在解释器中的使用"><a href="#1-在解释器中的使用" class="headerlink" title="1.在解释器中的使用"></a>1.在解释器中的使用</h2><p>​        Python会自动将解释器中最后一个值存储到‘_’中</p><p><img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209516.png" alt="截屏2022-02-28 下午4.33.27"></p><h2 id="2-忽略具体值"><a href="#2-忽略具体值" class="headerlink" title="2.忽略具体值"></a>2.忽略具体值</h2><p>​        很多情况下，在Python的解包操作中，我们并非需要其中的所有值。这时可以使用‘_’来忽略部分值。</p><p><img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209988.png" alt="截屏2022-02-28 下午4.37.12"></p><h2 id="3-在循环中使用"><a href="#3-在循环中使用" class="headerlink" title="3.在循环中使用"></a>3.在循环中使用</h2><p>​        这种用法和用法2较为类似。同样为不给某些值具体变量名。</p><p><img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209216.png" alt="截屏2022-02-28 下午4.38.40"></p><h2 id="4-分隔数字"><a href="#4-分隔数字" class="headerlink" title="4.分隔数字"></a>4.分隔数字</h2><p>​        在使用较长的数字时，可以使用下划线进行分隔。</p><p><img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209679.png" alt=""></p><h2 id="5-命名"><a href="#5-命名" class="headerlink" title="5.命名"></a>5.命名</h2><p>​        前缀双下划线有实际意义，而其他的都是一种编程约定。</p><ul><li><p>Single Pre Underscore:- <strong>_variable</strong></p></li><li><p>Signle Post Underscore:- <strong>variable_</strong></p></li><li><p>Double Pre Underscores:- <strong>__variable</strong></p></li><li><p>Double Pre and Post Underscores:- <strong><strong>variable</strong></strong></p></li></ul><h3 id="5-1-前缀单下划线"><a href="#5-1-前缀单下划线" class="headerlink" title="5.1 前缀单下划线"></a>5.1 前缀单下划线</h3><p>​        单下划线意味着内部使用，类似于Java中的private，在import 操作时不会引入有前缀单下划线的变量或者方法。</p><h3 id="5-2-后缀单下划线"><a href="#5-2-后缀单下划线" class="headerlink" title="5.2 后缀单下划线"></a>5.2 后缀单下划线</h3><p>​        Python中经常遇到命名冲突的场景，后缀单下划线就可以用来解决命名冲突问题。</p><p><img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209431.png" alt="截屏2022-02-28 下午4.45.37"></p><h3 id="5-3-前缀双下划线"><a href="#5-3-前缀双下划线" class="headerlink" title="5.3 前缀双下划线"></a>5.3 前缀双下划线</h3><p>​        Name magling is the process to overwrite such identifiers in a class to avoid conficts of names between the current class and its subclassed. 名称改写是改写类中变量名的一种行为，用来避免当前类和它的子类命名冲突的问题（避免被重写）。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span>:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.__var = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>base = Base()</span><br><span class="line">&gt;&gt;&gt;<span class="built_in">dir</span>(base)</span><br><span class="line">[<span class="string">&#x27;_Base__var&#x27;</span>, <span class="string">&#x27;__class__&#x27;</span>, <span class="string">&#x27;__delattr__&#x27;</span>, <span class="string">&#x27;__dict__&#x27;</span>, <span class="string">&#x27;__dir__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__eq__&#x27;</span>, <span class="string">&#x27;__format__&#x27;</span>, <span class="string">&#x27;__ge__&#x27;</span>, <span class="string">&#x27;__getattribute__&#x27;</span>, <span class="string">&#x27;__gt__&#x27;</span>, <span class="string">&#x27;__hash__&#x27;</span>, <span class="string">&#x27;__init__&#x27;</span>, <span class="string">&#x27;__init_subclass__&#x27;</span>, <span class="string">&#x27;__le__&#x27;</span>, <span class="string">&#x27;__lt__&#x27;</span>, <span class="string">&#x27;__module__&#x27;</span>, <span class="string">&#x27;__ne__&#x27;</span>, <span class="string">&#x27;__new__&#x27;</span>, <span class="string">&#x27;__reduce__&#x27;</span>, <span class="string">&#x27;__reduce_ex__&#x27;</span>, <span class="string">&#x27;__repr__&#x27;</span>, <span class="string">&#x27;__setattr__&#x27;</span>, <span class="string">&#x27;__sizeof__&#x27;</span>, <span class="string">&#x27;__str__&#x27;</span>, <span class="string">&#x27;__subclasshook__&#x27;</span>, <span class="string">&#x27;__weakref__&#x27;</span>]</span><br><span class="line">&gt;&gt;&gt;base.__var</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">AttributeError: <span class="string">&#x27;Base&#x27;</span> <span class="built_in">object</span> has no attribute <span class="string">&#x27;__var&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>base._Base__var</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure><h3 id="5-4-前后双下划线"><a href="#5-4-前后双下划线" class="headerlink" title="5.4 前后双下划线"></a>5.4 前后双下划线</h3><p>​        魔术方法。</p><p><img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209365.png" alt="截屏2022-02-28 下午4.55.50"></p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>1.<a href="https://www.datacamp.com/community/tutorials/role-underscore-python#SDON">Role of Underscore(_) in Python Tutorial</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tricks for contrastive learning</title>
+      <link href="/2022/01/23/tricks-for-contrastive-learning/"/>
+      <url>/2022/01/23/tricks-for-contrastive-learning/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Projection-head"><a href="#Projection-head" class="headerlink" title="Projection head"></a>Projection head</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> Deep Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> contrastive learning </tag>
+            
+            <tag> deep learning tricks </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>git-learn</title>
+      <link href="/2021/12/30/git-learn/"/>
+      <url>/2021/12/30/git-learn/</url>
+      
+        <content type="html"><![CDATA[<h1 id="The-lifecycle-of-the-status-of-files"><a href="#The-lifecycle-of-the-status-of-files" class="headerlink" title="The lifecycle of the status of files"></a>The lifecycle of the status of files</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202112301154791.png" alt="The lifecycle of the status of your files"></p><h1 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h1><ul><li>It may be helpful to think of it more as “add precisely this content to the next commit” rather than “add this file to the project”.</li><li>f you modify a file after you run <code>git add</code>, you have to run <code>git add</code> again to stage the latest version of the file.</li></ul><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202112301209255.png" alt="image-20211230120957213"></p><h1 id="Ignoring-Files"><a href="#Ignoring-Files" class="headerlink" title="Ignoring Files"></a>Ignoring Files</h1><h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><ul><li>Blank lines or lines starting with <code>#</code> are ignored.</li><li>Standard glob patterns work, and will be applied recursively throughout the entire working tree.</li><li>You can start patterns with a forward slash (<code>/</code>) to avoid recursively.</li><li>You can end patterns with a forward slash (<code>/</code>) to specify a directory.</li><li>You can negate a pattern by starting it with an exclamation point (<code>!</code>).</li></ul><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202112301226686.png" alt="image-20211230122626631"></p><ul><li><code>*~</code> tells Git to ignore all files whose names end with a tilde(~).</li><li><code>*.[oa]</code> tells Git to ignore any files ending in “.o” o “.a”</li><li><code>!</code> but do track <code>lib.a</code>, even though you’re ignoring .a files above</li><li>a question mark (<code>?</code>) matches a single character</li><li><code>a/**/z</code> would match <code>a/z</code>, <code>a/b/z</code>, <code>a/b/c/z</code>, and so on.</li></ul><h1 id="git-mv"><a href="#git-mv" class="headerlink" title="git mv"></a>git mv</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mv README.md README</span><br><span class="line">git rm README.md</span><br><span class="line">git add README</span><br></pre></td></tr></table></figure><h1 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a><a href="https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History">git log</a></h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log -S function_name</span><br></pre></td></tr></table></figure><p>if you wanted to find the last commit that added or removed a reference to a specific function, you could call <code>git log -S function_name</code></p><h2 id="git-log-—pretty"><a href="#git-log-—pretty" class="headerlink" title="git log —pretty"></a>git log —pretty</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --pretty=format:<span class="string">&quot;%h %s&quot;</span> --graph</span></span><br><span class="line">* 2d3acf9 Ignore errors from SIGCHLD on trap</span><br><span class="line">*  5e3ee11 Merge branch &#x27;master&#x27; of git://github.com/dustin/grit</span><br><span class="line">|\</span><br><span class="line">| * 420eac9 Add method for getting the current branch</span><br><span class="line">* | 30e367c Timeout code and tests</span><br><span class="line">* | 5a09431 Add timeout protection to grit</span><br><span class="line">* | e1193f8 Support for heads with slashes in them</span><br><span class="line">|/</span><br><span class="line">* d6016bc Require time for xmlschema</span><br><span class="line">*  11d191e Merge branch &#x27;defunkt&#x27; into local</span><br></pre></td></tr></table></figure><h1 id="git-fetch-vs-git-pull"><a href="#git-fetch-vs-git-pull" class="headerlink" title="git fetch vs git pull"></a>git fetch vs git pull</h1><ul><li>git fetch is a command that allows you to download objects from another repository.<ul><li>download files not available locally</li><li>make no change to local files</li><li>help you get all information you need</li><li>a safer alternative</li></ul></li><li>git pull is a command that allow you to fetch and integrate with another repository or local branch<ul><li>a faster alternative</li></ul></li></ul><h1 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> Basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Matplotlib Notes</title>
+      <link href="/2021/11/06/Matplotlib-Notes/"/>
+      <url>/2021/11/06/Matplotlib-Notes/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Figure-Axis"><a href="#Figure-Axis" class="headerlink" title="Figure Axis"></a>Figure Axis</h1><p><img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042155236.jpeg" alt="v2-896219515a8d7f28fdcb757e0ae81e8d_1440w"></p><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141551956.jpeg?token=AOH5QIG6RPRMWPMT5C3DCDLDJEKTO" alt="preview"></p><h1 id="plt-and-ax"><a href="#plt-and-ax" class="headerlink" title="plt and ax"></a>plt and ax</h1><p>​        在日常的使用中plt和ax经常混淆，需要记录一下。</p><h2 id="plt"><a href="#plt" class="headerlink" title="plt"></a>plt</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plt.figure()</span><br><span class="line">plt.plot([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141551798.png?token=AOH5QIFZFPC4HDK4BIXJCM3DJEKVM" alt="image-20211106213655889"></p><h2 id="ax"><a href="#ax" class="headerlink" title="ax"></a>ax</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fig,ax = plt.subplots()</span><br><span class="line">ax.plot([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141551993.png?token=AOH5QIDXFV6K5KTSBEQHVATDJEKU6" alt="image-20211106213728477"></p><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>​        两种情况下，得到的图像是一致的但是原理却不同。</p><p>​        从第一种方式的代码来看，先生成了一个<code>Figure</code>画布，然后在这个<strong>画布上隐式生成一个画图区域进行画图</strong>。</p><p>​        第二种方式同时生成了<code>Figure</code>和<code>axes</code>两个对象，然后用<code>ax</code>对象在<strong>其区域内</strong>进行绘图。如果从<strong>面向对象编程</strong>（对理解<code>Matplotlib</code>绘图很重要）的角度来看，显然第二种方式更加易于解释，生成的<code>fig</code>和<code>ax</code>分别对画布<code>Figure</code>和绘图区域<code>Axes</code>进行控制，第一种方式反而显得不是很直观，如果涉及到子图<strong>零部件的设置</strong>，用第一种绘图方式会很难受。</p><p>​        在实际绘图时，也更<strong>推荐使用第二种方式。</strong></p><h2 id="subplot的绘制"><a href="#subplot的绘制" class="headerlink" title="subplot的绘制"></a>subplot的绘制</h2><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141551231.png?token=AOH5QICQUOYCHC73RE4SB2LDJEKUU" alt="image-20211106213950817"></p><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol><li><a href="https://zhuanlan.zhihu.com/p/137057629">Matplotlib中的plt和ax都是啥？ - 知乎 (zhihu.com)</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Matplotlib </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Contrastive Learning</title>
+      <link href="/2021/11/02/Contrastive-Learning/"/>
+      <url>/2021/11/02/Contrastive-Learning/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202305251504525.png" alt="img"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python-learn-tips</title>
+      <link href="/2021/10/30/Python-learn-tips/"/>
+      <url>/2021/10/30/Python-learn-tips/</url>
+      
+        <content type="html"><![CDATA[<h1 id="号"><a href="#号" class="headerlink" title="*号"></a>*号</h1><p><a href="https://blog.csdn.net/zkk9527/article/details/88675129">Python中的<em>（星号）和*</em>(双星号）完全详解_微鉴道长的博客-CSDN博客_python 星号</a></p><h2 id="1-nn-Sequential-layers"><a href="#1-nn-Sequential-layers" class="headerlink" title="1. nn.Sequential(*layers)"></a>1. nn.Sequential(*layers)</h2><blockquote><p>类似于torch7中的Sequential，将每一个模块按照他们的顺序送入到nn.Sequential中 ,输入可以是一些列有顺序的模块</p></blockquote><pre><code>conv1=nn.FractionalMaxPool2d(2,output_ratio=(scaled,scaled))conv2=nn.Conv2d(D,D,kernel_size= 3,stride=1,padding=1,bias=True)conv3=nn.Upsample(size=(inputRes,inputRes),mode=&#39;bilinear&#39;)return nn.Sequential(conv1,conv2,conv3)</code></pre><blockquote><p>输入也可以是一个orderDict</p></blockquote><pre><code># Example of using Sequential with OrderedDictmodel = nn.Sequential(OrderedDict([           #orderdict按照建造时候的顺序进行存储          (&#39;conv1&#39;, nn.Conv2d(1,20,5)),          (&#39;relu1&#39;, nn.ReLU()),          (&#39;conv2&#39;, nn.Conv2d(20,64,5)),          (&#39;relu2&#39;, nn.ReLU())        ]))</code></pre><p>orderdict示例</p><pre><code>#orderdict部分源代码来自https://www.cnblogs.com/gide/p/6370082.html，稍有改动import collectionsprint &quot;Regular dictionary&quot;d=&#123;&#125;d[&#39;a&#39;]=&#39;A&#39;d[&#39;b&#39;]=&#39;B&#39;d[&#39;c&#39;]=&#39;C&#39;for k,v in d.items():    print k,vprint &quot;\nOrder dictionary&quot;d1 = collections.OrderedDict()d1[&#39;a&#39;] = &#39;A&#39;d1[&#39;b&#39;] = &#39;B&#39;d1[&#39;c&#39;] = &#39;C&#39;d1[&#39;2&#39;] = &#39;2&#39;d1[&#39;1&#39;] = &#39;1&#39;for k,v in d1.items():    print k,v</code></pre><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141606650.png?token=AOH5QIG4W2PLKWGQCPJE7K3DJEMMC" alt=""></p><blockquote><p>输入也可以是list,然后输入的时候用*来引用</p></blockquote><pre><code> layers = [] layers.append(block(inplanes, outplanes,inputRes,baseWidth=9,cardinality=4,stride=1,preact=preact)) return nn.Sequential(*layers)  # 不加*号，会报错 TypeError: list is not a Module subclass</code></pre><p>因为从nn.Sequential的定义来看<br><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141606878.png?token=AOH5QIGEQVQXRDJSW2DKLPTDJEMMO" alt=""><br>输入要么事orderdict,要么事一系列的模型，遇到上述的list，必须用*号进行转化</p><p>Sequential好处是啥呢？</p><pre><code>    def _make_fc(self, inplanes, outplanes):        bn = nn.BatchNorm2d(inplanes)        conv = nn.Conv2d(inplanes, outplanes, kernel_size=1, bias=True)        return nn.Sequential(                conv,                bn,                self.relu,            )</code></pre><p>在前传forward的时候，一步完成，而不需要conv,bn，relu在forward函数里都写一遍</p><h2 id="2-torch-nn-ModuleList"><a href="#2-torch-nn-ModuleList" class="headerlink" title="2. torch.nn.ModuleList"></a>2. torch.nn.ModuleList</h2><blockquote><p>存储一系列模型的module list，操作类似于标准的python list</p></blockquote><pre><code>class MyModule(nn.Module):    def __init__(self):        super(MyModule, self).__init__()        self.linears = nn.ModuleList([nn.Linear(10, 10) for i in range(10)])    def forward(self, x):        # ModuleList can act as an iterable, or be indexed using ints        for i, l in enumerate(self.linears):            x = self.linears[i // 2](x) + l(x)        return x</code></pre><p>代码中的<code>[nn.Linear(10, 10) for i in range(10)]</code>是一个python列表，必须要把它转换成一个module list列表才可以被pytorch使用，否则在运行的时候会报错，什么错呢？<code>RuntimeError: Input type (CUDAFloatTensor) and weight type (CPUFloatTensor) should be the same</code>,如果这部分不转成modulelist（gpu）,那么只是pythonlist(cpu) 来承载这些模型，定造成cpu和gpu的冲突。</p><h2 id="3-python-号"><a href="#3-python-号" class="headerlink" title="3 python *号"></a>3 python *号</h2><blockquote><p>单个星号代表这个位置接收任意多个非关键字参数，并转化成元表。也就是<em>b 会接受除了a之外的剩下的非关键字参数，需要注意的是</em>加在形参面前代表的是收集参数，如果*号加在了是实参上(例如第十四行)，代表的是将输入迭代器拆成一个个元素</p></blockquote><pre><code>d1 = collections.OrderedDict()d1[&#39;a&#39;] = &#39;A&#39;d1[&#39;b&#39;] = &#39;B&#39;d1[&#39;c&#39;] = &#39;C&#39;d1[&#39;2&#39;] = &#39;2&#39;d1[&#39;1&#39;] = &#39;1&#39;def one(a,*b):    print(b)def two(*b):    print(b)c = [6,7,8,9]one(1,2,3,4,5,6)one(*c)    #传入实参的时候，加上*号，可以将列表中的元素拆成一个个的元素one(*d1)   #传入实参的时候，加上*号，可以将字典中的元素拆成一个个的元素one(c)one(d1)two(c)two(d1)</code></pre><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141606600.png?token=AOH5QICWBXAARBSF7VKEDUTDJEMOG" alt=""></p><blockquote><p>** 双星号代表这个位置接收任意多个关键字参数，并按照关键字转化成字典<br>用双星号传入实参的时候，一定是所有的实参必须带有关键字</p></blockquote><pre><code>def three1(**b):    print(b)three(a=1,b=2,c=3,d=4,e=5,f=6)</code></pre><h2 id="4-torch-CMul-CAdd在pytorch中消失了，代以"><a href="#4-torch-CMul-CAdd在pytorch中消失了，代以" class="headerlink" title="4. torch CMul CAdd在pytorch中消失了，代以* , +"></a>4. torch CMul CAdd在pytorch中消失了，代以* , +</h2><p><code>CMul</code> : component-wise multiplication</p><p><code>CAdd</code>: component-wise addition</p><h1 id="魔术方法"><a href="#魔术方法" class="headerlink" title="魔术方法"></a><a href="https://zhuanlan.zhihu.com/p/329962624">魔术方法</a></h1><h2 id="什么是魔术方法？"><a href="#什么是魔术方法？" class="headerlink" title="什么是魔术方法？"></a><strong>什么是魔术方法？</strong></h2><p>在Python中，所有以双下划线<code>__</code>包起来的方法，统称为<strong>Magic Method（魔术方法）</strong>，它是一种的特殊方法，普通方法需要调用，而魔术方法不需要调用就可以自动执行。</p><p>魔术方法在类或对象的某些事件出发后会自动执行，让类具有神奇的“魔力”。如果希望根据自己的程序定制自己特殊功能的类，那么就需要对这些方法进行重写。</p><p>Python中常用的运算符、for循环、以及类操作等都是运行在魔术方法之上的。</p><p><strong>魔术方法<code>__init__</code>、<code>__new__</code>、<code>__del__</code>的应用</strong></p><pre><code>class People(object):    # 创建对象    def __new__(cls, *args, **kwargs):        print(&quot;触发了构造方法&quot;)        ret = super().__new__(cls) # 调用父类的__new__()方法创建对象        return ret ## 将对象返    # 实例化对象    def __init__(self, name, age):        self.name = name        self.age = age        print(&quot;初始化方法&quot;)    #  删除对象    #   del 对象名或者程序执行结束之后    def __del__(self):        print(&quot;析构方法，删除对象&quot;)</code></pre><p>​<br>​    if <strong>name</strong> == ‘<strong>main</strong>‘:<br>​        p1 = People(‘xiaoming’, 16)<br>​<br>​    输出：<br>​    触发了构造方法<br>​    初始化方法<br>​    析构方法，删除对象</p><p><strong>使用<code>__call__</code>方法实现斐波那契数列</strong></p><pre><code># 斐波那契数列指的是这样一个数列 0, 1, 1, 2, 3, 5, 8, 13# 特别指出：第0项是0，第1项是第一个1。从第三项开始，每一项都等于前两项之和。class Fib(object):    def __init__(self):        pass    def __call__(self,num):        a,b = 0,1;        self.l=[]        for i in range (num):            self.l.append(a)            a,b= b,a+b        return self.l    def __str__(self):        return str(self.l)    __rept__=__str__f = Fib()print(f(10))输出：[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]</code></pre><h2 id="常用的魔术方法"><a href="#常用的魔术方法" class="headerlink" title="常用的魔术方法"></a>常用的魔术方法</h2><h3 id="1-初始化方法-init"><a href="#1-初始化方法-init" class="headerlink" title="1.初始化方法__init__"></a>1.初始化方法<code>__init__</code></h3><pre><code>触发机制：实例化对象之后立即触发参数：至少有一个self，接收当前对象，其他参数根据需要进行定义返回值：无作用：初始化对象的成员</code></pre><h3 id="2-构造方法-new"><a href="#2-构造方法-new" class="headerlink" title="2.构造方法__new__"></a>2.构造方法<code>__new__</code></h3><pre><code>触发时机： 实例化对象时自动触发（在__init__之前触发）参数：至少一个cls 接收当前类，其他参数根据初始化方法参数决定返回值：必须返回一个对象实例，没有返回值，则实例化对象的结果为None作用：实例化对象注意：实例化对象是Object类底层实现，其他类继承了Object的__new__才能够实现实例化对象。</code></pre><h3 id="3-析构方法-del"><a href="#3-析构方法-del" class="headerlink" title="3.析构方法__del__"></a>3.析构方法<code>__del__</code></h3><pre><code>触发时机：当该类对象被销毁时，自动触发参数：一个self，接受当前对象返回值：无作用：关闭或释放对象创建时资源注意：del不一定会触发当前方法，只有当前对象没有任何变量引用时才会触发</code></pre><h3 id="4-call"><a href="#4-call" class="headerlink" title="4.__call__"></a>4.<code>__call__</code></h3><pre><code>调用对象的魔术方法触发时机:将对象当作函数调用时触发,方式： 对象()参数:至少一个self接收对象，其余根据调用时参数决定返回值：根据情况而定作用：可以将复杂的步骤进行合并操作，减少调用的步骤，方便使用注意：无</code></pre><h3 id="5-len"><a href="#5-len" class="headerlink" title="5.__len__"></a>5.<code>__len__</code></h3><pre><code>触发时机：使用len(对象) 的时候触发参数：一个参数self返回值：必须是一个整型作用：可以设置为检测对象成员个数，但是也可以进行其他任意操作注意：返回值必须必须是整数，否则语法报错，另外该要求是格式要求。</code></pre><h3 id="6-str"><a href="#6-str" class="headerlink" title="6.__str__"></a>6.<code>__str__</code></h3><pre><code>触发时机:使用print(对象)或者str(对象)的时候触发参数：一个self接收对象返回值：必须是字符串类型作用：print（对象时）进行操作，得到字符串，通常用于快捷操作注意：无</code></pre><h3 id="7-repr"><a href="#7-repr" class="headerlink" title="7.__repr__"></a>7.<code>__repr__</code></h3><pre><code>触发时机:在使用repr(对象)的时候触发参数：一个self接收对象返回值：必须是字符串作用：将对象转使用repr化为字符串时使用，也可以用于快捷操作</code></pre><h3 id="8-bool"><a href="#8-bool" class="headerlink" title="8.__bool__"></a>8.<code>__bool__</code></h3><pre><code>触发时机: 使用bool(对象)的时候触发参数：一个self接收对象返回值：必须是布尔值作用：根据实际情况决定，可以作为快捷方式使用注意:仅适合于返回布尔值的操作</code></pre><h3 id="9-format"><a href="#9-format" class="headerlink" title="9.__format__"></a>9.<code>__format__</code></h3><pre><code>触发时机：使用字符串.format(对象)时候触发参数：一个self接收对象，一个参数接收format的&#123;&#125;中的格式，例如:&gt;5返回值:必须是字符串作用：设置对象可以作为format的参数，并且自定义对象格式化的规则注意：无</code></pre><h2 id="与属性操作相关的魔术方法"><a href="#与属性操作相关的魔术方法" class="headerlink" title="与属性操作相关的魔术方法"></a>与属性操作相关的魔术方法</h2><hr><h3 id="1-getattr"><a href="#1-getattr" class="headerlink" title="1.__getattr__"></a>1.<code>__getattr__</code></h3><pre><code>触发时机：获取不存在的对象成员时触发参数：一个是接收当前对象的self，一个是获取成员名称的字符串返回值：必须有值作用:为访问不存在的属性设置值注意：getattribute无论何时都会在getattr之前触发，触发了getattribute就不会在触发getattr了</code></pre><h3 id="2-setattr"><a href="#2-setattr" class="headerlink" title="2.__setattr__"></a>2.<code>__setattr__</code></h3><pre><code>触发时机:设置对象成员值的时候触发参数:1个当前对象的self,一个是要设置的成员名称字符串,一个是要设置的值返回值:无 过程操作作用:接管设置操作,可以在设置前之前进行判断验证等行为注意:在当前方法中无法使用成员=值的方式直接设置成员，否则会无限递归，必须借助object的设置方法来完成object.__setattr__（参数1，参数2，参数3）</code></pre><h3 id="3-delattr"><a href="#3-delattr" class="headerlink" title="3.__delattr__"></a>3.<code>__delattr__</code></h3><pre><code>触发时机：删除对象成员时触发参数：一个当前对象的self返回值：无作用:可以在删除成员时进行验证。</code></pre><h3 id="4-getattribute"><a href="#4-getattribute" class="headerlink" title="4.__getattribute__"></a>4.<code>__getattribute__</code></h3><pre><code>触发时机：使用对象成员时触发，无论成员是否存在参数：1个接收当前对象self，一个是获取的成员的名称字符串返回值：必须有作用：在具有封装操作（私有化时），为程序开部分访问权限使用</code></pre><h3 id="5-dir"><a href="#5-dir" class="headerlink" title="5.__dir__"></a>5.<code>__dir__</code></h3><pre><code>触发时机：dir（对象）的时候触发参数:1个接收当前对象self返回值：必须为序列类型（列表，元组，集合等，）作用：可以自定义成员列表的返回值</code></pre><h2 id="其他魔术方法"><a href="#其他魔术方法" class="headerlink" title="其他魔术方法"></a>其他魔术方法</h2><h3 id="比较运算相关魔术方法"><a href="#比较运算相关魔术方法" class="headerlink" title="比较运算相关魔术方法"></a>比较运算相关魔术方法</h3><pre><code>__ lt__(self, other)：定义小于号的行为：x &lt; y 调用 x.lt(y)__ le__(self, other)：定义小于等于号的行为：x &lt;= y 调用 x.le(y)__ eq__(self, other) ：定义等于号的行为：x == y 调用 x.eq(y)__ ne__(self, other)：定义不等号的行为：x != y 调用 x.ne(y)__ gt__(self, other)：定义大于号的行为：x &gt; y 调用 x.**gt(y)__ ge__(self, other) ：定义大于等于号的行为：x &gt;= y 调用 x.ge(y)</code></pre><h3 id="算术运算相关魔术方法"><a href="#算术运算相关魔术方法" class="headerlink" title="算术运算相关魔术方法"></a>算术运算相关魔术方法</h3><pre><code>__add__(self, other)           定义加法的行为：+__sub__(self, other)           定义减法的行为：-__mul__(self, other)           定义乘法的行为：*__truediv__(self, other)       定义真除法的行为：/__floordiv__(self, other)      定义整数除法的行为：//__mod__(self, other)           定义取模算法的行为：%__divmod__(self, other)        定义当被 divmod() 调用时的行为__pow__(self, other[, modulo]) 定义当被 power() 调用或 ** 运算时的行为__lshift__(self, other)        定义按位左移位的行为：&lt;&lt;__rshift__(self, other)        定义按位右移位的行为：&gt;&gt;__and__(self, other)           定义按位与操作的行为：&amp;__xor__(self, other)           定义按位异或操作的行为：^__or__(self, other)            定义按位或操作的行为：|</code></pre><h3 id="赋值运算相关魔术方法"><a href="#赋值运算相关魔术方法" class="headerlink" title="赋值运算相关魔术方法"></a>赋值运算相关魔术方法</h3><pre><code>__iadd__(self, other)             定义赋值加法的行为：+=__isub__(self, other)             定义赋值减法的行为：-=__imul__(self, other)             定义赋值乘法的行为：=__itruediv__(self, other)         定义赋值真除法的行为：/=__ifloordiv__(self, other)        定义赋值整数除法的行为：//=__imod__(self, other)             定义赋值取模算法的行为：%=__ipow__(self, other[, modulo])   定义赋值幂运算的行为：**=__ilshift__(self, other)          定义赋值按位左移位的行为：&lt;&lt;=__irshift__(self, other)          定义赋值按位右移位的行为：&gt;&gt;=__iand__(self, other)             定义赋值按位与操作的行为：&amp;=__ixor__(self, other)             定义赋值按位异或操作的行为：^=__ior__(self, other)              定义赋值按位或操作的行为：|=</code></pre><h3 id="一元运算相关魔术方法"><a href="#一元运算相关魔术方法" class="headerlink" title="一元运算相关魔术方法"></a>一元运算相关魔术方法</h3><pre><code>__pos__(self)      定义正号的行为：+x__neg__(self)      定义负号的行为：-x__abs__(self)      定义当被 abs() 调用时的行为__invert__(self)   定义按位求反的行为：~x</code></pre><h3 id="类型转换相关魔术方法"><a href="#类型转换相关魔术方法" class="headerlink" title="类型转换相关魔术方法"></a>类型转换相关魔术方法</h3><pre><code>__complex__(self)      定义当被 complex() 调用时的行为（需要返回恰当的值）__int__(self)          定义当被 int() 调用时的行为（需要返回恰当的值）__float__(self)        定义当被 float() 调用时的行为（需要返回恰当的值）__round__(self[, n])   定义当被 round() 调用时的行为（需要返回恰当的值）__index(self)__        1. 当对象是被应用在切片表达式中时，实现整形强制转换                       2. 如果你定义了一个可能在切片时用到的定制的数值型,你应该定义 index                       3. 如果 index 被定义，则 int 也需要被定义，且返回相同的值</code></pre><h3 id="上下文管理相关魔术方法-with"><a href="#上下文管理相关魔术方法-with" class="headerlink" title="上下文管理相关魔术方法(with)"></a>上下文管理相关魔术方法(with)</h3><p><code>__enter__</code> 和 <code>__exit__</code></p><pre><code>__enter__(self)    1. 定义当使用 with 语句时的初始化行为    2. enter 的返回值被 with 语句的目标或者 as 后的名字绑定__exit__(self, exctype, excvalue, traceback)    1. 定义当一个代码块被执行或者终止后上下文管理器应该做什么    2. 一般被用来处理异常，清除工作或者做一些代码块执行完毕之后的日常工作</code></pre><h3 id="容器类型相关魔术方法"><a href="#容器类型相关魔术方法" class="headerlink" title="容器类型相关魔术方法"></a>容器类型相关魔术方法</h3><pre><code>__len__(self)                  定义当被 len() 调用时的行为（返回容器中元素的个数）__getitem__(self, key)         定义获取容器中指定元素的行为，相当于 self[key]__setitem__(self, key, value)  定义设置容器中指定元素的行为，相当于 self[key] = value__delitem__(self, key)         定义删除容器中指定元素的行为，相当于 del self[key]__iter__(self)                 定义当迭代容器中的元素的行为__reversed__(self)             定义当被 reversed() 调用时的行为__contains__(self, item)       定义当使用成员测试运算符（in 或 not in）时的行为关于python魔术方法的知识掌握这么多基本就够用了，这里给大家推荐一个评价不错的python课程，希望对大家有所帮助。</code></pre><h1 id="PyCharm-配置cv2"><a href="#PyCharm-配置cv2" class="headerlink" title="PyCharm 配置cv2"></a>PyCharm 配置cv2</h1><p>​        PyCharm在安装完opencv后，仍然无法自动补全和opencv相关的代码，解决方法如下。</p><blockquote><p>把Lib/site-pakages/cv2/*.pyd 复制到site-pakages</p></blockquote><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141607394.png?token=AOH5QIAV463S7D2EAQB4PL3DJEMO2" alt="image-20211122161302050"></p><h1 id="yield-and-return"><a href="#yield-and-return" class="headerlink" title="yield and return"></a>yield and return</h1><h2 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h2><p>It is generally used to convert a regular Python function into a generator. A generator is a special function in Python that returns a generator to the caller.  Since it stores the variable states, hence overhead of memory allocation is controlled.</p><h2 id="return"><a href="#return" class="headerlink" title="return"></a>return</h2><p>It is generally used for the end of the execution and “returns” the result to the caller statement. It can return all type of values and it returns None when there is no expression with the statement “return”.</p><div class="table-container"><table><thead><tr><th style="text-align:left">S.NO.</th><th style="text-align:left">YIELD</th><th style="text-align:left">RETURN</th></tr></thead><tbody><tr><td style="text-align:left">1</td><td style="text-align:left">Yield is generally used to convert a regular Python function into a generator.</td><td style="text-align:left">Return is generally used for the end of the execution and “returns” the result to the caller statement.</td></tr><tr><td style="text-align:left">2</td><td style="text-align:left">It replace the return of a function to suspend its execution without destroying local variables.</td><td style="text-align:left">It exits from a function and handing back a value to its caller.</td></tr><tr><td style="text-align:left">3</td><td style="text-align:left">It is used when the generator returns an intermediate result to the caller.</td><td style="text-align:left">It is used when a function is ready to send a value.</td></tr><tr><td style="text-align:left">4</td><td style="text-align:left">Code written after yield statement execute in next function call.</td><td style="text-align:left">while, code written after return statement wont execute.</td></tr><tr><td style="text-align:left">5</td><td style="text-align:left"><strong>It can run multiple times.</strong></td><td style="text-align:left"><strong>It only runs single time.</strong></td></tr><tr><td style="text-align:left">6</td><td style="text-align:left">Yield statement function is executed from the last state from where the function get paused.</td><td style="text-align:left">Every function calls run the function from the start.</td></tr></tbody></table></div><h1 id="While-else"><a href="#While-else" class="headerlink" title="While else"></a>While else</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>:</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">        </span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    正常推出<span class="keyword">while</span>时调用</span><br></pre></td></tr></table></figure><h1 id="新建dict注意"><a href="#新建dict注意" class="headerlink" title="新建dict注意"></a>新建dict注意</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">56</span>]: d = &#123;x: y <span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="keyword">for</span> y <span class="keyword">in</span> [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]&#125;</span><br><span class="line"></span><br><span class="line">In [<span class="number">57</span>]: d</span><br><span class="line">Out[<span class="number">57</span>]: &#123;<span class="number">1</span>: <span class="number">6</span>, <span class="number">2</span>: <span class="number">6</span>, <span class="number">3</span>: <span class="number">6</span>&#125;</span><br></pre></td></tr></table></figure><blockquote><p>1:4 -&gt; 1:5 -&gt; 1:6</p></blockquote><p>一直在更新键值对</p><h1 id="集合的方法"><a href="#集合的方法" class="headerlink" title="集合的方法"></a>集合的方法</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">update(<span class="string">&quot;all&quot;</span>) -&gt; a l l  add(<span class="string">&quot;all&quot;</span>)</span><br><span class="line"></span><br><span class="line">issuperset &gt;  &gt;=</span><br><span class="line"></span><br><span class="line">issubset  &lt; &lt;=</span><br><span class="line"></span><br><span class="line">union |</span><br><span class="line"></span><br><span class="line">intersection &amp;</span><br><span class="line"></span><br><span class="line">difference -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 集合A与集合B的对称差集定义为集合A与集合B中所有不属于A∩B的元素的集合，记为A△B</span></span><br><span class="line">symmetric_difference ^</span><br></pre></td></tr></table></figure><h1 id="Frozenset"><a href="#Frozenset" class="headerlink" title="Frozenset"></a>Frozenset</h1><p>可哈希</p><h1 id="字符串前-u-r-b-f"><a href="#字符串前-u-r-b-f" class="headerlink" title="字符串前 u r b f"></a>字符串前 u r b f</h1><p><a href="https://blog.csdn.net/sinat_38682860/article/details/108848994">Python 字符串前面加u,r,b,f的含义_python学习者的博客-CSDN博客</a></p><h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h2><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141607109.png?token=AOH5QIAXWQORMHSDGNK3AXLDJEMPK" alt="截屏2022-02-04 下午1.39.33"></p><p><strong>/</strong> 之前不可以使用关键字参数，<strong>/</strong>之后可以使用</p><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141607745.png?token=AOH5QIAZEMZ57JGJQCYEARDDJEMP2" alt="截屏2022-02-04 下午1.46.02"></p><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141607259.png?token=AOH5QIHYSGMH2SFRN2MKDGTDJEMQO" alt="截屏2022-02-04 下午1.48.00"></p><h2 id="收集参数"><a href="#收集参数" class="headerlink" title="收集参数"></a>收集参数</h2><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141607266.png?token=AOH5QID37OEI7FUSJTM7TOTDJEMRG" alt="截屏2022-02-04 下午1.54.03" style="zoom:25%;" /></p><p>​        Python中，多值赋值，返回多个值都是使用元组（打包解包）</p><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141607917.png?token=AOH5QIGAMLYI7PLL53DCKHDDJEMRU" alt="截屏2022-02-04 下午2.02.11"></p><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/%E6%88%AA%E5%B1%8F2022-02-04%20%E4%B8%8B%E5%8D%882.06.25.png" alt="截屏2022-02-04 下午2.06.25"></p><h2 id="global-nonlocal"><a href="#global-nonlocal" class="headerlink" title="global nonlocal"></a>global nonlocal</h2><p>nonlocal声明的变量不是局部变量,也不是全局变量,而是外部嵌套函数内的变量</p><p>global 全局</p><h2 id="LEGB"><a href="#LEGB" class="headerlink" title="LEGB"></a>LEGB</h2><p>local &gt; enclosed(嵌套函数的外部函数变量) &gt; global &gt; build-in</p><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202202041425081.png" alt="截屏2022-02-04 下午2.24.38" style="zoom:50%;" /></p><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141608061.png?token=AOH5QID4UABABKCLMATFWFLDJEMTW" alt="截屏2022-02-04 下午2.27.54"></p><h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">debug</span>(<span class="params">func</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span>():</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[DEBUG]: enter &#123;&#125;()&quot;</span>.<span class="built_in">format</span>(func.__name__))</span><br><span class="line">        <span class="keyword">return</span> func()</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@debug</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>)</span><br><span class="line"></span><br><span class="line">hello()</span><br><span class="line">-----------------------------</span><br><span class="line">&gt;&gt;&gt;[DEBUG]: enter hello()</span><br><span class="line">&gt;&gt;&gt;hello</span><br></pre></td></tr></table></figure><h2 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h2><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141608936.png?token=AOH5QIHOCPNQE35VT4M6J2DDJEMTI" alt="截屏2022-02-04 下午2.44.39"></p><p>filter 返回使得表达式为True的结果</p><h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141608411.png?token=AOH5QIDPPR75GICQWGPU723DJEMS6" alt="截屏2022-02-04 下午2.53.14"></p><h1 id="列表的删除问题"><a href="#列表的删除问题" class="headerlink" title="列表的删除问题"></a>列表的删除问题</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> each <span class="keyword">in</span> data:  <span class="comment"># for each in data.copy()</span></span><br><span class="line">  <span class="keyword">if</span> each == <span class="number">1</span>:</span><br><span class="line">    data.remove(<span class="number">1</span>)</span><br><span class="line">    </span><br><span class="line"><span class="built_in">print</span>(data)</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141608417.png?token=AOH5QID6QYNBCYNBKYOT5VTDJEMSM" alt="截屏2022-02-04 下午11.17.53"></p><h1 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h1><h2 id="元组中只有一个元素时—逗号"><a href="#元组中只有一个元素时—逗号" class="headerlink" title="元组中只有一个元素时—逗号"></a>元组中只有一个元素时—逗号</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tup1 = (<span class="number">50</span>,)</span><br></pre></td></tr></table></figure><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol><li><a href="https://www.geeksforgeeks.org/difference-between-yield-and-return-in-python/">Difference between Yield and Return in Python</a></li><li><a href="https://blog.csdn.net/sinat_38682860/article/details/108848994">Python 字符串前面加u,r,b,f的含义_python学习者的博客-CSDN博客</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CV-some-tips</title>
+      <link href="/2021/10/29/CV-some-tips/"/>
+      <url>/2021/10/29/CV-some-tips/</url>
+      
+        <content type="html"><![CDATA[<h1 id="【CNN】理解卷积神经网络中的通道-channel-scxyz的博客-CSDN博客-cnn通道"><a href="#【CNN】理解卷积神经网络中的通道-channel-scxyz的博客-CSDN博客-cnn通道" class="headerlink" title="【CNN】理解卷积神经网络中的通道 channel_scxyz的博客-CSDN博客_cnn通道"></a><a href="https://blog.csdn.net/sscc_learning/article/details/79814146">【CNN】理解卷积神经网络中的通道 channel_scxyz的博客-CSDN博客_cnn通道</a></h1><p><img src="https://raw.githubusercontent.com/pikeyang/iamage/master/img/202210141605871.png?token=AOH5QIC5TDKHGOU4AWF5DQDDJEMHW" alt="cnn"></p><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110300953770.png" alt="多个卷积核"></p><h1 id="1x1conv"><a href="#1x1conv" class="headerlink" title="1x1conv"></a>1x1conv</h1><p>Suppose that I have a conv layer which outputs an (N,F,H,W)(N,F,H,W) shaped tensor where:</p><ul><li>N is the batch size</li><li>F is the number of convolutional filters</li><li>H,WH,W are the spatial dimensions</li></ul><p>Suppose this output is fed into a conv layer with F1F1 1x1 filters, zero padding and stride 1. Then the output of this 1x1 conv layer will have shape (N,F1,H,W)(N,F1,H,W).</p><p>So 1x1 conv filters can be used to change the dimensionality in the filter space. If F1&gt;FF1&gt;F then we are increasing dimensionality, if F1&lt;FF1&lt;F we are decreasing dimensionality, in the filter dimension.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Deep Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+            <tag> Computer Vision </tag>
+            
+            <tag> CNN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Why does Logistics Regression not use Square Loss?</title>
+      <link href="/2021/10/11/Why-does-Logistics-Regression-not-use-Square-Loss/"/>
+      <url>/2021/10/11/Why-does-Logistics-Regression-not-use-Square-Loss/</url>
+      
+        <content type="html"><![CDATA[<h1 id="为什么不使用平方损失"><a href="#为什么不使用平方损失" class="headerlink" title="为什么不使用平方损失"></a>为什么不使用平方损失</h1><h2 id="非凸函数"><a href="#非凸函数" class="headerlink" title="非凸函数"></a><a href="https://www.programmersought.com/article/12853404913/">非凸函数</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110111503422.png" alt="image-20210629193814368"></p><h2 id="对反例的惩罚不够"><a href="#对反例的惩罚不够" class="headerlink" title="对反例的惩罚不够"></a><a href="https://radiant-brushlands-42789.herokuapp.com/towardsdatascience.com/why-not-mse-as-a-loss-function-for-logistic-regression-589816b5e03c">对反例的惩罚不够</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/image-20210629193908181.png" alt="image-20210629193908181"></p><h2 id="The-gradient-of-MSE-will-disappear"><a href="#The-gradient-of-MSE-will-disappear" class="headerlink" title="The gradient of MSE will disappear"></a><a href="https://www.programmersought.com/article/12853404913/">The gradient of MSE will disappear</a></h2><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/image-20210629193736889.png" alt="image-20210629193736889"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ML </tag>
+            
+            <tag> Logistics Regression </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Numpy-Note</title>
+      <link href="/2021/10/09/Numpy-Note/"/>
+      <url>/2021/10/09/Numpy-Note/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a><code>Numpy</code></h1><p>​        <a href="https://numpy.org/doc/stable/reference/random/generator.html">官方文档</a></p><h1 id="Random"><a href="#Random" class="headerlink" title="Random"></a>Random</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110091215782.png" alt="image-20211009121523706"></p><h2 id="numpy-random-normal"><a href="#numpy-random-normal" class="headerlink" title="numpy.random.normal"></a><code>numpy.random.normal</code></h2><blockquote><p>Parameters</p><ul><li><p><strong><code>loc</code></strong>: float or array_like of floats</p><p>Mean (“<code>centre</code>”) of the distribution.</p></li><li><p><strong>scale</strong>: float or array_like of floats</p><p>Standard deviation (spread or “width”) of the distribution. Must be non-negative.</p></li><li><p><strong>size</strong>: <code>int</code> or tuple of<code>ints</code>, optional</p><p>Output shape. If the given shape is, <code>e.g</code>., <code>(m, n, k)</code>, then <code>m * n * k</code> samples are drawn. If size is <code>None</code> (default), a single value is returned if <code>loc</code> and <code>scale</code> are both scalars. Otherwise, <code>np.broadcast(loc, scale).size</code> samples are drawn.</p></li></ul><p>Returns</p><ul><li><p><strong>out</strong>: <code>ndarray</code> or scalar</p><p>Drawn samples from the parameterized normal distribution.</p></li></ul></blockquote><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110091241117.png" alt="image-20211009124146088"></p><p>​        相比于<code>random.randn</code>只能产生标准的正态分布，normal中，可以自己选择，<code>loc</code>和<code>scale</code></p><script type="math/tex; mode=display">loc\to\mu \\scale\to\sigma</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Numpy </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Random </tag>
+            
+            <tag> Numpy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CPP-Array</title>
+      <link href="/2021/10/07/CPP-Array/"/>
+      <url>/2021/10/07/CPP-Array/</url>
+      
+        <content type="html"><![CDATA[<p>&lt;!DOCTYPE html&gt;</p><p><html></p><p><head></p><p>&lt;meta  charset=utf-8”/&gt;<br>    <style><br>        mark {<br>            background-color:#FFFF00 ; font-weight:bold;<br>        }    </style></p><h1 id="数组的声明"><a href="#数组的声明" class="headerlink" title="数组的声明"></a>数组的声明</h1><p>​        C++中，最经典的数组声明方法是，<code>type name [elements]</code>。例如：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> foo [<span class="number">5</span>];</span><br></pre></td></tr></table></figure><h1 id="数组的初始化"><a href="#数组的初始化" class="headerlink" title="数组的初始化"></a>数组的初始化</h1><blockquote><p>在局部作用域下（函数中）声明的数组一般是不会进行初始化操作的。</p></blockquote><p>​        初始化的几种方式，直接上代码。</p><h2 id="初始化数组中的每一个值"><a href="#初始化数组中的每一个值" class="headerlink" title="初始化数组中的每一个值"></a>初始化数组中的每一个值</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> foo [<span class="number">5</span>] = &#123; <span class="number">16</span>, <span class="number">2</span>, <span class="number">77</span>, <span class="number">40</span>, <span class="number">12071</span> &#125;;</span><br></pre></td></tr></table></figure><p><img src="https://www.cplusplus.com/doc/tutorial/arrays/arrays2.png" alt="img"></p><h2 id="初始化数组的一部分"><a href="#初始化数组的一部分" class="headerlink" title="初始化数组的一部分"></a>初始化数组的一部分</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> bar [<span class="number">5</span>] = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> &#125;;</span><br></pre></td></tr></table></figure><p><img src="https://www.cplusplus.com/doc/tutorial/arrays/arrays3.png" alt="img"></p><h2 id="默认值初始化"><a href="#默认值初始化" class="headerlink" title="默认值初始化"></a>默认值初始化</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> baz [<span class="number">5</span>] = &#123; &#125;; </span><br></pre></td></tr></table></figure><p><img src="https://www.cplusplus.com/doc/tutorial/arrays/arrays4.png" alt="img"></p><h2 id="不必声明数组的长度的情况"><a href="#不必声明数组的长度的情况" class="headerlink" title="不必声明数组的长度的情况"></a>不必声明数组的长度的情况</h2><p>​        越来越简洁。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> foo[] = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> &#125;;</span><br><span class="line"><span class="keyword">int</span> foo[] &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> &#125;; </span><br></pre></td></tr></table></figure><h1 id="字符串数组"><a href="#字符串数组" class="headerlink" title="字符串数组"></a>字符串数组</h1><p>​        C++中的string类已经非常好用了，但是字符串在本质上来讲，就是字符的序列，直接使用字符串数组来存储自由度更大（性能，操作方式等）。</p><p>​        C++在字符串数组中规定了一种公约，即在字符串结束后紧随一个’\0’用来标定字符串的结束。我认为一个是结束的标志，另一个也是维持字符串本身意义所需，字符串不想数字的序列有着它本身的意义，用结束符来标定比较具有完备性，自我的一点想法，设计者是不是这么考量的有待考证。</p><h2 id="字符串数组的初始化"><a href="#字符串数组的初始化" class="headerlink" title="字符串数组的初始化"></a>字符串数组的初始化</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> myword[] = &#123; <span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;\0&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">char</span> myword[] = <span class="string">&quot;Hello&quot;</span>; </span><br></pre></td></tr></table></figure><p>​        <mark>需要注意的是字符串数组被初始化完成后，上面的操作不可以用来改变<code>myword</code>的值了！！</mark></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myword = <span class="string">&quot;Bye&quot;</span>;</span><br><span class="line">myword[] = <span class="string">&quot;Bye&quot;</span>; </span><br></pre></td></tr></table></figure><p>​        都是不允许的,但是可以像下面这样的操作。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">myword[<span class="number">0</span>] = <span class="string">&#x27;B&#x27;</span>;</span><br><span class="line">myword[<span class="number">1</span>] = <span class="string">&#x27;y&#x27;</span>;</span><br><span class="line">myword[<span class="number">2</span>] = <span class="string">&#x27;e&#x27;</span>;</span><br><span class="line">myword[<span class="number">3</span>] = <span class="string">&#x27;\0&#x27;</span>;</span><br></pre></td></tr></table></figure><h2 id="string和c-string"><a href="#string和c-string" class="headerlink" title="string和c_string"></a>string和c_string</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> myntcs[] = <span class="string">&quot;some text&quot;</span>;</span><br><span class="line">string mystring = myntcs;  <span class="comment">// convert c-string to string</span></span><br><span class="line">cout &lt;&lt; mystring;          <span class="comment">// printed as a library string</span></span><br><span class="line">cout &lt;&lt; mystring.<span class="built_in">c_str</span>();  <span class="comment">// printed as a c-string</span></span><br></pre></td></tr></table></figure><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.cplusplus.com/doc/tutorial/arrays/（摘录）">https://www.cplusplus.com/doc/tutorial/arrays/（摘录）</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Array </tag>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PyTorch-Learning-Note</title>
+      <link href="/2021/10/07/PyTorch-Learning-Note/"/>
+      <url>/2021/10/07/PyTorch-Learning-Note/</url>
+      
+        <content type="html"><![CDATA[<p>&lt;!DOCTYPE html&gt;</p><p><html></p><p><head><br>    <style><br>        mark {<br>            background-color:#ffff00 ; font-weight:bold;<br>        }    </style></p><h1 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h1><h2 id="改变形状"><a href="#改变形状" class="headerlink" title="改变形状"></a>改变形状</h2><h3 id="view"><a href="#view" class="headerlink" title="view"></a>view</h3><p>​        <code>view</code>不会真正地改变tensor的形状，而是改变了观察tensor的视角。<mark>注意<code>view()</code>返回的新<code>Tensor</code>与源<code>Tensor</code>虽然可能有不同的<code>size</code>，但是是共享<code>data</code>的，也即更改其中的一个，另外一个也会跟着改变。</mark></p><h3 id="reshape"><a href="#reshape" class="headerlink" title="reshape"></a>reshape</h3><p>​        <code>reshape</code>不能保证返回的是源数据的副本还是源数据的不同视角（和view的操作效果相同），所以一般情况下不推荐使用<code>reshape</code>。</p><h3 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h3><p>​        因为<code>reshape</code>的不确定性，所以推荐这种用法<code>x.clone().view()</code></p><blockquote><p>使用<code>clone</code>还有一个好处是会被记录在计算图中，即梯度回传到副本时也会传到源<code>Tensor</code>。</p></blockquote><h3 id="squeeze"><a href="#squeeze" class="headerlink" title="squeeze"></a>squeeze</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">torch.squeeze(<span class="built_in">input</span>, dim=<span class="literal">None</span>, out=<span class="literal">None</span>)</span><br><span class="line">将输入张量形状中的<span class="number">1</span> 去除并返回。 如果输入是形如(A×<span class="number">1</span>×B×<span class="number">1</span>×C×<span class="number">1</span>×D)，那么输出形状就为： (A×B×C×D)</span><br><span class="line">当给定dim时，那么挤压操作只在给定维度上。例如，输入形状为: (A×<span class="number">1</span>×B), squeeze(<span class="built_in">input</span>, <span class="number">0</span>) </span><br><span class="line">将会保持张量不变，只有用 squeeze(<span class="built_in">input</span>, <span class="number">1</span>)，形状会变成 (A×B)。</span><br><span class="line"> </span><br><span class="line">注意： 返回张量与输入张量共享内存，所以改变其中一个的内容会改变另一个。</span><br><span class="line"> </span><br><span class="line">参数:</span><br><span class="line"> </span><br><span class="line"><span class="built_in">input</span> (Tensor) – 输入张量</span><br><span class="line">dim (<span class="built_in">int</span>, optional) – 如果给定，则<span class="built_in">input</span>只会在给定维度挤压</span><br><span class="line">out (Tensor, optional) – 输出张量</span><br><span class="line">例子：</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = torch.zeros(<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.size()</span><br><span class="line">(<span class="number">2L</span>, <span class="number">1L</span>, <span class="number">2L</span>, <span class="number">1L</span>, <span class="number">2L</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = torch.squeeze(x)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y.size()</span><br><span class="line">(<span class="number">2L</span>, <span class="number">2L</span>, <span class="number">2L</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = torch.squeeze(x, <span class="number">0</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y.size()</span><br><span class="line">(<span class="number">2L</span>, <span class="number">1L</span>, <span class="number">2L</span>, <span class="number">1L</span>, <span class="number">2L</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = torch.squeeze(x, <span class="number">1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y.size()</span><br><span class="line">(<span class="number">2L</span>, <span class="number">2L</span>, <span class="number">1L</span>, <span class="number">2L</span>)</span><br></pre></td></tr></table></figure><h3 id="item"><a href="#item" class="headerlink" title="item"></a>item</h3><p>​        <code>item()</code>可以将一个标量<code>Tensor</code>转换成一个Python number</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(x.item())</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tensor([2.3466])  #result</span><br><span class="line">2.3466382026672363</span><br></pre></td></tr></table></figure><h2 id="运算的内存开销"><a href="#运算的内存开销" class="headerlink" title="运算的内存开销"></a>运算的内存开销</h2><p>​        <code>y = x + y</code>这样的运算是会新开内存的，然后将<code>y</code>指向新内存。为了演示这一点，我们可以使用Python自带的<code>id</code>函数：如果两个实例的ID一致，那么它们所对应的内存地址相同；反之则不同。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = torch.tensor([<span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line">y = torch.tensor([<span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">id_before = <span class="built_in">id</span>(y)</span><br><span class="line">y = y + x   <span class="comment"># y[:] = y + x</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(y) == id_before) <span class="comment"># False </span></span><br></pre></td></tr></table></figure><p>​        为了减小内存开销，我们可以使用一些<code>inplace</code>的操作，比如<code>+=</code>(也即<code>add_()</code>)或者<code>torch.add(x, y, out=y)</code>还有<code>y[:] = y + x</code></p><blockquote><p>虽然<code>view</code>返回的<code>Tensor</code>与源<code>Tensor</code>是共享<code>data</code>的，但是依然是一个新的<code>Tensor</code>（因为<code>Tensor</code>除了包含<code>data</code>外还有一些其他属性），二者id（内存地址）并不一致。</p></blockquote><h2 id="Tensor和NumPy相互转换"><a href="#Tensor和NumPy相互转换" class="headerlink" title="Tensor和NumPy相互转换"></a><code>Tensor</code>和<code>NumPy</code>相互转换</h2><p>​        <code>numpy()</code>和<code>from_numpy()</code>将<code>Tensor</code>和<code>NumPy</code>中的数组相互转换。但是需要注意的一点是： <strong>这两个函数所产生的的<code>Tensor</code>和<code>NumPy</code>中的数组共享相同的内存（所以他们之间的转换很快），改变其中一个时另一个也会改变！！！</strong></p><p>​    此外还可以使用<code>tensor()</code>将<code>NumPy</code>转为<code>Tensor</code>，但是这个过程是数组的拷贝，返回的<code>Tensor</code>和原来不共享内存。</p><h2 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This computes the matrix multiplication between two tensors. y1, y2, y3 will have the same value</span></span><br><span class="line">y1 = tensor @ tensor.T</span><br><span class="line">y2 = tensor.matmul(tensor.T)</span><br><span class="line"></span><br><span class="line">y3 = torch.rand_like(tensor)</span><br><span class="line">torch.matmul(tensor, tensor.T, out=y3)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># This computes the element-wise product. z1, z2, z3 will have the same value</span></span><br><span class="line">z1 = tensor * tensor</span><br><span class="line">z2 = tensor.mul(tensor)</span><br><span class="line"></span><br><span class="line">z3 = torch.rand_like(tensor)</span><br><span class="line">torch.mul(tensor, tensor, out=z3)</span><br></pre></td></tr></table></figure><h1 id="梯度"><a href="#梯度" class="headerlink" title="梯度"></a>梯度</h1><h2 id="修改tensor"><a href="#修改tensor" class="headerlink" title="修改tensor"></a>修改<code>tensor</code></h2><p>​        如果我们想要修改<code>tensor</code>的数值，但是又不希望被<code>autograd</code>记录（即不会影响反向传播），那么我么可以对<code>tensor.data</code>进行操作。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">x = torch.ones(<span class="number">1</span>,requires_grad=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(x.data) <span class="comment"># 还是一个tensor</span></span><br><span class="line"><span class="built_in">print</span>(x.data.requires_grad) <span class="comment"># 但是已经是独立于计算图之外</span></span><br><span class="line"></span><br><span class="line">y = <span class="number">2</span> * x</span><br><span class="line">x.data *= <span class="number">100</span> <span class="comment"># 只改变了值，不会记录在计算图，所以不会影响梯度传播</span></span><br><span class="line"></span><br><span class="line">y.backward()</span><br><span class="line"><span class="built_in">print</span>(x) <span class="comment"># 更改data的值也会影响tensor的值</span></span><br><span class="line"><span class="built_in">print</span>(x.grad)</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tensor([1.])</span><br><span class="line">False</span><br><span class="line">tensor([100.], requires_grad=True)</span><br><span class="line">tensor([2.])</span><br></pre></td></tr></table></figure><h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><h2 id="nn"><a href="#nn" class="headerlink" title="nn"></a>nn</h2><blockquote><p>注意：<code>torch.nn</code>仅支持输入一个batch的样本不支持单个样本输入，如果只有单个样本，可使用<code>input.unsqueeze(0)</code>来添加一维。</p></blockquote><h3 id="nn和functional"><a href="#nn和functional" class="headerlink" title="nn和functional"></a>nn和functional</h3><div class="table-container"><table><thead><tr><th>torch.nn.X</th><th>torch.nn.functional.X</th></tr></thead><tbody><tr><td>是 类</td><td>是函数</td></tr><tr><td>结构中包含所需要初始化的参数</td><td>需要在函数外定义并初始化相应参数,并作为参数传入</td></tr><tr><td>一般情况下放在<em>init</em> 中实例化,并在forward中完成操作</td><td>一般在<em>init</em> 中初始化相应参数,在forward中传入</td></tr></tbody></table></div><h2 id="init"><a href="#init" class="headerlink" title="init"></a>init</h2><p>​        在使用模型之前，我们需要初始化模型参数。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.nn <span class="keyword">import</span> init</span><br><span class="line"></span><br><span class="line">init.normal_(net[<span class="number">0</span>].weight, mean=<span class="number">0</span>, std=<span class="number">0.01</span>)</span><br><span class="line">init.constant_(net[<span class="number">0</span>].bias, val=<span class="number">0</span>)  <span class="comment"># 也可以直接修改bias的data: net[0].bias.data.fill_(0)</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> PyTorch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+            <tag> PyTorch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>程序的内存分布</title>
+      <link href="/2021/10/06/%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83/"/>
+      <url>/2021/10/06/%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83/</url>
+      
+        <content type="html"><![CDATA[<h1 id="程序的内存分布结构"><a href="#程序的内存分布结构" class="headerlink" title="程序的内存分布结构"></a>程序的内存分布结构</h1><p>​    对于一个程序来讲，它在内存中分为五个部分。</p><ul><li>代码段 Text segment<ul><li>存储可执行的代码，这一部分通常是只读的</li></ul></li><li>数据段 Data segment<ul><li>存储已经被初始化完成的static/global变量，比如<code>static int a = 3</code> ，<code>a</code>将被存储在数据段</li></ul></li><li>BSS<ul><li>和数据段相对应，这里存储了未被初始化的static/global变量</li><li>这一段的内容被操作系统全部置零了，所以未被初始化的变量将被赋初值0，比如<code>static int b</code>，<code>b</code>的值就是0</li></ul></li><li>堆<ul><li>堆和数据结构中的堆并非同一个东西</li><li>堆是用来为动态内存（dynamic memory allocation）申请提供空间的，常见的操作为<code>malloc，calloc，realloc，free</code></li></ul></li><li>栈<ul><li>用于存储函数内部定义的局部变量，以及存储与函数调用相关的数据，如返回地址、参数等</li></ul></li></ul><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110061941498.png" alt="image-20211006194121438"></p><h2 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h2><ol><li>Du W. Computer &amp; internet security: a hands-on approach[M]. Independently published, 2019.</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Operating System </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Memory </tag>
+            
+            <tag> CPP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>程序是怎么跑起来的-1</title>
+      <link href="/2021/10/06/%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-1/"/>
+      <url>/2021/10/06/%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="CPU的组成"><a href="#CPU的组成" class="headerlink" title="CPU的组成"></a>CPU的组成</h1><p>​        CPU的内部由寄存器、控制器、运算器和时钟四个部分构成（有的时钟在CPU之外）</p><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/202110060022125.png" alt="image-20211006002224075"></p><p>​        CU控制单元，ALU算术逻辑单元。</p><p>未完待续。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Operating System </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CPU </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CPP-learn-source</title>
+      <link href="/2021/10/05/CPP-learn-source/"/>
+      <url>/2021/10/05/CPP-learn-source/</url>
+      
+        <content type="html"><![CDATA[<h1 id="内联函数"><a href="#内联函数" class="headerlink" title="内联函数"></a>内联函数</h1><p><a href="https://blog.csdn.net/BjarneCpp/article/details/76044493">c++ 内联函数（一看就懂）</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CPP-base </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>math-for-ML</title>
+      <link href="/2021/07/10/math-for-ML/"/>
+      <url>/2021/07/10/math-for-ML/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ML </tag>
+            
+            <tag> math </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>图像风格变换</title>
+      <link href="/2021/07/10/%E5%9B%BE%E5%83%8F%E9%A3%8E%E6%A0%BC%E5%8F%98%E6%8D%A2/"/>
+      <url>/2021/07/10/%E5%9B%BE%E5%83%8F%E9%A3%8E%E6%A0%BC%E5%8F%98%E6%8D%A2/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210710104000.png" alt="image-20210710104000250"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>contrastive loss function</title>
+      <link href="/2021/07/09/contrastive-loss-function/"/>
+      <url>/2021/07/09/contrastive-loss-function/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Contrastive-Loss"><a href="#Contrastive-Loss" class="headerlink" title="Contrastive Loss"></a>Contrastive Loss</h1><h2 id="Max-margin-contrastive-loss"><a href="#Max-margin-contrastive-loss" class="headerlink" title="Max margin contrastive loss"></a>Max margin contrastive loss</h2><h2 id="REFFERENCE"><a href="#REFFERENCE" class="headerlink" title="REFFERENCE"></a>REFFERENCE</h2><ol><li>Wang, F., &amp; Liu, H. (2020). Understanding the Behaviour of Contrastive Loss. 2495–2504. <a href="http://arxiv.org/abs/2012.09740">http://arxiv.org/abs/2012.09740</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> loss function </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ML </tag>
+            
+            <tag> loss-func </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>收藏的项目</title>
+      <link href="/2021/07/08/%E6%94%B6%E8%97%8F%E7%9A%84%E9%A1%B9%E7%9B%AE/"/>
+      <url>/2021/07/08/%E6%94%B6%E8%97%8F%E7%9A%84%E9%A1%B9%E7%9B%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="收藏的项目"><a href="#收藏的项目" class="headerlink" title="收藏的项目"></a>收藏的项目</h1><p><img src="https://gitee.com/cd-yang/pic/raw/master/img/20210708095602.jpeg" alt="My Favorite Rubber Stamp. Grunge Design With Dust Scratches... Royalty Free  Cliparts, Vectors, And Stock Illustration. Image 69733888."></p><h2 id="对比损失的实现"><a href="#对比损失的实现" class="headerlink" title="对比损失的实现"></a>对比损失的实现</h2><p><a href="https://github.com/wangz10/contrastive_loss">contrastive_loss</a></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Contrastive loss functions</span><br><span class="line">Experiments with different contrastive loss functions to see if they help supervised learning.</span><br><span class="line"></span><br><span class="line">For detailed reviews and intuitions, please check out those posts:</span><br><span class="line"></span><br><span class="line">Contrastive loss for supervised classification</span><br><span class="line">Contrasting contrastive loss functions</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>setting</title>
+      <link href="/2021/07/07/setting/"/>
+      <url>/2021/07/07/setting/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202305251435947.png" alt="image-20210707130820709"></p><h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>只针对github</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.https://github.com.proxy localhost:10809</span><br><span class="line"></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br></pre></td></tr></table></figure><p>为git开启代理</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global https.proxy localhost:10809</span><br><span class="line">git config --global http.proxy localhost:10809</span><br><span class="line"></span><br><span class="line">git config --global --unset http.proxy</span><br></pre></td></tr></table></figure><p>关闭 crlf转换</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span>     //禁用自動轉換</span><br></pre></td></tr></table></figure><p>Git升级</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git update-git-for-windows</span><br></pre></td></tr></table></figure><h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><ul><li><a href="https://butterfly.js.org/posts/4aa8abbe/">Hexo doc</a></li></ul><h2 id="hexo-highlight"><a href="#hexo-highlight" class="headerlink" title="hexo highlight"></a>hexo highlight</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span>  <span class="attr">charset</span>=<span class="string">utf-8</span>&quot;/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">mark</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>:<span class="number">#FFFF00</span> ; <span class="attribute">font-weight</span>:bold;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="多电脑协同"><a href="#多电脑协同" class="headerlink" title="多电脑协同"></a>多电脑协同</h2><h4 id="增加电脑时"><a href="#增加电脑时" class="headerlink" title="增加电脑时"></a>增加电脑时</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> address-of-your-site</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> address-of-your-site</span><br><span class="line"></span><br><span class="line">npm install <span class="comment"># due to the exist of gitignore, we should install module</span></span><br></pre></td></tr></table></figure><h4 id="不同电脑提交"><a href="#不同电脑提交" class="headerlink" title="不同电脑提交"></a>不同电脑提交</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git pull <span class="comment"># 同步</span></span><br><span class="line"></span><br><span class="line">git add -A</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">git push </span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure><h1 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;page-break-after:always&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AppData\Roaming\Typora\typora-user-images</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> note </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> hexo </tag>
+            
+            <tag> butterfly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Iteration Batch Epoch</title>
+      <link href="/2021/07/07/Iteration-Batch-Epoch/"/>
+      <url>/2021/07/07/Iteration-Batch-Epoch/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Iteration-Batch-Epoch"><a href="#Iteration-Batch-Epoch" class="headerlink" title="Iteration Batch Epoch"></a>Iteration Batch Epoch</h1><p><img src="https://yang-img-weng.oss-cn-hangzhou.aliyuncs.com/images/202304042209565.png" alt="img"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ML </tag>
+            
+            <tag> Gradient Descent </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
